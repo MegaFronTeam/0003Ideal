@@ -487,3 +487,22 @@ iframe {
 	
 	// @include row-sw(10px, sm, 100px);
 }
+
+h1 {
+	@include rfs(76px);
+}
+h2 {
+	@include rfs(52px);
+}
+h3 {
+	@include rfs(38px);
+}
+h4 {
+	@include rfs(32px);
+}
+h5 {
+	@include rfs(24px);
+}
+h6 {
+	@include rfs(19px);
+}

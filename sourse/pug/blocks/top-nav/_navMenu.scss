@@ -26,9 +26,9 @@
 
 
 .toggle-menu-mobile {
-	--h: #{em(2)};
-	--color: #{$primary};
-	--position: calc(var(--h) * 2);
+	--h: #{2px};
+	--color: #{$body-color};
+	--position: calc(var(--h) * 2.5);
 	&.on span {
 		--color: transparent;
 	}
@@ -38,10 +38,12 @@
 		--rotate: 45deg;
 	}
 	display: block;
-	height: calc(var(--h)* 12);
+	height: 48px;
 	position: relative; 
 	font-size: 32px;
-	width: 1em;
+	width: 48px;
+	background-color: $white;
+	border-radius: 50%;
 	cursor: pointer;
 	span:after,
 	span:before {
@@ -52,6 +54,8 @@
 	span {
 		@include a-cent(y);
 		display: block;
+		left: 50%;
+    transform: translateX(-50%);
 	}
 
 	span:before { 
@@ -67,7 +71,7 @@
 	span:after,
 	span:before {
 		// width: 32px;
-		width: 1em;
+		width: 18px;
 		height: var(--h);
 		background-color: var(--color);
 		transition: all 0.3s;
@@ -81,7 +85,7 @@
 
 	.menu-mobile {
 		position: fixed !important;
-		z-index: 999;
+		z-index: 1100;
 		max-width: 85%;
 		height: calc(var(--vh, 1vh) * 100);
 		width: 280px;

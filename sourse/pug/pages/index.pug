@@ -1,7 +1,7 @@
 extends ../layout/main.pug
 
 include ../blocks/header/_header.pug
-include ../blocks/topLine/_topLine.pug
+//- include ../blocks/topLine/_topLine.pug
 include ../blocks/top-nav/_top-nav.pug 
 include ../blocks/headerBlock/_headerBlock.pug
 include ../blocks/sForm/_sForm.pug
@@ -24,20 +24,9 @@ block pagecontent
 	
 	
 	+header()
+	//- +topLine
 	+top-nav()
-	+topLine
 	+headerBlock
-
-	+soc()
-	+sForm()
-	//- +sForm()
-	//- - let list = items[0].title
-	//- p= list
-	.container
-		each item in items
-			li 
-				h2= item.title
-				p= item.text
 	//- +sContact()
 	
 	+footer()

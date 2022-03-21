@@ -1,5 +1,5 @@
 mixin menu-toggle()
-	+b.toggle-menu-mobile--js.d-lg-none
+	+b.toggle-menu-mobile--js
 		span
 mixin mob-mnu()
 	-
@@ -21,13 +21,16 @@ mixin top-nav()
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		.container
-			.row
-				.col.order-lg-0.order-last
+			.row.align-items-center
+				.col
+					a(href="#")
+						img(src="img/@2x/logo.png", alt="") 
+				.col
 					.menu-mobile.menu-mobile--js
 						.menu-mobile__inner
-							+menu-toggle()
-							+mnu()
+							//- +menu-toggle()
+							//- +mnu()
 					
-				.col-auto.d-lg-none
+				.col-auto
 					+menu-toggle()
 	// end top-nav

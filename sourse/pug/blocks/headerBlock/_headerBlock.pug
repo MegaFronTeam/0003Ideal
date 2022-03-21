@@ -1,10 +1,21 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-
-			.row
-						
+		+b.firstScreen.bg-wrap
+			+img('header-bg-1.jpg', 'bg').picture-bg
+			.container
+				+b.section-title.text-center
+					h1 Готовые решения интерьера квартир
+					p Применим к&nbsp;любой площади квартиры и&nbsp;планировке заказчика
+					button.btn 
+						p Выбрать решение
+						+e.btnIcon
+							+icon('chevron-down')
+		+b.secondScreen.bg-wrap
+			+img('header-bg-2.jpg', 'bg').picture-bg
+			.container
+				+b.section-title.text-center
+					h2 Берлин
+					p Ни&nbsp;одна деталь не&nbsp;будет лишней, у&nbsp;каждой мелочи&nbsp;&mdash; свой функционал, только простые и&nbsp;лаконичные формы.
+					a(href="#").btn.btn-outline-primary Подробнее
 	// end headerBlock
