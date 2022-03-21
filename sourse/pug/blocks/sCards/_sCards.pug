@@ -1,0 +1,18 @@
+mixin sCards(data)
+	// start sCards
+	+b.SECTION.sCards.section#sCards&attributes(attributes)
+		.container
+			+e.row.row
+				mixin cards-item(i, title, text)
+					.col-sm-6
+						+e.wrap
+							+e.content
+								h4!= title
+								p!= text
+								//- +img(`cards-img-${i}.png`)
+								+pic(`cards-img-${i}.png`)
+				+cards-item('1', 'Фиксированная цена', 'Все материалы и&nbsp;работы входят в&nbsp;стоимость договора.<br>Полная смета от&nbsp;проекта до&nbsp;реализации.')
+				+cards-item('2', 'Соблюдение сроков', 'Благодаря четкому графику и своевременному поступлению<br>материалов, контроль этапов в личном кабинете.')
+				+cards-item('3', 'Лучшее качество', 'Только проверенные команды с опытом работы.<br>Контроль выполнения качества работ.')
+				+cards-item('1', 'Фиксированная цена', 'Все материалы и&nbsp;работы входят в&nbsp;стоимость договора. Полная смета от&nbsp;проекта до&nbsp;реализации.')
+	// end sCards

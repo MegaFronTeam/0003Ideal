@@ -7,6 +7,15 @@
 	width: 100%;
 	padding-top: rem(27);
 	z-index: 10;
+	.logo {
+		svg {
+			width: 90px;
+			height: 20px;
+			[fill="black"] {
+				fill: $white !important;
+			}
+		}
+	}
 	@include media-breakpoint-up(md) {}
 
 	@include media-breakpoint-up(sm) {}
