@@ -534,3 +534,9 @@ h6 {
 * {
 	font-feature-settings: 'pnum' on, 'lnum' on;
 }
+
+@media (min-width: 1400px) {
+	.container {
+		max-width: 1600px;
+	}
+}
