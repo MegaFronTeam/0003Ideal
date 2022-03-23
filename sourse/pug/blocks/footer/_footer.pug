@@ -2,34 +2,47 @@ mixin footer()
 	+b.FOOTER.footer
 		.container
 			.row
-				.col-lg-6
+				+e.logo-sm
 					+logo()
+				+e.col-contact.col-lg-6
+					+e.logo-lg
+						+logo()
 					+e.content
-						p 101000, Москва, Сверчков переулок&nbsp;15
-						a(href="mailto:info@ideal.ru") info@ideal.ru
-						a(href="tel:89000000000") 8 900 000-00-00
-					+e.P.copyright &copy;&nbsp;ООО &laquo;Идеал&raquo; 2021
-				.col
+						p 101000, Москва,<br>Сверчков переулок&nbsp;15
+						+e.links
+							a(href="mailto:info@ideal.ru") info@ideal.ru
+							a(href="tel:89000000000") 8&nbsp;900 000-00-00
+				+e.col-innerPage.col
 					+e.inner-pages
-						a(href="#").h6 Американская классика
-						a(href="#").h6 Амстердам
-						a(href="#").h6 Берлин
-						a(href="#").h6 Гавана
+						ul
+							li
+								a(href="#").h6 Американская классика
+							li
+								a(href="#").h6 Амстердам
+							li
+								a(href="#").h6 Берлин
+							li
+								a(href="#").h6 Гавана
+							li
+								a(href="#").h6 Париж
+							li
+								a(href="#").h6 Стокгольм
+							li
+								a(href="#").h6 Санкт-Петербург
+				+e.col-contact-pages.col-auto
+					+e.contant-page
+						ul
+							li
+								a(href="#") О компании
+							li
+								a(href="#") Условия работы
+							li
+								a(href="#") Новости
+							li
+								a(href="#") Контакты
+				.col-12.col-md-6.order-last
+					+e.P.copyright &copy;&nbsp;ООО &laquo;Идеал&raquo; 2021
+				.col-12.col-md-6.order-last
 					+e.made
 						+icon('coalla-logo')
 						p Сделано в Coalla Agency
-				.col
-					+e.inner-pages
-						a(href="#").h6 Париж
-						a(href="#").h6 Стокгольм
-						a(href="#").h6 Санкт-Петербург
-				.col-auto
-					ul
-						li
-							a(href="#") О компании
-						li
-							a(href="#") Условия работы
-						li
-							a(href="#") Новости
-						li
-							a(href="#") Контакты
