@@ -10,15 +10,19 @@
 		margin-bottom: 0;
 		position: relative;
 		z-index: 10;
+		max-width: rem(950);
+    margin-left: auto;
+    margin-right: auto;
 		h1 {
 			margin-bottom: rem(16);
+			line-height: 0.95em;
 			@include media-breakpoint-down(md) {
-				font-size: rem(32);
+				font-size: rem(27);
 			}
 		}
 		p {
 			font-size: rem(18);
-			margin-bottom: rem(4);
+			margin-bottom: rem(32);
 			@include media-breakpoint-down(md) {
 				font-size: rem(16);
 			}
@@ -38,6 +42,7 @@
 			margin-right: auto;
 			margin-left: auto;
 			border-radius: 50%;
+			margin-top: rem(8);
 		}
 	}
 	.firstScreen, .secondScreen {
@@ -58,27 +63,39 @@
 			top: 0;
 			left: 0;
 		}
+		.swiper {
+			width: 100vw;
+			height: 100vh;
+			position: absolute;
+		}
 	}
 	.secondScreen {
 		align-items: flex-end;
-		padding-bottom: rem(65);
-		position: relative;
-		&::before {
-			content: '';
-			display: block;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 8.8%), linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+		// padding-bottom: rem(73);
+		&__slide {
+			position: relative;
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 8.8%), linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+				z-index: 10;
+			}
 		}
 		.section-title {
-			max-width: rem(359);
+			max-width: rem(368);
 			margin-left: auto;
 			margin-right: auto;
+			margin-bottom: rem(73);
+			@include media-breakpoint-down(sm) {
+				max-width: rem(272);
+			}
 			h2 {
-				margin-bottom: rem(20);
+				margin-bottom: rem(13.600);
 			}
 			p {
 				font-size: rem(14);
@@ -92,6 +109,21 @@
 					background-color: $body-color;
 					border-color: $body-color;
 				}
+			}
+		}
+		.swiper {
+			width: 100vw;
+			height: 100vh;
+			position: absolute;
+		}
+		.swiper-button-hand {
+			z-index: 11;
+			bottom: rem(17);
+			&-prev {
+				--swiperArrowPosition: #{rem(24)};
+			}
+			&-next {
+				--swiperArrowPosition: #{rem(30)};
 			}
 		}
 	}

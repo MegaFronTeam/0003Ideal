@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>тест dffsdf dfsdтест 2222</title>
+		<title>Главная</title>
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
@@ -14,7 +14,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&amp;display=swap" rel="stylesheet"/>
 		<link href="css/main.min.css?v=0.0.1" rel="stylesheet"/>
 	</head>
-	<body class="main-page">
+	<body class="main-page" data-bg="main.jpg">
 		<div class="main-wrapper">
 			<!-- start header-->
 			<header class="header" id="header">
@@ -53,13 +53,21 @@
 			<!-- end top-nav-->
 			<!-- start headerBlock-->
 			<div class="headerBlock section" id="headerBlock">
-				<div class="firstScreen bg-wrap"><img class="object-fit-js picture-bg" src="img/@2x/header-bg-1.jpg" alt="" loading="lazy"/>
+				<div class="firstScreen bg-wrap">
+					<div class="firstScreen__slider firstScreen__slider--js swiper">
+						<div class="swiper-wrapper">
+							<div class="firstScreen__slide swiper-slide"><img class="object-fit-js picture-bg" src="img/@2x/header-bg-1.jpg" alt="" loading="lazy"/>
+							</div>
+							<div class="firstScreen__slide swiper-slide"><img class="object-fit-js picture-bg" src="img/@2x/header-bg-3.jpg" alt="" loading="lazy"/>
+							</div>
+						</div>
+					</div>
 					<div class="container">
 						<div class="section-title text-center">
 							<h1>Готовые решения интерьера квартир</h1>
 							<p>Применим к&nbsp;любой площади квартиры и&nbsp;планировке заказчика</p>
-							<button class="btn"> 
-								<p>Выбрать решение</p>
+							<button class="btn">
+								 Выбрать решение
 								<div class="section-title__btnIcon">
 									<svg class="icon icon-chevron-down ">
 										<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
@@ -69,7 +77,28 @@
 						</div>
 					</div>
 				</div>
-				<div class="secondScreen bg-wrap"><img class="object-fit-js picture-bg" src="img/@2x/header-bg-2.jpg" alt="" loading="lazy"/>
+				<div class="secondScreen bg-wrap">
+					<div class="secondScreen__slider secondScreen__slider--js swiper">
+						<div class="swiper-wrapper">
+							<div class="secondScreen__slide swiper-slide"><img class="object-fit-js picture-bg" src="img/@2x/header-bg-2.jpg" alt="" loading="lazy"/>
+							</div>
+							<div class="secondScreen__slide swiper-slide"><img class="object-fit-js picture-bg" src="img/@2x/header-bg-2.jpg" alt="" loading="lazy"/>
+							</div>
+							<div class="secondScreen__slide swiper-slide"><img class="object-fit-js picture-bg" src="img/@2x/header-bg-2.jpg" alt="" loading="lazy"/>
+							</div>
+						</div>
+						<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
+							<svg class="icon icon-chevron-left ">
+								<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+							</svg>
+						</div>
+						<div class="swiper-button-hand swiper-button-hand-next swiper-button-next">
+							<svg class="icon icon-chevron-right ">
+								<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+							</svg>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
 					<div class="container">
 						<div class="section-title text-center">
 							<h2>Берлин</h2>
@@ -87,12 +116,7 @@
 							<div class="sCards__wrap">
 								<div class="sCards__content">
 									<h4>Фиксированная цена</h4>
-									<p>Все материалы и&nbsp;работы входят в&nbsp;стоимость договора.<br>Полная смета от&nbsp;проекта до&nbsp;реализации.</p>
-									<!-- picture-->
-									<picture> 
-										<source type="image/webp" srcset="img/@2x/webp/cards-img-1.webp"/><img src="img/@2x/cards-img-1.png" alt="" loading="lazy"/>
-									</picture>
-									<!-- /picture-->
+									<p>Все материалы и&nbsp;работы входят в&nbsp;стоимость договора.<br>Полная смета от&nbsp;проекта до&nbsp;реализации.</p><img class="cards-img-1" src="img/@2x/cards-img-1.png" alt="" loading="lazy"/>
 								</div>
 							</div>
 						</div>
@@ -100,12 +124,7 @@
 							<div class="sCards__wrap">
 								<div class="sCards__content">
 									<h4>Соблюдение сроков</h4>
-									<p>Благодаря четкому графику и своевременному поступлению<br>материалов, контроль этапов в личном кабинете.</p>
-									<!-- picture-->
-									<picture> 
-										<source type="image/webp" srcset="img/@2x/webp/cards-img-2.webp"/><img src="img/@2x/cards-img-2.png" alt="" loading="lazy"/>
-									</picture>
-									<!-- /picture-->
+									<p>Благодаря четкому графику и&nbsp;своевременному поступлению<br>материалов, контроль этапов в&nbsp;личном кабинете.</p><img class="cards-img-2" src="img/@2x/cards-img-2.png" alt="" loading="lazy"/><img class="cards-img-3" src="img/@2x/cards-img-3.png" alt="" loading="lazy"/><img class="cards-img-4" src="img/@2x/cards-img-4.png" alt="" loading="lazy"/><img class="cards-img-5" src="img/@2x/cards-img-5.png" alt="" loading="lazy"/>
 								</div>
 							</div>
 						</div>
@@ -113,25 +132,25 @@
 							<div class="sCards__wrap">
 								<div class="sCards__content">
 									<h4>Лучшее качество</h4>
-									<p>Только проверенные команды с опытом работы.<br>Контроль выполнения качества работ.</p>
-									<!-- picture-->
-									<picture> 
-										<source type="image/webp" srcset="img/@2x/webp/cards-img-3.webp"/><img src="img/@2x/cards-img-3.png" alt="" loading="lazy"/>
-									</picture>
-									<!-- /picture-->
+									<p>Только проверенные команды с&nbsp;опытом работы.<br>Контроль выполнения качества работ.</p><img class="cards-img-6" src="img/@2x/cards-img-6.png" alt="" loading="lazy"/>
 								</div>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="sCards__wrap">
-								<div class="sCards__content">
-									<h4>Фиксированная цена</h4>
-									<p>Все материалы и&nbsp;работы входят в&nbsp;стоимость договора. Полная смета от&nbsp;проекта до&nbsp;реализации.</p>
-									<!-- picture-->
-									<picture> 
-										<source type="image/webp" srcset="img/@2x/webp/cards-img-1.webp"/><img src="img/@2x/cards-img-1.png" alt="" loading="lazy"/>
-									</picture>
-									<!-- /picture-->
+								<div class="sCards__content sCards__content--last-card">
+									<h3>Оставьте заявку или позвоните. </h3>
+									<p>Быстрая и&nbsp;точная предварительная оценка стоимости квартиры.</p>
+									<a class="sCards__phone-num" href="tel:89000000000">
+										<svg class="icon icon-phone-call ">
+											<use xlink:href="img/svg/sprite.svg#phone-call"></use>
+										</svg>8 900 000-00-00
+									</a>
+									<a class="sCards__send-order" href="#">
+										<svg class="icon icon-whrite ">
+											<use xlink:href="img/svg/sprite.svg#whrite"></use>
+										</svg>Оставить заявку
+									</a><img class="object-fit-js" src="img/@2x/cards-img-7.png" alt="" loading="lazy"/>
 								</div>
 							</div>
 						</div>
@@ -163,6 +182,12 @@
 						</div>
 						<div class="col">
 							<div class="footer__inner-pages"><a class="h6" href="#">Американская классика</a><a class="h6" href="#">Амстердам</a><a class="h6" href="#">Берлин</a><a class="h6" href="#">Гавана</a>
+							</div>
+							<div class="footer__made">
+								<svg class="icon icon-coalla-logo ">
+									<use xlink:href="img/svg/sprite.svg#coalla-logo"></use>
+								</svg>
+								<p>Сделано в Coalla Agency</p>
 							</div>
 						</div>
 						<div class="col">

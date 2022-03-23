@@ -2,17 +2,28 @@ mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
 		+b.firstScreen.bg-wrap
-			+img('header-bg-1.jpg', 'bg').picture-bg
+			+e.slider--js.swiper
+				.swiper-wrapper
+					+e.slide.swiper-slide
+						+img(`header-bg-1.jpg`, 'bg').picture-bg
+					+e.slide.swiper-slide
+						+img(`header-bg-3.jpg`, 'bg').picture-bg
 			.container
 				+b.section-title.text-center
 					h1 Готовые решения интерьера квартир
 					p Применим к&nbsp;любой площади квартиры и&nbsp;планировке заказчика
 					button.btn 
-						p Выбрать решение
+						| Выбрать решение
 						+e.btnIcon
 							+icon('chevron-down')
 		+b.secondScreen.bg-wrap
-			+img('header-bg-2.jpg', 'bg').picture-bg
+			+e.slider--js.swiper
+				.swiper-wrapper
+					-for(i=0; i<3; i++)
+						+e.slide.swiper-slide
+							+img('header-bg-2.jpg', 'bg').picture-bg
+				+arrow()
+				.swiper-pagination
 			.container
 				+b.section-title.text-center
 					h2 Берлин

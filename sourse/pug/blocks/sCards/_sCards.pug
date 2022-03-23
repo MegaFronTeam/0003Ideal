@@ -3,16 +3,49 @@ mixin sCards(data)
 	+b.SECTION.sCards.section#sCards&attributes(attributes)
 		.container
 			+e.row.row
-				mixin cards-item(i, title, text)
-					.col-sm-6
-						+e.wrap
-							+e.content
-								h4!= title
-								p!= text
-								//- +img(`cards-img-${i}.png`)
-								+pic(`cards-img-${i}.png`)
-				+cards-item('1', 'Фиксированная цена', 'Все материалы и&nbsp;работы входят в&nbsp;стоимость договора.<br>Полная смета от&nbsp;проекта до&nbsp;реализации.')
-				+cards-item('2', 'Соблюдение сроков', 'Благодаря четкому графику и своевременному поступлению<br>материалов, контроль этапов в личном кабинете.')
-				+cards-item('3', 'Лучшее качество', 'Только проверенные команды с опытом работы.<br>Контроль выполнения качества работ.')
-				+cards-item('1', 'Фиксированная цена', 'Все материалы и&nbsp;работы входят в&nbsp;стоимость договора. Полная смета от&nbsp;проекта до&nbsp;реализации.')
+				//- mixin cards-item(i, title, text)
+				//- 	.col-sm-6
+				//- 		+e.wrap
+				//- 			+e.content
+				//- 				h4!= title
+				//- 				p!= text
+				//- 				+img(`cards-img-${i}.png`)
+				//- 				//- +pic(`cards-img-${i}.png`)
+				//- +cards-item('1', 'Фиксированная цена', 'Все материалы и&nbsp;работы входят в&nbsp;стоимость договора.<br>Полная смета от&nbsp;проекта до&nbsp;реализации.')
+				//- +cards-item('2', 'Соблюдение сроков', 'Благодаря четкому графику и своевременному поступлению<br>материалов, контроль этапов в личном кабинете.')
+				//- +cards-item('3', 'Лучшее качество', 'Только проверенные команды с опытом работы.<br>Контроль выполнения качества работ.')
+				//- +cards-item('1', 'Фиксированная цена', 'Все материалы и&nbsp;работы входят в&nbsp;стоимость договора. Полная смета от&nbsp;проекта до&nbsp;реализации.')
+				.col-sm-6
+					+e.wrap
+						+e.content
+							h4 Фиксированная цена
+							p Все материалы и&nbsp;работы входят в&nbsp;стоимость договора.<br>Полная смета от&nbsp;проекта до&nbsp;реализации.
+							+img(`cards-img-1.png`).cards-img-1
+				.col-sm-6
+					+e.wrap
+						+e.content
+							h4 Соблюдение сроков
+							p Благодаря четкому графику и&nbsp;своевременному поступлению<br>материалов, контроль этапов в&nbsp;личном кабинете.
+							+img(`cards-img-2.png`).cards-img-2
+							+img(`cards-img-3.png`).cards-img-3
+							+img(`cards-img-4.png`).cards-img-4
+							+img(`cards-img-5.png`).cards-img-5
+				.col-sm-6
+					+e.wrap
+						+e.content
+							h4 Лучшее качество
+							p Только проверенные команды с&nbsp;опытом работы.<br>Контроль выполнения качества работ.
+							+img(`cards-img-6.png`).cards-img-6
+				.col-sm-6
+					+e.wrap
+						+e.content--last-card
+							h3 Оставьте заявку или позвоните. 
+							p Быстрая и&nbsp;точная предварительная оценка стоимости квартиры.
+							+e.A.phone-num(href="tel:89000000000")
+								+icon('phone-call')
+								| 8 900 000-00-00
+							+e.A.send-order(href="#")
+								+icon('whrite')
+								| Оставить заявку
+							+img(`cards-img-7.png`, 'bg')
 	// end sCards

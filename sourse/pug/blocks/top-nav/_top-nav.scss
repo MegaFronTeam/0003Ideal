@@ -2,19 +2,25 @@
 	// background: svg-load('../svg/check.svg',  stroke=$primary); 
 	// 
 	position: fixed;
-	top: 0;
+	top: rem(15.8);
 	left: 0;
 	width: 100%;
-	padding-top: rem(27);
 	z-index: 10;
 	.logo {
 		svg {
 			width: 90px;
 			height: 20px;
-			[fill="black"] {
-				fill: $white !important;
+			@include media-breakpoint-up(md) {
+				[fill="black"] {
+					fill: $white !important;
+				}
 			}
 		}
+	}
+	@include media-breakpoint-down(md) {
+		top: auto;
+		bottom: 0;
+		background-color: $white;
 	}
 	@include media-breakpoint-up(md) {}
 

@@ -1,6 +1,6 @@
 // start .sCards
 .sCards {
-	--sPT: #{rem(24)};
+	--sPT: #{rem(17.600)};
 	--sPB: #{rem(24)};
 	// --sTPB: #{rem()};
 	&__row{
@@ -18,18 +18,18 @@
 
 	}
 	&__wrap {
-		// @include block(617, 520);
-		width: 100%;
-		height: 100%;
+		@include block(617, 520);
+		// width: 100%;
+		// height: 100%;
 	}
 	&__content {
 		background-color: $gray-800;
 		border-radius: rem(12);
-		padding-top: rem(72);
-		position: relative;
-		// position: absolute;
-		// top: 0;
-		// left: 0;
+		padding-top: rem(68.8);
+		// position: relative;
+		position: absolute;
+		top: 0;
+		left: 0;
 		width: 100%;
 		height: 100%;
 		text-align: center;
@@ -38,7 +38,7 @@
 		z-index: 2;
 		h4 {
 			opacity: 0.8;
-			margin-bottom: rem(8);
+			margin-bottom: rem(4.8);
 			@include media-breakpoint-down(md) {
 				font-size: rem(20);
 			}
@@ -46,19 +46,29 @@
 		p {
 			font-size: rem(14);
 			flex-grow: 1;
-			margin-bottom: rem(23);
+			margin-bottom: 0;
 			opacity: 0.7;
 		}
-		picture {
-			@include block(617, 345);
-			img {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-			}
+		img {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			// width: 100%;
 		}
+
+		// .cards-img-3 {
+		// 	max-width: rem(632);
+		// }
+		// picture {
+		// 	@include block(617, 345);
+		// 	img {
+		// 		position: absolute;
+		// 		top: 0;
+		// 		left: 0;
+		// 		width: 100%;
+		// 		height: 100%;
+		// 	}
+		// }
 		&:before {
 			content: '';
 			position: absolute;
@@ -71,6 +81,84 @@
 			opacity: 0.4;
 			z-index: -1;
 			border-radius: rem(12);
+		}
+		&--last-card {
+			text-align: left;
+			padding-left: rem(64);
+			padding-right: rem(64);
+			padding-bottom: rem(59.2);
+			color: $white;
+			background-color: transparent;
+			h3, p {
+				max-width: rem(386);
+			}
+			p {
+				font-size: rem(18);
+				opacity: 1;
+			}
+			img {
+				z-index: -1;
+			}
+			.sCards__phone-num {
+				color: $white;
+				font-size: rem(24);
+				font-weight: 700;
+				margin-bottom: rem(16);
+				.icon {
+					color: $body-color;
+					background-color: $white;
+					border-radius: 50%;
+					padding: rem(6);
+					font-size: rem(32);
+					margin-right: rem(12);
+					overflow: visible;
+				}
+			}
+			.sCards__send-order {
+				background-color: $white;
+				width: 100%;
+				max-width: rem(236);
+				color: $body-color;
+				font-weight: 700;
+				text-align: center;
+				padding: rem(9);
+				border-radius: rem(8);
+				.icon {
+					vertical-align: sub;
+					font-size: rem(18);
+					margin-right: rem(8);
+				}
+				&:hover {
+					background-color: $body-color;
+					color: $white;
+				}
+			}
+		}
+		.cards-img {
+			&-1, &-6 {
+				width: 100%;
+			}
+			&-2, &-3, &-4, &-5 {
+				filter: drop-shadow(0px 18.0146px 40.0324px rgba(0, 0, 0, 0.22));
+			}
+			&-2 {
+				top: 35%;
+				left: 30%;
+				z-index: 5;
+			}
+			&-3 {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			&-4 {
+				bottom: 12%;
+				left: 6%;
+			}
+			&-5 {
+				right: 14%;
+				left: auto;
+				top: 55%;
+			}
 		}
 	}
 	@include media-breakpoint-up(xl) {}
