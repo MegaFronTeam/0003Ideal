@@ -387,6 +387,7 @@ function eventHandler() {
 
 	const secondScreenSwiper = new Swiper('.secondScreen__slider--js', {
 		// effect: "fade",
+		allowTouchMove: false,
 		slidesPerView: 1,
 		loop: true,
 		navigation: {
@@ -396,7 +397,7 @@ function eventHandler() {
 		pagination: {
 			el: ' .swiper-pagination',
 			type: 'bullets',
-			clickable: true,
+			clickable: false,
 		},
 	});
 
