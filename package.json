@@ -49,6 +49,8 @@
     "animate.css": "^4.1.1",
     "inputmask": "^5.0.6",
     "jquery": "^3.6.0",
+    "gsap": "^3.6.1",
+    "scrollmagic": "^2.0.8",
     "swiper": "^8.0.7"
   }
 }

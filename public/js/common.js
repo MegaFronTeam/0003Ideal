@@ -154,53 +154,7 @@ const JSCCommon = {
 		Inputmask({"mask":"+9(999)999-99-99", showMaskOnHover: false}).mask(InputTel);
 	},
 	// /inputMask
-	ifie() {
-		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
-		if (isIE11) {
-			document.body.insertAdjacentHTML("beforeend", '<div class="browsehappy">	<p class=" container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p></div>');
-		}
-	},
-	sendForm() {
-		var gets = (function () {
-			var a = window.location.search;
-			var b = new Object();
-			var c;
-			a = a.substring(1).split("&");
-			for (var i = 0; i < a.length; i++) {
-				c = a[i].split("=");
-				b[c[0]] = c[1];
-			}
-			return b;
-		})();
-		// form
-		$(document).on('submit', "form", function (e) {
-			e.preventDefault();
-			const th = $(this);
-			var data = th.serialize();
-			th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-			th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-			th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-			th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-			$.ajax({
-				url: 'action.php',
-				type: 'POST',
-				data: data,
-			}).done(function (data) {
-
-				Fancybox.close();
-				Fancybox.show([{ src: "#modal-thanks", type: "inline" }]);
-				// window.location.replace("/thanks.html");
-				setTimeout(function () {
-					// Done Functions
-					th.trigger("reset");
-					// $.magnificPopup.close();
-					// ym(53383120, 'reachGoal', 'zakaz');
-					// yaCounter55828534.reachGoal('zakaz');
-				}, 4000);
-			}).fail(function () { });
-
-		});
-	},
+ 
 	heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 		let vh = window.innerHeight * 0.01;
@@ -380,7 +334,7 @@ function eventHandler() {
 		loop: true,
 		// speed: 2500,
 		autoplay: {
-			delay: 5000,
+			delay: 1000,
 			disableOnInteraction: false,
 		},
 	});
@@ -417,6 +371,91 @@ function eventHandler() {
 			}, 1000);
 		};
 	});
+
+
+
+
+
+
+	var controller = new ScrollMagic.Controller();
+
+
+	let height = window.innerHeight;
+
+
+	var tweens = [
+		TweenMax.to(".cards-img-1", 100, { y: "-100%", duration: 4500 }),
+		TweenMax.to(".cards-img-2", 40, { y: "-100%",duration: 2000}),
+		TweenMax.to(".cards-img-3", 100, { y: "-200%",duration: 2500}),
+		TweenMax.to(".cards-img-4", 40, { y: "-200%",duration: 1800}),
+		]; // build scene 
+
+	for (var i = 0, l = tweens.length; i < l; i++) {
+		var scene = new ScrollMagic.Scene({
+			triggerElement: ".sCards__content--1",
+			duration: '100%', offset: -150
+		}).setTween(tweens[i]) // .addIndicators() // add indicators (requires plugin)
+		.addIndicators()
+		.addTo(controller);
+	} // main animate
+	// contact animate
+
+
+	// var tween = new TimelineMax()
+	// 	.to(".cards-img-1", 10, { y: -100,duration: 4500})
+	// 	.to(".cards-img-2", 40, { y: -150,duration: 2000})
+	// 	.to(".cards-img-3", 100, { y: -200,duration: 2500})
+	// 	.to(".cards-img-4", 40, { y: -180,duration: 1800})
+	// 	// .from(".picture-block--1", 3000, { y: height / 1.8 ,duration: 1500,})
+	// 	// .from(".picture-block--1 .picture-block__caption", 10, { opacity: 0 ,duration: 1500,})
+	// 	// .from(".picture-block--2", 3000, { y: height ,duration: 1500,})
+	// 	// .to(".picture-block--2 .picture-block__caption", 10, { x: '50%', opacity: 0 ,duration: 1500,})
+	// 	// .to(".picture-block--2 ", 3000, { scale: '.8', x: '10%' ,duration: 1500,})
+	// 	// .from(".picture-block--3", 3000, { y: height, delay: -1 ,duration: 1500,})
+	// 	// .from(".picture-block--3", 3000, { scale: '.5', x: '-10%' ,duration: 1500,})
+	// 	// .to(".picture-block--1, .picture-block--2", 100, { opacity: 0, delay: -50 ,duration: 1500,})
+	// 	// .to(".headerBlock__block", 3000, { opacity: 0,  duration: 1500,})
+	// 	// .to(".picture-block--3", 3000, { opacity: .4, delay: -50 ,duration: 1500,})
+	// // build scene
+	// new ScrollMagic
+	// 	.Scene({ triggerElement: ".sCards__content--1",  duration: '150%', offset: -150 })
+	// 	.setTween(tween)
+	// 	// .setPin(".headerBlock")
+	// 	.addIndicators() // add indicators (requires plugin)
+	// 	.addTo(controller);
+	
+	
+	// var tween2 = new TimelineMax()
+	// 	.to(".fixed-block p", 3000, {y: '-50%', opacity:0 ,duration: 1500,})
+	// 	.to(".picture-block--3", 3000, { opacity: .2 ,duration: 1500,})
+	// 	.to(".fixed-block , .picture-block--3", 3000, { y: '-100%' ,duration: 1500,})
+
+	// let scene2 = new ScrollMagic
+	// 	.Scene({
+	// 		triggerElement: "#trigger1",
+	// 		duration: "150%",
+	// 		offset: '0%',
+	// 		triggerHook: 'onLeave',
+	// 	})
+	// 	.setTween(tween2)
+	// 	.setPin(".fixed-block")
+	// 	// .addIndicators({name: "2 (duration: 0)"}) // add indicators (requires plugin)
+	// 	.addTo(controller);
+
+	// var tween3 = new TimelineMax()
+	// 	.from(".sMap h2", 2000, {opacity:0 ,duration: 1500,})
+	// 	.from(".map-block", 2000, {y: '50%', opacity:0 ,duration: 1500,})
+	// let scene3 = new ScrollMagic
+	// 	.Scene({
+	// 		triggerElement: "#sMap",
+	// 		duration: "100%",
+	// 		// offset: '0%',
+	// 		// triggerHook: 'onLeave',
+	// 	})
+	// 	.setTween(tween3)
+	// 	// .setPin(".fixed-block")
+	// 	// .addIndicators({name: "3 (duration: 0)"}) // add indicators (requires plugin)
+	// 	.addTo(controller);
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
