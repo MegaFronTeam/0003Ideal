@@ -5,14 +5,14 @@ mixin headerBlock()
 			+e.slider--js.swiper
 				.swiper-wrapper
 					+e.slide.swiper-slide
-						+img(`header-bg-1.jpg`, 'bg').picture-bg
+						+img(`header-bg-1.jpg`, 'bg')
 					+e.slide.swiper-slide
-						+img(`header-bg-3.jpg`, 'bg').picture-bg
+						+img(`header-bg-3.jpg`, 'bg')
 			.container
-				+b.section-title.text-center
+				+b.section-title--js.text-center
 					h1 Готовые решения интерьера квартир
 					p Применим к&nbsp;любой площади квартиры и&nbsp;планировке заказчика
-					button.btn 
+					+e.BUTTON.btn--js.btn 
 						| Выбрать решение
 						+e.btnIcon
 							+icon('chevron-down')
@@ -22,11 +22,11 @@ mixin headerBlock()
 					-for(i=0; i<3; i++)
 						+e.slide.swiper-slide
 							+img('header-bg-2.jpg', 'bg').picture-bg
+							.container
+								+b.section-title--js2.text-center
+									h2 Берлин
+									p Ни&nbsp;одна деталь не&nbsp;будет лишней, у&nbsp;каждой мелочи&nbsp;&mdash; свой функционал, только простые и&nbsp;лаконичные формы.
+									a(href="#").btn.btn-outline-primary Подробнее
 				+arrow()
 				.swiper-pagination
-			.container
-				+b.section-title.text-center
-					h2 Берлин
-					p Ни&nbsp;одна деталь не&nbsp;будет лишней, у&nbsp;каждой мелочи&nbsp;&mdash; свой функционал, только простые и&nbsp;лаконичные формы.
-					a(href="#").btn.btn-outline-primary Подробнее
 	// end headerBlock

@@ -375,16 +375,18 @@ function eventHandler() {
 	// modal window
 
 	const firstScreenSwiper = new Swiper('.firstScreen__slider--js', {
+		effect: "fade",
 		slidesPerView: 1,
 		loop: true,
+		// speed: 2500,
 		autoplay: {
-			delay: 2500,
+			delay: 5000,
 			disableOnInteraction: false,
 		},
-		effect: "fade",
 	});
 
 	const secondScreenSwiper = new Swiper('.secondScreen__slider--js', {
+		effect: "fade",
 		slidesPerView: 1,
 		loop: true,
 		navigation: {
@@ -396,6 +398,23 @@ function eventHandler() {
 			type: 'bullets',
 			clickable: true,
 		},
+	});
+
+	$('.section-title__btn--js').click(function() {
+		$('.section-title--js').addClass('animate__animated animate__fadeOutDown');
+		setTimeout(() => {
+			$('.firstScreen').addClass('animate__animated animate__fadeOutDown');
+			$('.index-page').css("overflow", "auto")
+		}, 1000);
+	});
+
+	$('.swiper-button-hand').click(function() {
+		if($('.swiper-slide-active')) {
+			$('.section-title--js2').addClass('animate__animated animate__fadeInUp');
+			setTimeout(() => {
+				$('.section-title--js2').removeClass('animate__animated animate__fadeInUp');
+			}, 1000);
+		};
 	});
 };
 if (document.readyState !== 'loading') {

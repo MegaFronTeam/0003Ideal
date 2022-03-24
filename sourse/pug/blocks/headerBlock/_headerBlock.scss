@@ -52,8 +52,10 @@
 		justify-content: center;
 	}
 	.firstScreen {
+		@include mt;
 		align-items: center;
 		position: relative;
+		z-index: 2;
 		&::before {
 			content: '';
 			position: absolute;
@@ -70,13 +72,15 @@
 		}
 	}
 	.secondScreen {
-		align-items: flex-end;
+		// align-items: flex-end;
 		// padding-bottom: rem(73);
 		position: absolute;
 		top: 0;
-		z-index: -1;
+		z-index: 1;
 		&__slide {
 			position: relative;
+			display: flex;
+    	align-items: flex-end;
 			&::before {
 				content: '';
 				display: block;
@@ -130,6 +134,7 @@
 			}
 		}
 	}
+
 	@include media-breakpoint-up(xl) {}
 
 	@include media-breakpoint-up(lg) {}
