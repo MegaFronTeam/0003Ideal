@@ -386,7 +386,7 @@ function eventHandler() {
 	});
 
 	const secondScreenSwiper = new Swiper('.secondScreen__slider--js', {
-		effect: "fade",
+		// effect: "fade",
 		slidesPerView: 1,
 		loop: true,
 		navigation: {
