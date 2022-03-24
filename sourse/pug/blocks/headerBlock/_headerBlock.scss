@@ -72,6 +72,9 @@
 	.secondScreen {
 		align-items: flex-end;
 		// padding-bottom: rem(73);
+		position: absolute;
+		top: 0;
+		z-index: -1;
 		&__slide {
 			position: relative;
 			&::before {
