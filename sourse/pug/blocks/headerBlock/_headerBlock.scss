@@ -72,67 +72,7 @@
 		}
 	}
 	.secondScreen {
-		// align-items: flex-end;
-		// padding-bottom: rem(73);
 		position: absolute;
-		top: 0;
-		z-index: 1;
-		&__slide {
-			position: relative;
-			display: flex;
-    	align-items: flex-end;
-			&::before {
-				content: '';
-				display: block;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 8.8%), linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-				z-index: 10;
-			}
-		}
-		.section-title {
-			max-width: rem(368);
-			margin-left: auto;
-			margin-right: auto;
-			margin-bottom: rem(73);
-			@include media-breakpoint-down(sm) {
-				max-width: rem(272);
-			}
-			h2 {
-				margin-bottom: rem(13.600);
-			}
-			p {
-				font-size: rem(14);
-				margin-bottom: rem(20);
-			}
-			a {
-				color: $white;
-				border-color: $white;
-				padding: rem(3) rem(28);
-				&:hover {
-					background-color: $body-color;
-					border-color: $body-color;
-				}
-			}
-		}
-		.swiper {
-			width: 100vw;
-			height: 100vh;
-			position: absolute;
-		}
-		.swiper-button-hand {
-			z-index: 11;
-			bottom: rem(17);
-			&-prev {
-				--swiperArrowPosition: #{rem(24)};
-			}
-			&-next {
-				--swiperArrowPosition: #{rem(30)};
-			}
-		}
 	}
 
 	@include media-breakpoint-up(xl) {}

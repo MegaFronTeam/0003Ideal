@@ -384,10 +384,10 @@ function eventHandler() {
 
 
 	var tweens = [
-		TweenMax.to(".cards-img-1", 100, { y: "-100%", duration: 4500 }),
-		TweenMax.to(".cards-img-2", 40, { y: "-100%",duration: 2000}),
-		TweenMax.to(".cards-img-3", 100, { y: "-200%",duration: 2500}),
-		TweenMax.to(".cards-img-4", 40, { y: "-200%",duration: 1800}),
+		TweenMax.to(".cards-img-1", 100, { y: "-20%", duration: 4500 }),
+		TweenMax.to(".cards-img-2", 40, { y: "-60%",duration: 2000}),
+		TweenMax.to(".cards-img-3", 100, { y: "-100%",duration: 2500}),
+		TweenMax.to(".cards-img-4", 40, { y: "-50%",duration: 1800}),
 		]; // build scene 
 
 	for (var i = 0, l = tweens.length; i < l; i++) {
@@ -401,61 +401,61 @@ function eventHandler() {
 	// contact animate
 
 
-	// var tween = new TimelineMax()
-	// 	.to(".cards-img-1", 10, { y: -100,duration: 4500})
-	// 	.to(".cards-img-2", 40, { y: -150,duration: 2000})
-	// 	.to(".cards-img-3", 100, { y: -200,duration: 2500})
-	// 	.to(".cards-img-4", 40, { y: -180,duration: 1800})
-	// 	// .from(".picture-block--1", 3000, { y: height / 1.8 ,duration: 1500,})
-	// 	// .from(".picture-block--1 .picture-block__caption", 10, { opacity: 0 ,duration: 1500,})
-	// 	// .from(".picture-block--2", 3000, { y: height ,duration: 1500,})
-	// 	// .to(".picture-block--2 .picture-block__caption", 10, { x: '50%', opacity: 0 ,duration: 1500,})
-	// 	// .to(".picture-block--2 ", 3000, { scale: '.8', x: '10%' ,duration: 1500,})
-	// 	// .from(".picture-block--3", 3000, { y: height, delay: -1 ,duration: 1500,})
-	// 	// .from(".picture-block--3", 3000, { scale: '.5', x: '-10%' ,duration: 1500,})
-	// 	// .to(".picture-block--1, .picture-block--2", 100, { opacity: 0, delay: -50 ,duration: 1500,})
-	// 	// .to(".headerBlock__block", 3000, { opacity: 0,  duration: 1500,})
-	// 	// .to(".picture-block--3", 3000, { opacity: .4, delay: -50 ,duration: 1500,})
-	// // build scene
-	// new ScrollMagic
-	// 	.Scene({ triggerElement: ".sCards__content--1",  duration: '150%', offset: -150 })
-	// 	.setTween(tween)
-	// 	// .setPin(".headerBlock")
-	// 	.addIndicators() // add indicators (requires plugin)
-	// 	.addTo(controller);
-	
-	
-	// var tween2 = new TimelineMax()
-	// 	.to(".fixed-block p", 3000, {y: '-50%', opacity:0 ,duration: 1500,})
-	// 	.to(".picture-block--3", 3000, { opacity: .2 ,duration: 1500,})
-	// 	.to(".fixed-block , .picture-block--3", 3000, { y: '-100%' ,duration: 1500,})
+	var tweens2 = [
+		TweenMax.to(".cards-img-7", 100, { y: "-50%", duration: 3500 }),
+		TweenMax.to(".cards-img-8", 60, { y: "-10%",duration: 3000}),
+		TweenMax.to(".cards-img-9", 100, { y: "-100%",duration: 2500}),
+		TweenMax.to(".cards-img-10", 40, { y: "-50%",duration: 1800}),
+		]; // build scene 
 
-	// let scene2 = new ScrollMagic
-	// 	.Scene({
-	// 		triggerElement: "#trigger1",
-	// 		duration: "150%",
-	// 		offset: '0%',
-	// 		triggerHook: 'onLeave',
-	// 	})
-	// 	.setTween(tween2)
-	// 	.setPin(".fixed-block")
-	// 	// .addIndicators({name: "2 (duration: 0)"}) // add indicators (requires plugin)
-	// 	.addTo(controller);
+	for (var i = 0, l = tweens2.length; i < l; i++) {
+		var scene = new ScrollMagic.Scene({
+			triggerElement: ".sCards__content--2",
+			duration: '100%', offset: -150
+		}).setTween(tweens2[i]) // .addIndicators() // add indicators (requires plugin)
+		.addIndicators()
+		.addTo(controller);
+	} // main animate
+	// contact animate
 
-	// var tween3 = new TimelineMax()
-	// 	.from(".sMap h2", 2000, {opacity:0 ,duration: 1500,})
-	// 	.from(".map-block", 2000, {y: '50%', opacity:0 ,duration: 1500,})
-	// let scene3 = new ScrollMagic
-	// 	.Scene({
-	// 		triggerElement: "#sMap",
-	// 		duration: "100%",
-	// 		// offset: '0%',
-	// 		// triggerHook: 'onLeave',
-	// 	})
-	// 	.setTween(tween3)
-	// 	// .setPin(".fixed-block")
-	// 	// .addIndicators({name: "3 (duration: 0)"}) // add indicators (requires plugin)
-	// 	.addTo(controller);
+	var tweens3 = [
+		TweenMax.to(".cards-img-5", 100, { y: "-24%", duration: 3500 })
+		]; // build scene 
+
+	for (var i = 0, l = tweens3.length; i < l; i++) {
+		var scene = new ScrollMagic.Scene({
+			triggerElement: ".sCards__content--3",
+			duration: '100%', offset: -150
+		}).setTween(tweens3[i]) // .addIndicators() // add indicators (requires plugin)
+		.addIndicators()
+		.addTo(controller);
+	} // main animate
+	// contact animate
+
+	var tweens4 = [
+		TweenMax.to(".cards-img-6", 100, { y: "-9%", duration: 1500 })
+		]; // build scene 
+
+	for (var i = 0, l = tweens4.length; i < l; i++) {
+		var scene = new ScrollMagic.Scene({
+			triggerElement: ".sCards__content--last-card",
+			duration: '100%', offset: -150
+		}).setTween(tweens4[i]) // .addIndicators() // add indicators (requires plugin)
+		.addIndicators()
+		.addTo(controller);
+	} // main animate
+	// contact animate
+
+	$('.sParisContentBody__btn').click(function() {
+		$(this).toggleClass('active');
+		$('.sParisContentBody__text').slideUp(function() {
+			// $(this).removeClass('active');
+		});
+		$('.sParisContentBody__text:hidden').slideDown(function() {
+			// $(this).addClass('active');
+		});
+	});
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

@@ -4,6 +4,9 @@
 	@include media-breakpoint-down(md) {
 		padding-bottom: rem(48);
 	}
+	@include media-breakpoint-up(lg) {
+		padding-top: rem(40);
+	}
 	&__content {
 		display: flex;
 		justify-content: space-between;
