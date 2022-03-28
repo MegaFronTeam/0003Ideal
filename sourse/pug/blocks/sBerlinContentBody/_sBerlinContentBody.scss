@@ -8,21 +8,16 @@
 		--sPT: #{rem(72)};
 		--sPB: #{rem(78)};
 	}
-	&__row{
-		// --bs-gutter-x: #{rem()};
+	&__row {
 		--bs-gutter-y: #{rem(40)};
 		@include media-breakpoint-up(lg) {
 			--bs-gutter-y: #{rem(57)};
 		}
 	}
-	.section-title{
-		
-	}
-	&__col{
-
-	}
-	&__item{
-
+	&__col-img-vertical {
+		@include media-breakpoint-up(lg) {
+			margin-top: -132px;
+		}
 	}
 	.vertical {
 		@include block(544, 670);
@@ -39,16 +34,19 @@
 		border-radius: 12px;
 	}
 	p {
-		font-weight: 600;
-		max-width: rem(352);
-		color: $white;
+		max-width: rem(323);
 		margin-left: auto;
 		margin-right: auto;
-		line-height: 1.26em;
-	}
-	a {
-		&:not(:hover) {
-			color: #40B3F4;
+		color: $white;
+		font-weight: 700;
+		line-height: 1.71em;
+		@include media-breakpoint-up(lg) {
+			line-height: 1.26em;
+		}
+		a {
+			&:not(:hover) {
+				color: #40B3F4;
+			}
 		}
 	}
 	@include media-breakpoint-up(xl) {}
@@ -59,3 +57,93 @@
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}
 } // end.sBerlinContentBody
+
+
+
+// &__row{
+// 	// --bs-gutter-x: #{rem()};
+// 	--bs-gutter-y: #{rem(40)};
+// 	@include media-breakpoint-up(lg) {
+// 		--bs-gutter-y: #{rem(57)};
+// 	}
+// }
+// &__row-wrap {
+// 	& > * {
+// 		margin-top: rem(40);
+// 	}
+// 	p {
+// 		@include media-breakpoint-up(lg) {
+// 			margin-bottom: 132px;
+// 		}
+// 	}
+// }
+// &__col-first-line-img {
+// 	margin-bottom: rem(16);
+// 	@include media-breakpoint-up(lg) {
+// 		margin-bottom: rem(56);
+// 	}
+// }
+// &__col-img-vertical {
+// 	@include media-breakpoint-up(lg) {
+// 		position: relative;
+// 	}
+// 	picture {
+// 		@include media-breakpoint-up(lg) {
+// 			position: absolute;
+// 			top: -132px;
+// 		}
+// 	}
+// }
+// &__col-img-horizontal {
+// 	@include media-breakpoint-up(lg) {
+// 		position: relative;
+// 	}
+// 	picture {
+// 		@include media-breakpoint-up(lg) {
+// 			position: absolute;
+// 			margin-top: -89px;
+// 		}
+// 	}
+// }
+// .section-title{
+	
+// }
+// &__col{
+
+// }
+// &__item{
+
+// }
+// .vertical {
+// 	@include block(544, 670);
+// }
+// .horizontal {
+// 	@include block(1120, 670);
+// }
+// img {
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 100%;
+// 	border-radius: 12px;
+// }
+// p {
+// 	font-weight: 600;
+// 	max-width: rem(352);
+// 	color: $white;
+// 	margin-left: auto;
+// 	margin-right: auto;
+// 	line-height: 1.26em;
+// 	margin-bottom: 0;
+// 	@extend .h6;
+// 	@include media-breakpoint-down(lg) {
+// 		line-height: 1.71em;
+// 		font-size: rem(14);
+// 	}
+// }
+// a {
+// 	&:not(:hover) {
+// 		color: #40B3F4;
+// 	}
+// }

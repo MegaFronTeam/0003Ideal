@@ -53,7 +53,7 @@ mixin page-head(data)
 			+e.P.subtitle!= data.text
 
 mixin secondScreen(showMore)
-	+b.secondScreen.bg-wrap
+	+b.secondScreen.bg-wrap.wow.animate__animated.animate__fadeInUp
 		if showMore
 			+e.titleMore.h5 Посмотреть другие стили
 		+e.slider--js.swiper
@@ -68,3 +68,6 @@ mixin secondScreen(showMore)
 								a(href="#").btn.btn-outline-primary Подробнее
 			+arrow()
 			.swiper-pagination
+
+mixin orderProject()
+	button.orderProject.btn Заказать дизайн-проект

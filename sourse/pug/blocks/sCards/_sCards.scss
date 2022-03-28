@@ -3,6 +3,9 @@
 	--sPT: #{rem(17.600)};
 	--sPB: #{rem(24)};
 	// --sTPB: #{rem()};
+	background-color: white;
+	position: relative;
+	z-index: 12;
 	&__row{
 		--bs-gutter-x: #{rem(16)};
 		--bs-gutter-y: var(--bs-gutter-x);

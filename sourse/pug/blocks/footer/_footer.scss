@@ -1,8 +1,11 @@
 .footer {
 	padding-top: rem(9);
-	padding-bottom: rem(22);
+	padding-bottom: rem(71.6);
+	position: relative;
+	z-index: 15;
+	background-color: $white;
 	@include media-breakpoint-down(md) {
-		padding-bottom: rem(48);
+		padding-bottom: rem(103.6);
 	}
 	@include media-breakpoint-up(lg) {
 		padding-top: rem(40);
