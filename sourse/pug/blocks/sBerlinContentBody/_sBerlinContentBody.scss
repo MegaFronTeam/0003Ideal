@@ -3,7 +3,7 @@
 	--sPT: #{rem(48)};
 	--sPB: #{rem(48)};
 	// --sTPB: #{rem()};
-	background-color: rgba(83, 98, 105, 0.9);
+	background-color: rgba(83, 98, 105);
 	@include media-breakpoint-up(lg) {
 		--sPT: #{rem(72)};
 		--sPB: #{rem(78)};

@@ -2,7 +2,7 @@
 	// background: svg-load('../svg/check.svg',  stroke=$primary); 
 	// 
 	// position: absolute;
-	// top: rem(15.8);
+	top: rem(15.8);
 	left: 0;
 	width: 100%;
 	z-index: 15;
@@ -23,6 +23,7 @@
 		--scrollPos: 25%;
 		transform: translateY(var(--scrollPos));
 		position: fixed;
+		// top: 0;
 	}
 	// transform: translateY(15.800px);
 	&.active {
