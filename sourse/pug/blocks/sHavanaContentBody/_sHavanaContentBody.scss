@@ -1,0 +1,37 @@
+// start .sHavanaContentBody
+.sHavanaContentBody {
+	--sPT: #{rem(188)};
+	--sPB: #{rem(0)};
+	// --sTPB: #{rem()};
+	background-color: #FBF6ED;
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(700)};
+	}
+	
+	&__text {
+		font-size: rem(18);
+		line-height: 1.33em;
+		padding-bottom: rem(56);
+		margin-bottom: 0;
+		max-width: rem(749);
+	}
+	&__img-wrap {
+		picture {
+			@include block(1280, 768);
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sHavanaContentBody

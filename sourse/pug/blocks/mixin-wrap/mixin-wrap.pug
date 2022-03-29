@@ -46,14 +46,14 @@ mixin logo()
 		</svg>
 
 mixin page-head(data)
-	+b.page-head.bg-wrap
+	+b.page-head.bg-wrap&attributes(attributes)
 		+img(`${data.img}`, 'bg').picture-bg
 		+e.container.container.animate__animated.animate__fadeInUp
 			+e.title.h1!= data.title
 			+e.P.subtitle!= data.text
 
 mixin secondScreen(showMore)
-	+b.secondScreen.bg-wrap.wow.animate__animated.animate__fadeInUp
+	+b.secondScreen.bg-wrap
 		if showMore
 			+e.titleMore.h5 Посмотреть другие стили
 		+e.slider--js.swiper

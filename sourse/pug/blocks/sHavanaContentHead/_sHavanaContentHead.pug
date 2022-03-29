@@ -1,0 +1,19 @@
+mixin sHavanaContentHead(data)
+	// start sHavanaContentHead
+	+b.sHavanaContentHead.section#sHavanaContentHead&attributes(attributes)
+		+b.section-title
+			.container
+				p.wow.animate__animated.animate__fadeInUp Гаванский дизайн включает в&nbsp;себя яркие, но&nbsp;теплые цвета: насыщенный красный и&nbsp;баклажановый, мягкий бирюзовый и&nbsp;солнечно-желтый, шоколадный и&nbsp;фисташковый. Как&nbsp;бы вы&nbsp;ни&nbsp;комбинировали эти оттенки, в&nbsp;результате все равно получится теплый и&nbsp;уютный интерьер, в&nbsp;котором приятно находиться в&nbsp;пасмурный день.
+		+b.imageSlider
+			//- +pic('imageSlider-1', 'bg')
+			//- +pic('imageSlider-2', 'bg')
+			+img('imageSlider-1.jpg')
+			+img('imageSlider-2.jpg')
+		+e.footer
+			+pic('sHavanaContent-img-1.jpg', 'bg')
+			.container
+				p Особое значение в&nbsp;гаванском дизайне имеют картины и&nbsp;принты. Картины и&nbsp;плакаты в&nbsp;стиле поп-арт делают интерьер дерзким и&nbsp;современным, а&nbsp;причудливыми геометричными паттернами украшают стены, ковры, покрывала и&nbsp;декоративные подушки. Яркие узоры создают настроение праздника и&nbsp;даже обычный рабочий день перестанет быть рутинным: такая обстановка больше напоминает теплые дни в&nbsp;отпуске на&nbsp;островах.
+		+e.content-pic
+			+pic('sHavanaContent-img-2.jpg').picture-1
+			+pic('sHavanaContent-img-3.jpg').picture-2
+	// end sHavanaContentHead

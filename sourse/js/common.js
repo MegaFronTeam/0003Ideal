@@ -368,7 +368,7 @@ function eventHandler() {
 			$('.section-title--js2').addClass('animate__animated animate__fadeInUp');
 			setTimeout(() => {
 				$('.section-title--js2').removeClass('animate__animated animate__fadeInUp');
-			}, 1000);
+			}, 600);
 		};
 	});
 
@@ -455,13 +455,6 @@ function eventHandler() {
 			// $(this).addClass('active');
 		});
 	});
-	
-
-	
-	
-	// root.addEventListener("scroll", e => {
-		// 	root.style.setProperty('--scrollPos', navHeight + "px");
-		// });
 		
 	$(document).scroll(function() {
 		let root = this.querySelector('.top-nav');
@@ -483,6 +476,52 @@ function eventHandler() {
 			$('.orderProject').removeClass('visible');
 		}
 	});
+
+	
+	const mediaQuery = window.matchMedia('(min-width: 991.98px)')
+	// Check if the media query is true
+	if (mediaQuery.matches) {
+		var wipeAnimation = new TimelineMax()
+			.fromTo(".imageSlider img", 1, {x: "0"}, {x: "+75vw", ease: Linear.easeNone})  // in from left
+	
+		// create scene to pin and link animation
+		new ScrollMagic.Scene({
+			triggerElement: ".imageSlider",
+			triggerHook: 0.2,
+			duration: "100%"
+		})
+		.setPin(".imageSlider")
+		.setTween(wipeAnimation)
+		.addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+	}
+
+	var tweenPicture = TweenMax.to(".sHavanaContentHead__footer img", 1, {scale:1.2, ease:Linear.easeNone});
+
+	// create scene to pin and link animation
+	new ScrollMagic.Scene({
+		triggerElement: ".sHavanaContentHead__footer picture",
+		triggerHook: 0.2,
+		duration: "100%"
+	})
+	.setTween(tweenPicture)
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+
+
+	var sHavanaContentBodyPicture = TweenMax.to(".sHavanaContentBody__img-wrap img", 1, {scale:1.2, ease:Linear.easeNone});
+
+	// create scene to pin and link animation
+	new ScrollMagic.Scene({
+		triggerElement: ".sHavanaContentBody__img-wrap picture",
+		triggerHook: 0.2,
+		duration: "100%"
+	})
+	.setTween(sHavanaContentBodyPicture)
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

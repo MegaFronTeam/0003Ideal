@@ -55,7 +55,7 @@
 		@include mt;
 		align-items: center;
 		position: relative;
-		z-index: 2;
+		z-index: 20;
 		&::before {
 			content: '';
 			position: absolute;

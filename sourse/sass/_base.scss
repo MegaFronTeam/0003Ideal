@@ -541,6 +541,8 @@ iframe {
 	}
 }
 
-.index-page {
-	// overflow: hidden;
+.inner-page {
+	.main-wrapper {
+		margin-top: 100vh;
+	}
 }
