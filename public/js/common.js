@@ -351,8 +351,8 @@ function eventHandler() {
 		pagination: {
 			el: ' .swiper-pagination',
 			type: 'bullets',
-			clickable: false,
-		},
+			clickable: true,
+		}
 	});
 
 	$('.section-title__btn--js').click(function() {
@@ -576,15 +576,12 @@ function eventHandler() {
 	.addTo(controller);
 
 
-	const body = new Scrooth();
 	// const scroll = new Scrooth({
+	// 	element: window,
+	// 	strength: 20,
+	// 	acceleration: 1.5,
+	// 	deceleration: 0.975,
 	// });
-	const scroll = new Scrooth({
-		element: window, // target element
-		strength: 10,
-		acceleration: 2,
-		deceleration: 0.5
-	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
