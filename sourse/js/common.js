@@ -487,10 +487,10 @@ function eventHandler() {
 		// create scene to pin and link animation
 		new ScrollMagic.Scene({
 			triggerElement: ".imageSlider",
-			triggerHook: 0.2,
+			triggerHook: 0.5,
 			duration: "100%"
 		})
-		.setPin(".imageSlider")
+		// .setPin(".imageSlider")
 		.setTween(wipeAnimation)
 		.addIndicators() // add indicators (requires plugin)
 		.addTo(controller);
@@ -501,6 +501,19 @@ function eventHandler() {
 	// create scene to pin and link animation
 	new ScrollMagic.Scene({
 		triggerElement: ".sHavanaContentHead__footer picture",
+		triggerHook: 0.2,
+		duration: "100%"
+	})
+	.setTween(tweenPicture)
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+
+
+	var tweenPicture = TweenMax.to(".sHavanaContentHead__content-pic img", 1.2, {scale:0.9, ease:Linear.easeNone});
+
+	// create scene to pin and link animation
+	new ScrollMagic.Scene({
+		triggerElement: ".sHavanaContentHead__content-pic picture",
 		triggerHook: 0.2,
 		duration: "100%"
 	})
@@ -521,6 +534,46 @@ function eventHandler() {
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
+	// Check if the media query is true
+	if (mediaQuery.matches) {
+		var wipeAnimation = new TimelineMax()
+			.fromTo(".sHavanaContentBody__imageSlider img", 1, {x: "0"}, {x: "+75vw", ease: Linear.easeNone})  // in from left
+	
+		// create scene to pin and link animation
+		new ScrollMagic.Scene({
+			triggerElement: ".sHavanaContentBody__imageSlider",
+			triggerHook: 0.5,
+			duration: "100%"
+		})
+		// .setPin(".sHavanaContentBody__imageSlider")
+		.setTween(wipeAnimation)
+		.addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+	}
+
+	var tweenPicture = TweenMax.to(".sHavanaContentBody__content-pic img", 1.2, {scale:0.9, ease:Linear.easeNone});
+
+	// create scene to pin and link animation
+	new ScrollMagic.Scene({
+		triggerElement: ".sHavanaContentBody__content-pic picture",
+		triggerHook: 0.2,
+		duration: "100%"
+	})
+	.setTween(tweenPicture)
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+
+	var sHavanaContentBodyPicture2 = TweenMax.to(".sHavanaContentBody__img-wrap-js img", 1, {scale:1.2, ease:Linear.easeNone});
+
+	// create scene to pin and link animation
+	new ScrollMagic.Scene({
+		triggerElement: ".sHavanaContentBody__img-wrap-js picture",
+		triggerHook: 0.2,
+		duration: "100%"
+	})
+	.setTween(sHavanaContentBodyPicture2)
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
 
 };
 if (document.readyState !== 'loading') {

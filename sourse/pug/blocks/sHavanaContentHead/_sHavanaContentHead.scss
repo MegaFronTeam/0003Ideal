@@ -30,15 +30,16 @@
 	.imageSlider {
 		background-color: #5A6849;
 		padding: rem(40) 0;
-		flex-direction: column;
 		@media (max-width: 829px) {
 			text-align: center;
+			img {
+				width: 100%;
+			}
 		}
 		@include media-breakpoint-up(md) {
 			padding-top: rem(86);
 			padding-bottom: rem(71);
 			@include roww(36px, m);
-			flex-direction: row;
 		}
 		img {
 			@media (max-width: 829px) {
@@ -96,11 +97,13 @@
 			}
 		}
 		picture {
+			overflow: hidden;
 			@include media-breakpoint-up(lg) {
+				// transform: scale(1.2);
 				position: absolute;
 				z-index: 15;
 				bottom: -50%;
-				transform: translateY(50%);
+				transform: translateY(50%) scale(1.1);
 			}
 		}
 	}
