@@ -340,10 +340,10 @@ function eventHandler() {
 	});
 
 	const secondScreenSwiper = new Swiper('.secondScreen__slider--js', {
-		// effect: "fade",
+		effect: "fade",
 		allowTouchMove: false,
 		slidesPerView: 1,
-		loop: true,
+		// loop: true,
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
@@ -368,7 +368,7 @@ function eventHandler() {
 			$('.section-title--js2').addClass('animate__animated animate__fadeInUp');
 			setTimeout(() => {
 				$('.section-title--js2').removeClass('animate__animated animate__fadeInUp');
-			}, 600);
+			}, 800);
 		};
 	});
 
@@ -395,7 +395,7 @@ function eventHandler() {
 			triggerElement: ".sCards__content--1",
 			duration: '100%', offset: -150
 		}).setTween(tweens[i]) // .addIndicators() // add indicators (requires plugin)
-		.addIndicators()
+		// .addIndicators()
 		.addTo(controller);
 	} // main animate
 	// contact animate
@@ -413,7 +413,7 @@ function eventHandler() {
 			triggerElement: ".sCards__content--2",
 			duration: '100%', offset: -150
 		}).setTween(tweens2[i]) // .addIndicators() // add indicators (requires plugin)
-		.addIndicators()
+		// .addIndicators()
 		.addTo(controller);
 	} // main animate
 	// contact animate
@@ -427,7 +427,7 @@ function eventHandler() {
 			triggerElement: ".sCards__content--3",
 			duration: '100%', offset: -150
 		}).setTween(tweens3[i]) // .addIndicators() // add indicators (requires plugin)
-		.addIndicators()
+		// .addIndicators()
 		.addTo(controller);
 	} // main animate
 	// contact animate
@@ -441,7 +441,7 @@ function eventHandler() {
 			triggerElement: ".sCards__content--last-card",
 			duration: '100%', offset: -150
 		}).setTween(tweens4[i]) // .addIndicators() // add indicators (requires plugin)
-		.addIndicators()
+		// .addIndicators()
 		.addTo(controller);
 	} // main animate
 	// contact animate
@@ -492,7 +492,7 @@ function eventHandler() {
 		})
 		// .setPin(".imageSlider")
 		.setTween(wipeAnimation)
-		.addIndicators() // add indicators (requires plugin)
+		// .addIndicators() // add indicators (requires plugin)
 		.addTo(controller);
 	}
 
@@ -505,7 +505,7 @@ function eventHandler() {
 		duration: "100%"
 	})
 	.setTween(tweenPicture)
-	.addIndicators() // add indicators (requires plugin)
+	// .addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 
@@ -518,7 +518,7 @@ function eventHandler() {
 		duration: "100%"
 	})
 	.setTween(tweenPicture)
-	.addIndicators() // add indicators (requires plugin)
+	// .addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 
@@ -531,7 +531,7 @@ function eventHandler() {
 		duration: "100%"
 	})
 	.setTween(sHavanaContentBodyPicture)
-	.addIndicators() // add indicators (requires plugin)
+	// .addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 	// Check if the media query is true
@@ -547,7 +547,7 @@ function eventHandler() {
 		})
 		// .setPin(".sHavanaContentBody__imageSlider")
 		.setTween(wipeAnimation)
-		.addIndicators() // add indicators (requires plugin)
+		// .addIndicators() // add indicators (requires plugin)
 		.addTo(controller);
 	}
 
@@ -560,7 +560,7 @@ function eventHandler() {
 		duration: "100%"
 	})
 	.setTween(tweenPicture)
-	.addIndicators() // add indicators (requires plugin)
+	// .addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 	var sHavanaContentBodyPicture2 = TweenMax.to(".sHavanaContentBody__img-wrap-js img", 1, {scale:1.2, ease:Linear.easeNone});
@@ -572,7 +572,7 @@ function eventHandler() {
 		duration: "100%"
 	})
 	.setTween(sHavanaContentBodyPicture2)
-	.addIndicators() // add indicators (requires plugin)
+	// .addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 
