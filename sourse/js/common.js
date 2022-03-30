@@ -575,6 +575,16 @@ function eventHandler() {
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
+
+	const body = new Scrooth();
+	// const scroll = new Scrooth({
+	// });
+	const scroll = new Scrooth({
+		element: window, // target element
+		strength: 10,
+		acceleration: 2,
+		deceleration: 0.5
+	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

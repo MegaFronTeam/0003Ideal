@@ -14,7 +14,7 @@
 
 body,
 html {
-	font-size: var(--bs-body-font-size);
+	font-size: calc(var(--bs-body-font-size) + (1vw + 1vh) * 0.101);
 }
 html{
 	-webkit-text-size-adjust: 100%;
@@ -535,11 +535,17 @@ iframe {
 	font-feature-settings: 'pnum' on, 'lnum' on;
 }
 
-@media (min-width: 1400px) {
-	.container {
-		max-width: 1600px;
+.container {
+	max-width: 100%;
+	padding: 0 rem(16);
+	@media (min-width: 1400px) {
+		padding: 0 rem(80);
 	}
 }
+// @media (min-width: 1400px) {
+// 	.container {
+// 	}
+// }
 
 .inner-page {
 	.main-wrapper {

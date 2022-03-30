@@ -81,7 +81,7 @@
 		position: relative;
 		background-color: #5A6849;
 		@include media-breakpoint-up(lg) {
-			padding-bottom: 350px;
+			padding-bottom: rem(350);
 		}
 		.picture-1 {
 			
@@ -91,8 +91,8 @@
 			right: 0;
 			@include media-breakpoint-down(lg) {
 				position: relative;
-				bottom: -147px;
-				margin-top: -246px;
+				bottom: rem(-147);
+				margin-top: rem(-246);
 				text-align: center;
 			}
 		}

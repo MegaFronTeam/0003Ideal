@@ -146,7 +146,7 @@
 	}
 	&__titleMore {
 		position: absolute;
-		top: 30px;
+		top: rem(30);
 		left: 50%;
 		transform: translateX(-50%);
 		color: $white;
@@ -219,6 +219,6 @@
 		color: $white;
 	}
 	@include media-breakpoint-down(md) {
-		bottom: 57px;
+		bottom: rem(57);
 	}
 }

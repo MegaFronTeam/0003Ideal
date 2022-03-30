@@ -16,7 +16,7 @@
 	}
 	&__col-img-vertical {
 		@include media-breakpoint-up(xxl) {
-			margin-top: -132px;
+			margin-top: rem(-132);
 		}
 	}
 	.vertical {

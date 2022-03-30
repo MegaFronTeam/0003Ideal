@@ -1,0 +1,45 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+//- include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sCards/_sCards.pug
+include ../blocks/sStockholmBody/_sStockholmBody.pug
+
+block variables
+	- let  mainPage= 'inner-page' 
+	- let  bg= '06-content-stockholm.jpg'
+
+block title
+	- let  title= 'Стокгольм'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+header()
+	//- +topLine
+	+top-nav()
+	//- +headerBlock
+	+page-head({
+		img: 'sStockholm-img-1.jpg',
+		title: 'Стокгольм',
+		text: 'Скандинавский стиль в&nbsp;оформлении квартиры&nbsp;&mdash; это уютное, теплое<br>и&nbsp;греющее душу явление'
+	})
+	+sStockholmBody
+	+sCards
+	+secondScreen('true')
+	//- +sContact()
+	
+	+footer()
+	+orderProject()
+
+
