@@ -10,3 +10,21 @@ mixin sAmericanBody(data)
 				.col-lg-5 
 					+e.P.text.wow.animate__animated.animate__backInRight Несмотря на&nbsp;то, что этому стилю свойственна функциональность и&nbsp;каждый свободный угол используется с&nbsp;пользой, дизайнерам удается сохранить &laquo;воздух&raquo; в&nbsp;интерьере. Пространство получается незагруженным, свободным, есть, где пройти, поставить елку и&nbsp;сделать общее фото на&nbsp;праздник. Основной прием, который позволяет это сделать,&nbsp;&mdash; деление на&nbsp;зоны.
 	// end sAmericanBody
+
+mixin sAmericanBody2(data)
+	// start sAmericanBody
+	+b.sAmericanBody--2.section#sAmericanBody&attributes(attributes)
+		+e.container.container
+			.row
+				.col-lg-5.order-last.order-lg-first
+					+e.P.text.wow.animate__animated.animate__backInLeft При вашем желании, главным героем оформления в&nbsp;этом стиле может выступить камин. Если захотите его установить, то&nbsp;сейчас есть много разновидностей каминов&nbsp;&mdash; не&nbsp;только массивные кирпичные или каменные установки, а&nbsp;более современные и&nbsp;даже биокамины, которые не&nbsp;требуют дымохода. Такой удобно установить в&nbsp;квартире, но&nbsp;все&nbsp;же самостоятельно сделать это будет непросто, поэтому решение этих вопросов лучше доверить специалистам.
+				.col-lg-7
+					+pic('sAmerican-img-7.jpg', 'bg').sAmericanBody__img.wow.animate__animated.animate__backInRight
+					+e.img-wrap.wow.animate__animated.animate__fadeInUp
+						+pic('sAmerican-img-7.jpg', 'bg')
+		+pic('sAmerican-img-8.jpg', 'bg').sAmericanBody__bg-img
+	// end sAmericanBody
+
+	//- .wow.animate__animated.animate__backInRight
+	//- .wow.animate__animated.animate__backInLeft
+	//- .wow.animate__animated.animate__fadeInUp

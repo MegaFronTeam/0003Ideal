@@ -596,7 +596,6 @@ function eventHandler() {
 		
 
 
-		// var sAmericanContent = TweenMax.to(".sAmericanContent__wrap", 1, {scale:1.2, ease:Linear.easeNone});
 		var sAmericanContent = new TimelineMax()
 			// .fromTo(".sAmericanContent__wrap", 1, {x: "100%"}, {x: "0", ease: Linear.easeNone})
 			.fromTo(".sAmericanContent--js2 .sAmericanContent__wrap",    0.1, {x:  "-100%"}, {x: "0%", autoAlpha: 1, ease: Linear.easeNone}) 
@@ -643,12 +642,25 @@ function eventHandler() {
 	// .addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
+	var sAmericanContentBodyPicture2 = TweenMax.to(".sAmericanBody__bg-img img", 1, {scale:1, ease:Linear.easeNone});
+
+	// create scene to pin and link animation
+	new ScrollMagic.Scene({
+		triggerElement: ".sAmericanBody__bg-img",
+		triggerHook: 0.5,
+		duration: "100%"
+	})
+	.setTween(sAmericanContentBodyPicture2)
+	// .addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+
 	// const scroll = new Scrooth({
 	// 	element: window,
 	// 	strength: 20,
 	// 	acceleration: 1.5,
 	// 	deceleration: 0.975,
 	// });
+	
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
