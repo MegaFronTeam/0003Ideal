@@ -114,6 +114,11 @@
 			font-size: rem(18);
 		}
 	}
+	&.bg-gradient {
+		&:before {
+			background-image: linear-gradient(180deg, rgba(103, 97, 96, 0.1) 0%, rgba(103, 97, 96, 0.45) 100%);
+		}
+	}
 }
 
 // .main-wrapper {

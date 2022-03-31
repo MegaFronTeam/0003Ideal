@@ -576,6 +576,73 @@ function eventHandler() {
 	.addTo(controller);
 
 
+	if (mediaQuery.matches) {
+		// var sAmericanContent = TweenMax.to(".sAmericanContent__wrap", 1, {scale:1.2, ease:Linear.easeNone});
+		var sAmericanContent = new TimelineMax()
+			// .fromTo(".sAmericanContent__wrap", 1, {x: "100%"}, {x: "0", ease: Linear.easeNone})
+			.fromTo(".sAmericanContent--js .sAmericanContent__wrap",    0.1, {x:  "100%"}, {x: "0%", autoAlpha: 1, ease: Linear.easeNone}) 
+	
+		// create scene to pin and link animation
+		new ScrollMagic.Scene({
+			triggerElement: ".sAmericanContent--js",
+			triggerHook: 'onLeave',
+			duration: "100%"
+		})
+		.setTween(sAmericanContent)
+		.setPin(".sAmericanContent--js")
+		.setClassToggle(".sAmericanContent--js", "visible")
+		// .addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+		
+
+
+		// var sAmericanContent = TweenMax.to(".sAmericanContent__wrap", 1, {scale:1.2, ease:Linear.easeNone});
+		var sAmericanContent = new TimelineMax()
+			// .fromTo(".sAmericanContent__wrap", 1, {x: "100%"}, {x: "0", ease: Linear.easeNone})
+			.fromTo(".sAmericanContent--js2 .sAmericanContent__wrap",    0.1, {x:  "-100%"}, {x: "0%", autoAlpha: 1, ease: Linear.easeNone}) 
+	
+		// create scene to pin and link animation
+		new ScrollMagic.Scene({
+			triggerElement: ".sAmericanContent--js2",
+			triggerHook: 'onLeave',
+			duration: "100%"
+		})
+		.setTween(sAmericanContent)
+		.setPin(".sAmericanContent--js2")
+		.setClassToggle(".sAmericanContent--js2", "visible")
+		// .addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+
+
+
+		var sAmericanContent2 = new TimelineMax()
+			// .fromTo(".sAmericanContent__wrap", 1, {x: "100%"}, {x: "0", ease: Linear.easeNone})
+			.fromTo(".sAmericanContent--js3 .sAmericanContent__wrap",    0.1, {x:  "100%"}, {x: "0%", autoAlpha: 1, ease: Linear.easeNone}) 
+	
+		// create scene to pin and link animation
+		new ScrollMagic.Scene({
+			triggerElement: ".sAmericanContent--js3",
+			triggerHook: 'onLeave',
+			duration: "100%"
+		})
+		.setTween(sAmericanContent2)
+		.setPin(".sAmericanContent--js3")
+		// .addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+	}
+
+	var sAmericanContentPicture2 = TweenMax.to(".sAmericanContent__section-picture img", 1, {scale:1, ease:Linear.easeNone});
+
+	// create scene to pin and link animation
+	new ScrollMagic.Scene({
+		triggerElement: ".sAmericanContent__section-picture",
+		triggerHook: 0.5,
+		duration: "100%"
+	})
+	.setTween(sAmericanContentPicture2)
+	// .addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+
 	// const scroll = new Scrooth({
 	// 	element: window,
 	// 	strength: 20,

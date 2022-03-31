@@ -119,6 +119,8 @@ $output-bourbon-deprecation-warnings: false;
 @import '../pug/blocks/sHavanaContentHead/_sHavanaContentHead.scss';
 @import '../pug/blocks/sHavanaContentBody/_sHavanaContentBody.scss';
 @import '../pug/blocks/sStockholmBody/_sStockholmBody.scss';
+@import '../pug/blocks/sAmericanContent/_sAmericanContent.scss';
+@import '../pug/blocks/sAmericanBody/_sAmericanBody.scss';
 
 @import "media"; // Всегда в конце
 
