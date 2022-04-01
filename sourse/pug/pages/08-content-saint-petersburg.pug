@@ -1,0 +1,49 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+//- include ../blocks/topLine/_topLine.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sCards/_sCards.pug
+include ../blocks/sPetersburgInfo/_sPetersburgInfo.pug
+
+block variables
+	- let  mainPage= 'inner-page' 
+	- let  bg= '06-content-stockholm.jpg'
+
+block title
+	- let  title= 'Санкт-Петербург'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+header()
+	//- +topLine
+	+top-nav()
+	//- +headerBlock
+	+page-head({
+		img: 'saint-petersburg-img-1.jpg',
+		title: 'Санкт-Петербург',
+		text: 'Современный петербургский дизайн простой, лаконичный и аккуратный.'
+	}).petersburg-bg
+	+sPetersburgInfo({
+		img1: 2,
+		img2: 3,
+		text: 'Интерьер современной питерской квартиры&nbsp;&mdash; это классика на&nbsp;новый лад.<br>Если в&nbsp;исторических зданиях высокие потолки и&nbsp;богато украшенные колонны были основными акцентами, то&nbsp;теперь помпезность отошла в&nbsp;сторону, уступив простым и&nbsp;функциональным элементам. Конечно, вековую лепнину на&nbsp;потолке никуда не&nbsp;деть, но&nbsp;новые квартиры так уже не&nbsp;украшают. Современный петербургский дизайн простой, лаконичный и&nbsp;аккуратный. Массивные люстры заменяем стильными и&nbsp;тонкими, винтажные ковры&nbsp;&mdash; мягкими, а&nbsp;каменные конструкции более легкими.',
+	})
+	+sCards
+	+secondScreen('true')
+	//- +sContact()
+	
+	+footer()
+	+orderProject()
+
+

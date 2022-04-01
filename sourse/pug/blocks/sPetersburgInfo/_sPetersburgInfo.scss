@@ -1,0 +1,60 @@
+// start .sPetersburgInfo
+.sPetersburgInfo {
+	--sPT: #{rem(40)};
+	--sPB: #{rem(40)};
+	// --sTPB: #{rem()};
+	background-color: $white;
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(47)};
+		--sPB: #{rem(46)};
+	}
+	&__row{
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+
+	}
+	&__container {
+		padding-left: rem(16);
+		padding-right: rem(16);
+	}
+	.section-title{
+		
+	}
+	&__col{
+
+	}
+	&__item{
+
+	}
+	picture {
+		@include block(374, 493);
+		img {
+			border-radius: 12px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	p {
+		color: #85746A;
+		font-size: rem(14);
+		margin-bottom: 0;
+		line-height: 1.71em;
+		@include media-breakpoint-up(lg) {
+			margin-left: 17px;
+			line-height: 1.43em;
+		}
+		@include media-breakpoint-down(lg) {
+			margin-top: rem(24);
+		}
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sPetersburgInfo

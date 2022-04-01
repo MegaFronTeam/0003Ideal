@@ -628,6 +628,22 @@ function eventHandler() {
 		.setPin(".sAmericanContent--js3")
 		// .addIndicators() // add indicators (requires plugin)
 		.addTo(controller);
+
+
+		var sAmericanContent3 = new TimelineMax()
+			// .fromTo(".sAmericanContent__wrap", 1, {x: "100%"}, {x: "0", ease: Linear.easeNone})
+			.fromTo(".sAmericanContent--js5 .sAmericanContent__wrap",    0.1, {x:  "100%"}, {x: "0%", autoAlpha: 1, ease: Linear.easeNone}) 
+	
+		// create scene to pin and link animation
+		new ScrollMagic.Scene({
+			triggerElement: ".sAmericanContent--js5",
+			triggerHook: 'onLeave',
+			duration: "100%"
+		})
+		.setTween(sAmericanContent3)
+		.setPin(".sAmericanContent--js5")
+		// .addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
 	}
 
 	var sAmericanContentPicture2 = TweenMax.to(".sAmericanContent__section-picture img", 1, {scale:1, ease:Linear.easeNone});
