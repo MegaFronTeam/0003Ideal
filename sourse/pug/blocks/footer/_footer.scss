@@ -120,6 +120,15 @@
 			margin-bottom: 0;
 		}
 	}
+	&--news {
+		background-color: #6E7576;
+		ul a, p, .icon-coalla-logo, .footer__content a {
+			color: $white;
+		}
+		[fill="black"] {
+			fill: $white;
+		}
+	}
 @include media-breakpoint-up(xl) {}
 
 @include media-breakpoint-up(lg) {}

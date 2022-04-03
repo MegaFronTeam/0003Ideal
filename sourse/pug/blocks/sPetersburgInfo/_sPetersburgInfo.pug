@@ -1,12 +1,23 @@
-mixin sPetersburgInfo(data)
+mixin sPetersburgInfo(img1, img2, text)
 	// start sPetersburgInfo
-	+b.SECTION.sPetersburgInfo.section#sPetersburgInfo&attributes(attributes)
+	+b.sPetersburgInfo.section#sPetersburgInfo&attributes(attributes)
 		+e.container.container-fluid
 			.row
 				.col-6.col-lg-4
-					+pic(`saint-petersburg-img-${data.img1}.jpg`, 'bg').wow.animate__animated.animate__fadeInUp
+					+pic(`saint-petersburg-img-${img1}.jpg`, 'bg').wow.animate__animated.animate__fadeInUp
 				.col-6.col-lg-4
-					+pic(`saint-petersburg-img-${data.img2}.jpg`, 'bg').wow.animate__animated.animate__fadeInUp
+					+pic(`saint-petersburg-img-${img2}.jpg`, 'bg').wow.animate__animated.animate__fadeInUp
 				.col-lg-4
-					p.wow.animate__animated.animate__fadeInUp!= data.text
+					p.wow.animate__animated.animate__fadeInUp!= text
+	// end sPetersburgInfo
+
+mixin sPetersburgInfo2(img3, text)
+	// start sPetersburgInfo
+	+b.sPetersburgInfo--second.section#sPetersburgInfo&attributes(attributes)
+		+e.container.container-fluid
+			.row
+				.col-lg-8
+					+pic(`saint-petersburg-img-${img3}.jpg`, 'bg').wow.animate__animated.animate__fadeInUp
+				.col-lg-4
+					p.wow.animate__animated.animate__fadeInUp!= text
 	// end sPetersburgInfo

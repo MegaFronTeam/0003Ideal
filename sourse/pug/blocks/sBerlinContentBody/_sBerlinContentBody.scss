@@ -40,6 +40,8 @@
 		color: $white;
 		font-weight: 700;
 		line-height: 1.71em;
+		margin-bottom: 0;
+		font-size: rem(19);
 		@include media-breakpoint-up(lg) {
 			line-height: 1.26em;
 		}

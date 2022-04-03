@@ -5,3 +5,4 @@
 6. <https://megafronteam.github.io/0003Ideal/public/06-content-stockholm.html>
 7. <https://megafronteam.github.io/0003Ideal/public/07-content-american.html>
 8. <https://megafronteam.github.io/0003Ideal/public/08-content-saint-petersburg.html>
+8. <https://megafronteam.github.io/0003Ideal/public/09-news.html>

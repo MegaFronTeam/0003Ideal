@@ -1,0 +1,29 @@
+mixin sNews(data)
+	// start sNews
+	+b.SECTION.sNews.section#sNews&attributes(attributes)
+		+e.container.container
+			+b.section-title.text-center
+				h3 Новости
+			+e.row.row.align-items-center.justify-content-center
+				mixin card-wrap(num)
+					.col-lg-6
+						+e.A.card-wrap(href="#")
+							+pic(`news-${num}.jpg`, 'bg')&attributes(attributes)
+							+e.wrap
+								p 20 современных идей домашнего декора для любого любителя дизайна
+								+e.date
+									span 28 января 
+									span 2022
+				+card-wrap('1').img-sm
+				+card-wrap('2').img-lg
+				+card-wrap('3').img-lg
+				+card-wrap('4').img-sm
+				+card-wrap('5').img-sm
+				+card-wrap('6').img-lg
+				+card-wrap('7').img-lg
+				+card-wrap('8').img-sm
+				+card-wrap('9').img-sm
+				+card-wrap('10').img-lg
+				+e.col-btn.col-auto
+					button.btn.btn-outline-primary Еще новости
+	// end sNews

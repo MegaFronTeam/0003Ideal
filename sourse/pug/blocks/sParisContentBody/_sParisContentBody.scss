@@ -36,6 +36,7 @@
 		}
 	}
 	&__text{
+		font-size: rem(14);
 		@include media-breakpoint-up(lg) {
 			margin-bottom: rem(17);
 			&:last-of-type {

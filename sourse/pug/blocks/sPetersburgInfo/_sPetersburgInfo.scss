@@ -40,14 +40,23 @@
 	p {
 		color: #85746A;
 		font-size: rem(14);
+		font-weight: 500;
 		margin-bottom: 0;
 		line-height: 1.71em;
 		@include media-breakpoint-up(lg) {
 			margin-left: 17px;
 			line-height: 1.43em;
+			margin-top: rem(65);
 		}
 		@include media-breakpoint-down(lg) {
 			margin-top: rem(24);
+		}
+	}
+	&--second {
+		background-color: #E1DBD6;
+		color: #1F1B19;
+		picture {
+			--ratio: 464/773;
 		}
 	}
 	@include media-breakpoint-up(xl) {}
