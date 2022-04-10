@@ -677,6 +677,19 @@ function eventHandler() {
 	// 	deceleration: 0.975,
 	// });
 	
+	const mediaContentSwiper = new Swiper('.mediaContent__slider--js', {
+		slidesPerView: 1,
+		// loop: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		pagination: {
+			el: ' .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		}
+	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

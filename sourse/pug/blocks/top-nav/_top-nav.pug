@@ -15,6 +15,7 @@ mixin mob-mnu()
 		+b.toggle-menu-mobile--js
 			span
 		+e.inner
+			+sMenu()
 			+mnu()
 	//  мобильное меню
 mixin top-nav() 
@@ -29,7 +30,7 @@ mixin top-nav()
 						.menu-mobile__inner
 							//- +menu-toggle()
 							//- +mnu()
-					
+							//- +sMenu
 				.col-auto
 					+menu-toggle()
 	// end top-nav
