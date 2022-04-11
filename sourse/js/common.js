@@ -692,6 +692,7 @@ function eventHandler() {
 	});
 
 
+if (document.querySelector('.point')) {
 	const mask = document.querySelector('.point');
 	const mainModal = document.querySelector('.block404');
 
@@ -699,6 +700,7 @@ function eventHandler() {
 		mask.style.setProperty('--x', (e.clientX) + 'px');
 		mask.style.setProperty('--y', (e.clientY) + 'px');
 	}, { passive: true });
+}
 
 
 };
