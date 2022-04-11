@@ -125,6 +125,9 @@ $output-bourbon-deprecation-warnings: false;
 @import '../pug/blocks/sPetersburgText/_sPetersburgText.scss';
 @import '../pug/blocks/sNews/_sNews.scss';
 @import '../pug/blocks/sMenu/_sMenu.scss';
+@import '../pug/blocks/sAboutCompanyInfo/_sAboutCompanyInfo.scss';
+@import '../pug/blocks/sAboutCompanyPersons/_sAboutCompanyPersons.scss';
+@import '../pug/blocks/404block/_404block.scss';
 
 @import "media"; // Всегда в конце
 

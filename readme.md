@@ -7,3 +7,5 @@
 8. <https://megafronteam.github.io/0003Ideal/public/08-content-saint-petersburg.html>
 9. <https://megafronteam.github.io/0003Ideal/public/09-news.html>
 10. <https://megafronteam.github.io/0003Ideal/public/10-article.html>
+11. <https://megafronteam.github.io/0003Ideal/public/11-about-company.html>
+12. <https://megafronteam.github.io/0003Ideal/public/12-404-page.html>

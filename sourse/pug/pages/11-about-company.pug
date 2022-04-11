@@ -1,0 +1,48 @@
+extends ../layout/main.pug
+
+include ../blocks/header/_header.pug
+//- include ../blocks/topLine/_topLine.pug
+include ../blocks/sMenu/_sMenu.pug
+include ../blocks/top-nav/_top-nav.pug 
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sContent/_sContent.pug
+ 
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/footer/_footer.pug
+include ../blocks/sNews/_sNews.pug
+include ../blocks/sAboutCompanyInfo/_sAboutCompanyInfo.pug
+include ../blocks/sAboutCompanyPersons/_sAboutCompanyPersons.pug
+
+block variables
+	- let  mainPage= '' 
+	- let  bg= ''
+
+block title
+	- let  title= 'О компании'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+header()
+	//- +topLine
+	+top-nav()
+	+sMenu
+	//- +headerBlock
+	//- +sNews
+	//- +sCards
+	//- +secondScreen('true')
+	+page-head({
+		img: 'sAbout-company-bg.jpg',
+		title: 'О компании'
+	})
+	+sAboutCompanyInfo()
+	+sAboutCompanyPersons()
+	//- +secondScreen('true')
+	+footer()
+	//- +orderProject()
+
+

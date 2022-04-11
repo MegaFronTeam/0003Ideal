@@ -1,0 +1,14 @@
+mixin sAboutCompanyPersons(data)
+	// start sAboutCompanyPersons
+	+b.SECTION.sAboutCompanyPersons.section#sAboutCompanyPersons&attributes(attributes)
+		.container
+			h3.wow.animate__animated.animate__fadeInUp Как небольшая отмеченная наградами творческа студия, мы специализируемся на&nbsp;возвышение пространств и&nbsp;интерьеров.
+			+e.row.row
+				-for(i=1; i<10; i++)
+					+e.col.col-auto.wow.animate__animated.animate__fadeInUp
+						+pic(`sAbout-person-${i}.jpg`)
+						+e.text
+							h6 Екатерина Собян
+							p Дизайнер
+		+pic('sAbout-bg-2.jpg').pictureBg.wow.animate__animated.animate__fadeInUp
+	// end sAboutCompanyPersons

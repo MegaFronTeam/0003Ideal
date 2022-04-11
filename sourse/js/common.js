@@ -690,6 +690,17 @@ function eventHandler() {
 			clickable: true,
 		}
 	});
+
+
+	const mask = document.querySelector('.point');
+	const mainModal = document.querySelector('.block404');
+
+	mainModal.addEventListener('mousemove', (e) => {
+		mask.style.setProperty('--x', (e.clientX) + 'px');
+		mask.style.setProperty('--y', (e.clientY) + 'px');
+	}, { passive: true });
+
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

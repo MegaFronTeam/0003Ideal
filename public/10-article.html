@@ -12,7 +12,7 @@
 		<link href="libs/@fancyapps/ui/fancybox.css" rel="stylesheet"/>
 		<link rel="preconnect" href="https://fonts.googleapis.com"/>
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;500;700&amp;display=swap" rel="stylesheet"/>
 		<link href="css/main.min.css?v=0.0.1" rel="stylesheet"/>
 	</head>
 	<body data-bg="">
@@ -39,11 +39,6 @@
 <path d="M23.1745 10.0809C22.2441 13.4189 19.1348 15.8935 15.4077 15.9945V16H9.22491L9.22276 11.8167H9.23566V11.2176H15.1539C16.1732 11.2176 17.0842 10.7762 17.6956 10.0809H23.1745Z" fill="black"/>
 </svg></a>
 						</div>
-						<div class="col">
-							<div class="menu-mobile menu-mobile--js">
-								<div class="menu-mobile__inner"></div>
-							</div>
-						</div>
 						<div class="col-auto">
 							<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
 							</div>
@@ -56,75 +51,105 @@
 			<div class="sMenu menu-mobile menu-mobile--js" id="sMenu">
 				<div class="container">
 					<div class="section-title text-center">
-						<h4>Готовые решения</h4>
+						<div class="h4">Готовые решения</div>
 					</div>
-					<div class="sMenu__row row justify-content-around flex-grow-1">
-						<div class="col-auto"><a href="#">
-								<div class="sMenu__wrap">
-									<!-- picture-->
-									<picture> 
-										<source type="image/webp" srcset="img/@2x/webp/menu-img-1.webp"/><img src="img/@2x/menu-img-1.jpg" alt="" loading="lazy"/>
-									</picture>
-									<!-- /picture-->
-									<h6>Американская классика</h6>
-								</div></a></div>
-						<div class="col-auto"><a href="#">
-								<div class="sMenu__wrap">
-									<!-- picture-->
-									<picture> 
-										<source type="image/webp" srcset="img/@2x/webp/menu-img-2.webp"/><img src="img/@2x/menu-img-2.jpg" alt="" loading="lazy"/>
-									</picture>
-									<!-- /picture-->
-									<h6>Амстердам</h6>
-								</div></a></div>
-						<div class="col-auto"><a href="#">
-								<div class="sMenu__wrap">
-									<!-- picture-->
-									<picture> 
-										<source type="image/webp" srcset="img/@2x/webp/menu-img-3.webp"/><img src="img/@2x/menu-img-3.jpg" alt="" loading="lazy"/>
-									</picture>
-									<!-- /picture-->
-									<h6>Берлин</h6>
-								</div></a></div>
-						<div class="col-auto"><a href="#">
-								<div class="sMenu__wrap">
-									<!-- picture-->
-									<picture> 
-										<source type="image/webp" srcset="img/@2x/webp/menu-img-4.webp"/><img src="img/@2x/menu-img-4.jpg" alt="" loading="lazy"/>
-									</picture>
-									<!-- /picture-->
-									<h6>Гавана</h6>
-								</div></a></div>
-						<div class="col-auto"><a href="#">
-								<div class="sMenu__wrap">
-									<!-- picture-->
-									<picture> 
-										<source type="image/webp" srcset="img/@2x/webp/menu-img-5.webp"/><img src="img/@2x/menu-img-5.jpg" alt="" loading="lazy"/>
-									</picture>
-									<!-- /picture-->
-									<h6>Париж</h6>
-								</div></a></div>
-						<div class="col-auto"><a href="#">
-								<div class="sMenu__wrap">
-									<!-- picture-->
-									<picture> 
-										<source type="image/webp" srcset="img/@2x/webp/menu-img-6.webp"/><img src="img/@2x/menu-img-6.jpg" alt="" loading="lazy"/>
-									</picture>
-									<!-- /picture-->
-									<h6>Стокгольм</h6>
-								</div></a></div>
-						<div class="col-auto"><a href="#">
-								<div class="sMenu__wrap">
-									<!-- picture-->
-									<picture> 
-										<source type="image/webp" srcset="img/@2x/webp/menu-img-7.webp"/><img src="img/@2x/menu-img-7.jpg" alt="" loading="lazy"/>
-									</picture>
-									<!-- /picture-->
-									<h6>Санкт-Петербург</h6>
-								</div></a></div>
+					<div class="sMenu__row row">
+						<div class="sMenu__col col">
+							<a class="sMenu__item bg-wrap" href="#">
+								<!-- picture-->
+								<picture class="picture-bg"> 
+									<source type="image/webp" srcset="img/@2x/webp/menu-img-1.webp"/><img class="object-fit-js" src="img/@2x/menu-img-1.jpg" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+								<div class="h6">Американская классика</div>
+							</a>
+						</div>
+						<div class="sMenu__col col">
+							<a class="sMenu__item bg-wrap" href="#">
+								<!-- picture-->
+								<picture class="picture-bg"> 
+									<source type="image/webp" srcset="img/@2x/webp/menu-img-2.webp"/><img class="object-fit-js" src="img/@2x/menu-img-2.jpg" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+								<div class="h6">Амстердам</div>
+							</a>
+						</div>
+						<div class="sMenu__col col">
+							<a class="sMenu__item bg-wrap" href="#">
+								<!-- picture-->
+								<picture class="picture-bg"> 
+									<source type="image/webp" srcset="img/@2x/webp/menu-img-3.webp"/><img class="object-fit-js" src="img/@2x/menu-img-3.jpg" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+								<div class="h6">Берлин</div>
+							</a>
+						</div>
+						<div class="sMenu__col col">
+							<a class="sMenu__item bg-wrap" href="#">
+								<!-- picture-->
+								<picture class="picture-bg"> 
+									<source type="image/webp" srcset="img/@2x/webp/menu-img-4.webp"/><img class="object-fit-js" src="img/@2x/menu-img-4.jpg" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+								<div class="h6">Гавана</div>
+							</a>
+						</div>
+						<div class="sMenu__col col">
+							<a class="sMenu__item bg-wrap" href="#">
+								<!-- picture-->
+								<picture class="picture-bg"> 
+									<source type="image/webp" srcset="img/@2x/webp/menu-img-5.webp"/><img class="object-fit-js" src="img/@2x/menu-img-5.jpg" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+								<div class="h6">Париж</div>
+							</a>
+						</div>
+						<div class="sMenu__col col">
+							<a class="sMenu__item bg-wrap" href="#">
+								<!-- picture-->
+								<picture class="picture-bg"> 
+									<source type="image/webp" srcset="img/@2x/webp/menu-img-6.webp"/><img class="object-fit-js" src="img/@2x/menu-img-6.jpg" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+								<div class="h6">Стокгольм</div>
+							</a>
+						</div>
+						<div class="sMenu__col col">
+							<a class="sMenu__item bg-wrap" href="#">
+								<!-- picture-->
+								<picture class="picture-bg"> 
+									<source type="image/webp" srcset="img/@2x/webp/menu-img-7.webp"/><img class="object-fit-js" src="img/@2x/menu-img-7.jpg" alt="" loading="lazy"/>
+								</picture>
+								<!-- /picture-->
+								<div class="h6">Санкт-Петербург</div>
+							</a>
+						</div>
 					</div>
-					<div class="row">
-						<div class="col">asdasdasd</div>
+				</div>
+				<div class="container">
+					<div class="sMenu__row-footer row">
+						<div class="col-12 col-lg">
+							<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">О компании</a></li>
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Новости</a></li>
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Условия работы</a></li>
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Контакты</a></li>
+							</ul>
+						</div>
+						<div class="col-12 col-lg text-lg-right">
+							<a class="sMenu__btn sMenu__btn--call" href="tel:89000000000">
+								<svg class="icon icon-phone-call ">
+									<use xlink:href="img/svg/sprite.svg#phone-call"></use>
+								</svg>8 900 000-00-00
+							</a>
+						</div>
+						<div class="col-12 col-lg-auto">
+							<a class="sMenu__btn sMenu__btn--request" href="#">
+								<svg class="icon icon-pencil ">
+									<use xlink:href="img/svg/sprite.svg#pencil"></use>
+								</svg>Оставить заявку
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>

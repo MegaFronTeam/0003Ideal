@@ -2,11 +2,17 @@
 	@include media-breakpoint-up(lg) {
 
 		display: flex;
-		text-align: center;
+		// text-align: center;
 		@include roww(20px);
 		flex-wrap: wrap;
 	}
-
+	@include media-breakpoint-down(lg) {
+		display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+		margin-bottom: rem(40);
+	}
 	list-style: none;
 	position: relative;
 	margin-bottom: 0;
@@ -16,10 +22,23 @@
 		// margin-left: 0;
 		// margin-right: 0;
 		padding: 0;
+		@include media-breakpoint-down(lg) {
+			width: calc(100% / 2);
+		}
 	}
 	a{
 		display: block;
-		padding: rem(20) calc(var(--bs-gutter-x) / 2);
+		// padding: rem(20) calc(var(--bs-gutter-x) / 2);
+		font-size: rem(20);
+		color: $white;
+		text-decoration: underline;
+		text-decoration-color: transparent;
+		@include media-breakpoint-up(lg) {
+			font-size: rem(34);
+		}
+		&:hover {
+			text-decoration-color: $white;
+		}
 	}
 }
 
@@ -31,6 +50,9 @@
 	--position: calc(var(--h) * 2.5);
 	&.on span {
 		--color: transparent;
+		&::after, &::before {
+			--color: #{$body-color};
+		}
 	}
 
 	&.on  { 
@@ -79,81 +101,19 @@
 		transform-origin: 50% 50%;
 	} 
 }
-@include media-breakpoint-down(lg) {
 
 	
 
 	.menu-mobile {
 		position: fixed !important;
 		z-index: 1100;
-		max-width: 85%;
 		height: calc(var(--vh, 1vh) * 100);
-		width: 280px;
 		top: 0;
-		// left: 0;
 		right: 0;
-		background-color: $body-bg;
 		&:not(.active){
-			transform: translate3d(120%, 0,0);
+			transform: translate3d(0, -120%,0);
 			--opacity: 0;
-			.toggle-menu-mobile{
-				opacity: 0;
-			}
 		}
 		@include mt(.6s);
 		will-change: transform;
-
-		
-		.toggle-menu-mobile { 
-			margin-left: -15%;
-			position: absolute; 
-			left: 0;
-			right: auto;
-			color: #FFF;
-			top: 10px;
-			z-index: 9999; 
-			span:after,
-			span:before {
-				--color: #ffffff;
-			}
-		}
-		&__inner {
-			padding: rem(20) 0;
-			overflow-x: hidden;
-			overflow-y: auto;
-			-webkit-overflow-scrolling: touch;
-			height: 100%;
-			@include mt(.3s);
-			transition-delay: .4s;
-			// opacity: var(--opacity);
-			background-color: #3D3D3D;
-			width: 100%;
-			height: 100%;
-		}
-
-		&.active { 
-			.toggle-menu-mobile {
-				opacity: 1;
-			}
-		}
-
-
-		ul {
-			position: relative;
-		}
-
-		li {
-			display: block;
-			margin: 0;
-			border-top: 1px solid rgba(255, 255, 255, .13);
-
-			a {
-				// font-size: 16px;
-
-				padding: 10px;
-				display: block;
-
-			}
-		}
 	}
-}

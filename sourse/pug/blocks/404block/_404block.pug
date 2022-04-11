@@ -1,0 +1,14 @@
+mixin 404block(data)
+	// start 404block
+	+b.block404.bg-wrap.section#404block&attributes(attributes)
+		+pic('bg-404.jpg', 'bg').picture-bg
+		.bg
+		.point
+		.container
+			.row
+				.col
+					+e.P.number 404
+					+e.P.text Страница<br>не найдена!
+					a(href="/") На главную
+						+icon('chevron-right')
+	// end 404block
