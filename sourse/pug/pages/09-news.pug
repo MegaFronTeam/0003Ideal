@@ -12,6 +12,7 @@ include ../blocks/sForm/_sForm.pug
 include ../blocks/sForm/_sForm.pug
 include ../blocks/footer/_footer.pug
 include ../blocks/sNews/_sNews.pug
+include ../blocks/sMenu/_sMenu.pug
 
 block variables
 	- let  mainPage= '' 
@@ -29,6 +30,7 @@ block pagecontent
 	+top-nav()
 	//- +headerBlock
 	+sNews
+	+sMenu
 	//- +sCards
 	//- +secondScreen('true')
 	//- +sContact()

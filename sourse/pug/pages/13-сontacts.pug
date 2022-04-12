@@ -20,13 +20,15 @@ include ../blocks/sMenu/_sMenu.pug
 
 block variables
 	- let  mainPage= '' 
-	- let  bg= ''
+	- let  bg= '13-сontacts.jpg'
 
 block title
-	- let  title= '404'
+	- let  title= 'Контакты'
 	title= title
 block pagecontent
 	//- +mob-mnu()
-	+404block()
+	+top-nav(title)
+	+sContact()
 	+sMenu
+	+footer().--contacts
 

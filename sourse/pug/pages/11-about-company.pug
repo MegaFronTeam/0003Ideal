@@ -15,6 +15,7 @@ include ../blocks/footer/_footer.pug
 include ../blocks/sNews/_sNews.pug
 include ../blocks/sAboutCompanyInfo/_sAboutCompanyInfo.pug
 include ../blocks/sAboutCompanyPersons/_sAboutCompanyPersons.pug
+include ../blocks/sMenu/_sMenu.pug
 
 block variables
 	- let  mainPage= '' 
@@ -39,9 +40,11 @@ block pagecontent
 		img: 'sAbout-company-bg.jpg',
 		title: 'О компании'
 	})
+	+sMenu
 	+sAboutCompanyInfo()
 	+sAboutCompanyPersons()
 	//- +secondScreen('true')
+	+applicationSent()
 	+footer()
 	//- +orderProject()
 

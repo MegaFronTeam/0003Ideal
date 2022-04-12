@@ -18,13 +18,21 @@ mixin mob-mnu()
 			+sMenu()
 			+mnu()
 	//  мобильное меню
-mixin top-nav() 
+mixin top-nav(title) 
 	// start top-nav
 	+b.top-nav.block-with-lazy
-		.container
+		.container-fluid
 			.row.align-items-center
-				.col
-					+logo()
+				//- .col-auto
+				//- 	+logo()
+				if title
+					.col-auto
+						+logo()
+					.col
+						.h2.text-center!= title
+				else
+					.col
+						+logo()
 				//- .col
 				//- 	.menu-mobile.menu-mobile--js
 				//- 		.menu-mobile__inner

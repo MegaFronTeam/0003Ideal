@@ -14,6 +14,7 @@ include ../blocks/footer/_footer.pug
 include ../blocks/sCards/_sCards.pug
 include ../blocks/sPetersburgInfo/_sPetersburgInfo.pug
 include ../blocks/sPetersburgText/_sPetersburgText.pug
+include ../blocks/sMenu/_sMenu.pug
 
 block variables
 	- let  mainPage= 'inner-page' 
@@ -30,6 +31,7 @@ block pagecontent
 	//- +topLine
 	+top-nav()
 	//- +headerBlock
+	+sMenu
 	+page-head({
 		img: 'saint-petersburg-img-1.jpg',
 		title: 'Санкт-Петербург',

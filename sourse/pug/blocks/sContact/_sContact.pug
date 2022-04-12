@@ -1,9 +1,51 @@
 mixin sContact()
 	// start sContact
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 sContact
-				
+		+e.container.container
 			.row
+				.col.d-block.d-md-none
+					.h2 Контакты
+				.col-12
+					a.h3(href="tel:+74959160123") +7 (495) 916-01-23
+					p.h3 Москва, ул. Земляной вал, д. 46, офис 41, подъезд 2
+					a.h3(href="mailto:IDEAL@ideal.ru") IDEAL@ideal.ru
+		+e.map
+			#map(data-mark="img/svg/map-marker.svg")
+			<script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey="></script>
+			script.
+				const map = document.querySelector('#map');
+
+				ymaps.ready(init);
+
+				function init () {
+					//- var center = [55.75322550427434,37.65589449999999];
+					var center = [55.7529781840114,37.65581269262505];
+					var myMap = new ymaps.Map("map", {
+							center: center,
+							zoom: 18
+						}),
+							myPlacemark2 = new ymaps.Placemark(center, {
+									// Свойства.
+									// hintContent: 'Собственный значок метки'
+							}, {
+									// Опции.
+									// Своё изображение иконки метки.
+									iconImageHref: map.dataset.mark,
+									//- iconImageHref: 'img/svg/map-marker.svg',
+									// Размеры метки.
+									iconImageSize: [47, 56],
+									// Смещение левого верхнего угла иконки относительно
+									// её "ножки" (точки привязки).
+									iconImageOffset: [-47, -56]
+									//- [-38, -76]
+							});
+						myMap.behaviors.disable('scrollZoom');
+						//на мобильных устройствах... (проверяем по userAgent браузера)
+						if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+						//... отключаем перетаскивание карты
+						myMap.behaviors.disable('drag');
+					}
+					myMap.geoObjects
+						.add(myPlacemark2)
+				}
 	// end sContact

@@ -8,6 +8,9 @@
 	z-index: 500;
 	// top: 0;
 	@include mt;
+	.h2 {
+		color: $white;
+	}
 	.logo {
 		svg {
 			width: rem(90);
@@ -19,8 +22,12 @@
 			}
 		}
 	}
+	.container-fluid {
+		--bs-gutter-x: #{rem(24)};
+	}
 	@include media-breakpoint-up(md) {
-		--scrollPos: 25%;
+		// --scrollPos: 25%;
+		--scrollPos: 0;
 		transform: translateY(var(--scrollPos));
 		position: fixed;
 		// top: 0;

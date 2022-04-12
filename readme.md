@@ -9,3 +9,4 @@
 10. <https://megafronteam.github.io/0003Ideal/public/10-article.html>
 11. <https://megafronteam.github.io/0003Ideal/public/11-about-company.html>
 12. <https://megafronteam.github.io/0003Ideal/public/12-404-page.html>
+13. <https://megafronteam.github.io/0003Ideal/public/13-сontacts.html>

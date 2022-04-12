@@ -12,6 +12,7 @@ include ../blocks/sForm/_sForm.pug
 include ../blocks/sForm/_sForm.pug
 include ../blocks/footer/_footer.pug
 include ../blocks/sCards/_sCards.pug
+include ../blocks/sMenu/_sMenu.pug
 
 block variables
 	- let  mainPage= 'index-page' 
@@ -27,6 +28,7 @@ block pagecontent
 	+header()
 	//- +topLine
 	+top-nav()
+	+sMenu
 	+headerBlock
 	+sCards
 	//- +sContact()

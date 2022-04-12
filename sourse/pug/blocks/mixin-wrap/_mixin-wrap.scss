@@ -236,3 +236,41 @@
 .menu {
 	flex-direction: column;
 }
+
+.applicationSent {
+	position: fixed;
+	right: rem(24);
+	bottom: rem(24 + 56);
+	display: flex;
+	background-color: $white;
+	border-radius: rem(8);
+	border: 1px solid #E3E7EC;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+	padding: rem(12);
+	z-index: 22;
+	margin-left: rem(16);
+	@include media-breakpoint-up(md) {
+		width: 100%;
+		max-width: rem(372);
+		margin-left: 0;
+		bottom: rem(40);
+		align-items: center;
+	}
+	.icon {
+		font-size: rem(24);
+		&-info {
+			margin-right: rem(4);
+			@include media-breakpoint-down(md) {
+				min-width: rem(24);
+			}
+		}
+		&-cross {
+			color: #999EAB;
+		}
+	}
+	&__text {
+		font-size: rem(16);
+		margin-bottom: 0;
+		flex-grow: 1;
+	}
+}

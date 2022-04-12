@@ -14,6 +14,7 @@ include ../blocks/footer/_footer.pug
 include ../blocks/sCards/_sCards.pug
 include ../blocks/sHavanaContentHead/_sHavanaContentHead.pug
 include ../blocks/sHavanaContentBody/_sHavanaContentBody.pug
+include ../blocks/sMenu/_sMenu.pug
 
 block variables
 	- let  mainPage= 'inner-page' 
@@ -35,6 +36,7 @@ block pagecontent
 		title: 'Гавана',
 		text: 'Кубинский колорит&nbsp;&mdash; это цвета и&nbsp;узоры, смелые принты и&nbsp;акценты. При этом<br>интерьер не&nbsp;выглядит пошло или &laquo;с&nbsp;перебором&raquo;.'
 	})
+	+sMenu
 	+sHavanaContentHead
 	+sHavanaContentBody
 	+sCards

@@ -13,6 +13,7 @@ include ../blocks/sForm/_sForm.pug
 include ../blocks/footer/_footer.pug
 include ../blocks/sCards/_sCards.pug
 include ../blocks/sParisContentBody/_sParisContentBody.pug
+include ../blocks/sMenu/_sMenu.pug
 
 block variables
 	- let  mainPage= 'inner-page' 
@@ -34,6 +35,7 @@ block pagecontent
 		title: 'Париж',
 		text: 'Это смелый арт-деко, который собрал в&nbsp;себе влияние модерна, немецких<br>художников и&nbsp;русского конструктивизма.'
 	})
+	+sMenu
 	+sParisContentBody
 	+sCards
 	+secondScreen('true')

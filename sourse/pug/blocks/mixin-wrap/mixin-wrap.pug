@@ -72,3 +72,10 @@ mixin secondScreen(showMore)
 
 mixin orderProject()
 	button.orderProject.btn Заказать дизайн-проект
+
+mixin applicationSent()
+	+b.applicationSent
+		+icon('info')
+		+e.P.text Ваша заявка успешно отправлена
+		a(href="#")
+			+icon('cross')

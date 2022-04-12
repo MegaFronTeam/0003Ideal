@@ -14,6 +14,7 @@ include ../blocks/footer/_footer.pug
 include ../blocks/sCards/_sCards.pug
 include ../blocks/sAmericanContent/_sAmericanContent.pug
 include ../blocks/sAmericanBody/_sAmericanBody.pug
+include ../blocks/sMenu/_sMenu.pug
 
 block variables
 	- let  mainPage= 'inner-page' 
@@ -35,6 +36,7 @@ block pagecontent
 		title: 'Американская классика',
 		text: 'Хорошая новость: интерьер из&nbsp;любимого фильма может перенестись с&nbsp;экраном<br>прямо к&nbsp;вам. Это американская классика, которую теперь можно воплотить в<br>реальность'
 	}).bg-gradient
+	+sMenu
 	+sAmericanContent
 	+sAmericanBody
 	+sAmericanContent2
