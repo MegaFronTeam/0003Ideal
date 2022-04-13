@@ -1,0 +1,46 @@
+// start .sConditions
+.sConditions {
+	--sPT: #{rem(0)};
+	--sPB: #{rem(0)};
+	// --sTPB: #{rem()};
+	background-color: rgba(61, 61, 61);
+	margin-top: 100vh;
+	--bs-gutter-x: #{rem(0)};
+	&__row{
+		--bs-gutter-x: #{rem(0)};
+		// --bs-gutter-y: #{rem()};
+
+	}
+	.section-title{
+		
+	}
+	&__col{
+
+	}
+	&__item{
+
+	}
+	&__col-left-side {
+		background-color: $white;
+	}
+	&__col-right-side {
+	}
+	.sCards {
+		&__textwrap {
+			position: absolute;	
+			top: 0;
+			z-index: 3;
+			text-align: center;
+		}
+		&__content {
+			background-color: $white;
+		}
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sConditions

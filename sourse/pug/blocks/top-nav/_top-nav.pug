@@ -26,9 +26,9 @@ mixin top-nav(title)
 				//- .col-auto
 				//- 	+logo()
 				if title
-					.col-auto
+					.col.col-md-auto
 						+logo()
-					.col
+					.col.d-none.d-md-block
 						.h2.text-center!= title
 				else
 					.col

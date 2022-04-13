@@ -10,42 +10,79 @@ mixin sContact()
 					p.h3 Москва, ул. Земляной вал, д. 46, офис 41, подъезд 2
 					a.h3(href="mailto:IDEAL@ideal.ru") IDEAL@ideal.ru
 		+e.map
-			#map(data-mark="img/svg/map-marker.svg")
-			<script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey="></script>
+			#map(data-mark="../img/svg/map-marker.svg")
+			<script src="https://api-maps.yandex.ru/2.1/?apikey=09afbf5f-475d-4f11-bb68-eb2d6371a737&lang=ru_RU" type="text/javascript"></script>
 			script.
 				const map = document.querySelector('#map');
 
-				ymaps.ready(init);
-
 				function init () {
-					//- var center = [55.75322550427434,37.65589449999999];
-					var center = [55.7529781840114,37.65581269262505];
-					var myMap = new ymaps.Map("map", {
-							center: center,
-							zoom: 18
-						}),
-							myPlacemark2 = new ymaps.Placemark(center, {
-									// Свойства.
-									// hintContent: 'Собственный значок метки'
-							}, {
-									// Опции.
-									// Своё изображение иконки метки.
-									iconImageHref: map.dataset.mark,
-									//- iconImageHref: 'img/svg/map-marker.svg',
-									// Размеры метки.
-									iconImageSize: [47, 56],
-									// Смещение левого верхнего угла иконки относительно
-									// её "ножки" (точки привязки).
-									iconImageOffset: [-47, -56]
-									//- [-38, -76]
-							});
-						myMap.behaviors.disable('scrollZoom');
-						//на мобильных устройствах... (проверяем по userAgent браузера)
-						if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+					var multiRoute = new ymaps.multiRouter.MultiRoute({
+							// Описание опорных точек мультимаршрута.
+							referencePoints: [
+									[55.734876, 37.59308],
+									"Москва, ул. Мясницкая"
+							],
+							// Параметры маршрутизации.
+							params: {
+									// Ограничение на максимальное количество маршрутов, возвращаемое маршрутизатором.
+									results: 2
+							}
+					}, {
+							// Автоматически устанавливать границы карты так, чтобы маршрут был виден целиком.
+							boundsAutoApply: true
+					});
+					// Создаем кнопки для управления мультимаршрутом.
+					var trafficButton = new ymaps.control.Button({
+							data: { content: "Учитывать пробки" },
+							options: { selectOnClick: true }
+					}),
+					viaPointButton = new ymaps.control.Button({
+							data: { content: "Добавить транзитную точку" },
+							options: { selectOnClick: true }
+					});
+					// Объявляем обработчики для кнопок.
+					trafficButton.events.add('select', function () {
+						multiRoute.model.setParams({ avoidTrafficJams: true }, true);
+					});
+					trafficButton.events.add('deselect', function () {
+						multiRoute.model.setParams({ avoidTrafficJams: false }, true);
+					});
+					viaPointButton.events.add('select', function () {
+						var referencePoints = multiRoute.model.getReferencePoints();
+								referencePoints.splice(1, 0, "Москва, ул. Солянка, 7");
+								multiRoute.model.setReferencePoints(referencePoints, [1]);
+					});
+					viaPointButton.events.add('deselect', function () {
+						var referencePoints = multiRoute.model.getReferencePoints();
+								referencePoints.splice(1, 1);
+								multiRoute.model.setReferencePoints(referencePoints, []);
+					});
+
+
+
+					var center = [55.75321869731571,37.65587572453689];
+					myPlacemark2 = new ymaps.Placemark(center, {
+					}, {
+							iconImageHref: 'img/svg/map-marker.svg',
+							iconImageSize: [47, 56],
+							iconImageOffset: [-47, -56]
+					});
+					var myMap = new ymaps.Map('map', {
+						center,
+						zoom: 17,
+						controls: [trafficButton, viaPointButton]
+					}, {
+						buttonMaxWidth: 300
+					});
+					myMap.behaviors.disable('scrollZoom');
+					//на мобильных устройствах... (проверяем по userAgent браузера)
+					if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
 						//... отключаем перетаскивание карты
 						myMap.behaviors.disable('drag');
 					}
 					myMap.geoObjects
 						.add(myPlacemark2)
+						.add(multiRoute)
 				}
+				ymaps.ready(init);
 	// end sContact

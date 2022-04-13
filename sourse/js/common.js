@@ -243,7 +243,7 @@ function eventHandler() {
 	JSCCommon.modalCall();
 	// JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
-	// JSCCommon.inputMask();
+	JSCCommon.inputMask();
 	// JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.makeDDGroup();
@@ -702,6 +702,11 @@ if (document.querySelector('.point')) {
 	}, { passive: true });
 }
 
+document.addEventListener("click", function (event) {
+	const toggleEv = event.target.closest(".applicationSent__close");
+	if (!toggleEv) return;
+	toggleEv.closest('.applicationSent').classList.remove('active');
+}, { passive: true });
 
 };
 if (document.readyState !== 'loading') {

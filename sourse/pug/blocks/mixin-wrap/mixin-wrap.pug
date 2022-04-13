@@ -74,8 +74,8 @@ mixin orderProject()
 	button.orderProject.btn Заказать дизайн-проект
 
 mixin applicationSent()
-	+b.applicationSent
+	+b.applicationSent.active
 		+icon('info')
 		+e.P.text Ваша заявка успешно отправлена
-		a(href="#")
+		+e.close(href="#")
 			+icon('cross')

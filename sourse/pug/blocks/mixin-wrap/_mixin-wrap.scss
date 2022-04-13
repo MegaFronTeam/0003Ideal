@@ -238,6 +238,7 @@
 }
 
 .applicationSent {
+	@include mt;
 	position: fixed;
 	right: rem(24);
 	bottom: rem(24 + 56);
@@ -249,6 +250,7 @@
 	padding: rem(12);
 	z-index: 22;
 	margin-left: rem(16);
+	transform: translateX(200%);
 	@include media-breakpoint-up(md) {
 		width: 100%;
 		max-width: rem(372);
@@ -272,5 +274,8 @@
 		font-size: rem(16);
 		margin-bottom: 0;
 		flex-grow: 1;
+	}
+	&.active {
+		transform: translateX(0);
 	}
 }
