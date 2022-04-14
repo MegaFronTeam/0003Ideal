@@ -519,3 +519,7 @@ iframe {
 		margin-top: 100vh;
 	}
 }
+
+.container-fluid {
+	--bs-gutter-x: #{rem(24)};
+}

@@ -23,9 +23,9 @@
 			}
 		}
 	}
-	.container-fluid {
-		--bs-gutter-x: #{rem(24)};
-	}
+	// .container-fluid {
+	// 	--bs-gutter-x: #{rem(24)};
+	// }
 	@include media-breakpoint-up(md) {
 		// --scrollPos: 25%;
 		--scrollPos: 0;
