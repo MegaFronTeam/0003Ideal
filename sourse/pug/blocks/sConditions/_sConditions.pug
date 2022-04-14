@@ -3,18 +3,55 @@ mixin sConditions(data)
 	+b.SECTION.sConditions.section#sConditions&attributes(attributes)
 		.container-fluid
 			+e.row.row
-				+e.col-left-side.col-6.wow.animate__animated.animate__fadeInUp
+				+e.col-left-side.col-lg-6.wow.animate__animated.animate__fadeInUp
 					+b.sCards
 						+e.wrap
 							+e.textwrap
-								p Этап 1
-								h4 Возвышение пространств<br>и интерьеров
-								p Как небольшая отмеченная наградами творческа студия,<br>мы&nbsp;специализируемся на&nbsp;возвышение пространств и&nbsp;интерьеров.
+								+e.P.headline Этап 1
+								+e.title.h4 Возвышение пространств<br>и интерьеров
+								+e.text Как небольшая отмеченная наградами творческа студия,<br>мы&nbsp;специализируемся на&nbsp;возвышение пространств и<br>интерьеров.
 							+e.content--1
 								+img(`cards-img-1.png`).cards-img-1
 								+img(`cards-img-2.png`).cards-img-2
 								+img(`cards-img-3.png`).cards-img-3
 								+img(`cards-img-4.png`).cards-img-4
-				+e.col-right-side.col-6
-					p 123123
+				+e.col-right-side.col-lg-6.wow.animate__animated.animate__fadeInUp
+					+b.sCards
+						+e.wrap
+							+e.textwrap--2
+								+e.P.headline Этап 2
+								+e.title.h4 Дизайна интерьера
+								+e.text Для нас цель дизайна интерьера не обязательно отражать дух<br>времени, а реагировать на него и создавать решения.
+							+e.content
+								+img('sConditions-img-1.jpg', 'bg').cards-img-6
+				mixin step(headline, title, text)
+					.col-12.wow.animate__animated.animate__fadeInUp
+						+b.textwrap
+							+e.P.headline!= headline
+							+e.title.h4!= title
+							+e.text!= text
+				+step('Этап 3', 'Произведения искусства, смешанные с&nbsp;высококачественными индивидуальными предметами', 'В&nbsp;вашем доме будет так много различных произведений искусства, смешанных с&nbsp;высококачественными индивидуальными предметами , что вы&nbsp;почувствуете, что совершаете частную экскурсию по&nbsp;музею!')
+				+e.col-right-side.col-lg-6.wow.animate__animated.animate__fadeInUp
+					+b.sCards
+						+e.wrap
+							+e.textwrap
+								+e.P.headline Этап 4
+								+e.title.h4 Фиксированная цена
+								+e.text Все материалы и работы входят в стоимость договора. Полная<br>смета от проекта до реализации. 
+							+e.content--last-card
+								+img('sConditions-img-3.jpg', 'bg').cards-img-11
+				+e.col-left-side.col-lg-6.wow.animate__animated.animate__fadeInUp
+					+b.sCards
+						+e.wrap
+							+e.textwrap
+								+e.P.headline Этап 5
+								+e.title.h4 Домашние офисы 
+								+e.text Домашние офисы , вероятно, являются самыми<br>посещаемыми комнатами в&nbsp;этом году, и&nbsp;этот полностью<br>черный роскошный домашний офис будет держать вас в<br>тонусе! Торшер S&nbsp;tanley станет идеальным офисным<br>светильником.
+							+e.content--2
+								+img(`cards-img-7.png`).cards-img-7
+								+img(`cards-img-8.png`).cards-img-8
+								+img(`cards-img-9.png`).cards-img-9
+								+img(`cards-img-10.png`).cards-img-10
+				+step('Этап 6', 'Соблюдение сроков', 'Как небольшая отмеченная наградами творческа студия, мы&nbsp;специализируемся на&nbsp;возвышение пространств и&nbsp;интерьеров.')
+
 	// end sConditions

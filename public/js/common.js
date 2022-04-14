@@ -433,8 +433,12 @@ function eventHandler() {
 	// contact animate
 
 	var tweens4 = [
-		TweenMax.to(".cards-img-6", 100, { y: "-9%", duration: 1500 })
+		TweenMax.to(".cards-img-6", 100, { y: "-9%", duration: 1500 }),
+		TweenMax.to(".cards-img-11", 100, { y: "-9%", duration: 1500 })
 		]; // build scene 
+
+	// var tweens11 = [
+	// 	]; // build scene 
 
 	for (var i = 0, l = tweens4.length; i < l; i++) {
 		var scene = new ScrollMagic.Scene({
@@ -707,6 +711,27 @@ document.addEventListener("click", function (event) {
 	if (!toggleEv) return;
 	toggleEv.closest('.applicationSent').classList.remove('active');
 }, { passive: true });
+
+
+const sConditionsSwiper = new Swiper('.sConditionsSlider__slider--js', {
+	slidesPerView: 'auto',
+	spaceBetween: 24,
+	loop: true,
+	// speed: 2500,
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+	breakpoints: {
+		992: {
+			slidesPerView: 3,
+			spaceBetween: 16,
+		},
+		1200: {
+			slidesPerView: 4
+		},
+	},
+});
 
 };
 if (document.readyState !== 'loading') {

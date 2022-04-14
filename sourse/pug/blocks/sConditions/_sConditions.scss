@@ -27,13 +27,96 @@
 	}
 	.sCards {
 		&__textwrap {
+			width: 100%;
 			position: absolute;	
 			top: 0;
 			z-index: 3;
 			text-align: center;
+			padding-top: rem(42);
+			@include media-breakpoint-up(lg) {
+				padding-top: rem(56);
+			}
+			&--2 {
+				& > * {
+					color: $white !important;
+					opacity: 1 !important;
+				}
+			}
 		}
 		&__content {
 			background-color: $white;
+			border-radius: 0;
+			&:before {
+				border-radius: 0;
+			}
+		}
+		&__title {
+			margin-bottom: rem(8);
+			color: $black;
+			opacity: 0.8;
+		}
+		&__headline {
+			font-weight: 700;
+			font-size: rem(14);
+			margin-bottom: rem(8);
+			color: $gray-900;
+		}
+		&__text {
+			font-size: rem(14);
+			line-height: 1.43em;
+			color: $black;
+			opacity: 0.7;
+			margin-bottom: 0;
+		}
+		&__wrap {
+			position: relative;
+			@include media-breakpoint-down(lg) {
+				--ratio: 424/360;
+			}
+		}
+	}
+	.textwrap {
+		padding-top: rem(40);
+		padding-bottom: rem(40);
+		color: $white;
+		text-align: center;
+		@include media-breakpoint-up(lg) {
+			padding-top: rem(82);
+			padding-bottom: rem(82);
+		}
+		&__headline {
+			font-weight: 700;
+			font-size: rem(14);
+			margin-bottom: rem(8);
+			color: $gray-600;
+		}
+		&__title {
+			max-width: rem(569);
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: rem(16);
+		}
+		&__text {
+			max-width: rem(453);
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 0;
+		}
+	}
+	.cards-img {
+		@include media-breakpoint-up(xl) {
+			&-7 {
+				bottom: 38%;
+			}
+			&-8 {
+				bottom: 0;
+			}
+			&-11 {
+				bottom: -9%;
+				height: 109%;
+				left: -9%;
+				width: 109%;
+			}
 		}
 	}
 	@include media-breakpoint-up(xl) {}

@@ -1,0 +1,23 @@
+mixin sConditionsSlider(data)
+	// start sConditionsSlider
+	+b.SECTION.sConditionsSlider.section#sConditionsSlider&attributes(attributes)
+		.container
+			.row
+				.col-12
+					h4 Документы
+				+e.slider-wrap
+					+e.slider--js.swiper
+						.swiper-wrapper
+							mixin sConditions-item(i)
+								+e.slide.swiper-slide
+									+e.item(href="http://www.africau.edu/images/default/sample.pdf" data-fancybox=`pdf-${i}`)
+										+img(`sConditions-img-${i}.jpg`)
+										+e.text
+											p Сертификат соответствия
+											+icon('pdf-icon')
+							+sConditions-item(4)
+							+sConditions-item(5)
+							+sConditions-item(6)
+							+sConditions-item(7)
+					+arrow()
+	// end sConditionsSlider

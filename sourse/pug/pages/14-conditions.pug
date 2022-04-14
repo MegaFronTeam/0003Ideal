@@ -18,6 +18,7 @@ include ../blocks/sAboutCompanyPersons/_sAboutCompanyPersons.pug
 include ../blocks/404block/_404block.pug
 include ../blocks/sMenu/_sMenu.pug
 include ../blocks/sConditions/_sConditions.pug
+include ../blocks/sConditionsSlider/_sConditionsSlider.pug
 
 block variables
 	- let  mainPage= '' 
@@ -31,9 +32,11 @@ block pagecontent
 	+top-nav()
 	+sMenu
 	+page-head({
-		img: 'sAbout-company-bg.jpg',
-		title
-	})
+		img: 'sConditions-img-2.jpg',
+		title,
+		text: 'Благодаря четкому графику и&nbsp;своевременному поступлению материалов,<br>контроль этапов в&nbsp;личном кабинете.'
+	}).page-head--conditions
 	+sConditions
+	+sConditionsSlider
 	+footer()
 
