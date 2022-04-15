@@ -567,11 +567,11 @@ function eventHandler() {
 	// .addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
-	var sHavanaContentBodyPicture2 = TweenMax.to(".sHavanaContentBody__img-wrap-js img", 1, {scale:1.2, ease:Linear.easeNone});
+	var sHavanaContentBodyPicture2 = TweenMax.to(".img-wrap-js img", 1, {scale:1.2, ease:Linear.easeNone});
 
 	// create scene to pin and link animation
 	new ScrollMagic.Scene({
-		triggerElement: ".sHavanaContentBody__img-wrap-js picture",
+		triggerElement: ".img-wrap-js picture",
 		triggerHook: 0.2,
 		duration: "100%"
 	})

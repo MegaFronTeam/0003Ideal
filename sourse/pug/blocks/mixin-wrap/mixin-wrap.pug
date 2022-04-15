@@ -79,3 +79,7 @@ mixin applicationSent()
 		+e.P.text Ваша заявка успешно отправлена
 		+e.close(href="#")
 			+icon('cross')
+
+mixin fullPageImg(link)
+	+b.img-wrap-js
+		+pic(`${link}`, 'bg')
