@@ -523,3 +523,21 @@ iframe {
 .container-fluid {
 	--bs-gutter-x: #{rem(24)};
 }
+
+
+@keyframes fadeInUpSlide {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 15%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUpSlide {
+  animation-name: fadeInUpSlide;
+	animation-duration: .3s;
+}

@@ -1,13 +1,15 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
-		+b.firstScreen.bg-wrap
-			+e.slider--js.swiper
-				.swiper-wrapper
-					+e.slide.swiper-slide
-						+img(`header-bg-1.jpg`, 'bg')
-					+e.slide.swiper-slide
-						+img(`header-bg-3.jpg`, 'bg')
+		+b.firstScreen
+			+e.wrap
+				+e.slider--js.swiper
+					.swiper-wrapper
+						//- -for(i=0; i<3; i++)
+						+e.slide.swiper-slide
+							img(src="img/@2x/header-bg-1.jpg", alt="")
+						+e.slide.swiper-slide
+							img(src="img/@2x/header-bg-3.jpg", alt="")
 			.container
 				+b.section-title--js.text-center
 					h1 Готовые решения интерьера квартир
@@ -16,17 +18,19 @@ mixin headerBlock()
 						| Выбрать решение
 						+e.btnIcon
 							+icon('chevron-down')
-		+b.secondScreen.bg-wrap
+		+b.secondScreen
 			+e.slider--js.swiper
 				.swiper-wrapper
-					-for(i=0; i<3; i++)
-						+e.slide.swiper-slide
-							+img('header-bg-2.jpg', 'bg').picture-bg
+					mixin slide(i, t='Берлин')
+						+e.slide.swiper-slide.bg-wrap
+							+img(i, 'bg').picture-bg
 							.container
 								+b.section-title--js2.text-center
-									h2 Берлин
+									h2= t
 									p Ни&nbsp;одна деталь не&nbsp;будет лишней, у&nbsp;каждой мелочи&nbsp;&mdash; свой функционал, только простые и&nbsp;лаконичные формы.
 									a(href="#").btn.btn-outline-primary Подробнее
+					+slide("header-bg-2.jpg")
+					+slide("content-paris-bg.jpg",'Париж')
 				+arrow()
 				.swiper-pagination
 	// end headerBlock
