@@ -357,12 +357,15 @@ function eventHandler() {
 			el: ' .swiper-pagination',
 			type: 'bullets',
 			clickable: true,
+			
 		},
 		on: {
-			slideChangeTransitionStart: () => {
+			slideChangeTransitionStart: (swiper) => {
 				$('div:not(.swiper-slide-active) .section-title--js2.active').removeClass('active');
-				$(' .swiper-slide-active .section-title--js2').addClass('active'); 
-
+				$(' .swiper-slide-active .section-title--js2').addClass('active');  
+				var r = document.querySelector(':root');
+				var rs = getComputedStyle(r);
+				r.style.setProperty('--pagination-count', swiper.realIndex);
 			}
 		}
 	});
@@ -396,16 +399,18 @@ function eventHandler() {
 
 
 	var tweens = [
-		TweenMax.to(".cards-img-1", 100, { y: "-20%", duration: 4500 }),
+		TweenMax.to(".cards-img-1", 100, { y: "-30%", duration: 4500 }),
+		TweenMax.to(".cards-img-1-2", 100, { y: "-30%", duration: 1500 }),
+		TweenMax.to(".cards-img-1-3", 190, { y: "-30%", duration: 1500 }),
 		TweenMax.to(".cards-img-2", 40, { y: "-60%",duration: 2000}),
-		TweenMax.to(".cards-img-3", 100, { y: "-100%",duration: 2500}),
+		TweenMax.to(".cards-img-3", 100, { y: "-70%",duration: 2500}),
 		TweenMax.to(".cards-img-4", 40, { y: "-50%",duration: 1800}),
 		]; // build scene 
 
 	for (var i = 0, l = tweens.length; i < l; i++) {
 		var scene = new ScrollMagic.Scene({
 			triggerElement: ".sCards__content--1",
-			duration: '100%', offset: -150
+			duration: '100%', offset: -10
 		}).setTween(tweens[i]) // .addIndicators() // add indicators (requires plugin)
 		// .addIndicators()
 		.addTo(controller);

@@ -6,6 +6,7 @@
 	position: relative;
 	padding-top: 0;
 	padding-bottom: 0;
+	background-color: $body-color;
 	.section-title {
 		color: $white;
 		margin-bottom: 0;
@@ -69,6 +70,16 @@
 		}
 	}
 
+	.swiper-button-hand{
+		top: auto;
+		transform: none;
+		bottom: rem(40);
+	}
+
+	.swiper-pagination{
+		bottom: rem(40);
+	}
+
 	@include media-breakpoint-up(sm) {}
 
 	@include media-breakpoint-up(xs) {}
@@ -115,8 +126,8 @@
 .firstScreen {
 	@include mt;
 	align-items: center;
-	// position: absolute;
-	position: relative;
+	// position: relative;
+	position: absolute;
 	// display: none;
 	left: 0;
 	top: 0;
@@ -142,8 +153,11 @@
 	&__slide{
 		min-height: 100vh;
 		img{
+			position: absolute;
+			left: 0;
+			top: 0;
 			height: 100%;
-			min-height: 100vh;
+			min-height: 100%;
 			width: 100%;
 			object-fit: cover;
 		}
@@ -156,7 +170,7 @@
 	// padding-bottom: rem(73);
 	// position: absolute;
 	height: 100vh;
-	width: 100vw;
+	// width: 100vw;
 	top: 0;
 	z-index: 15;
 	&__slide {
@@ -187,13 +201,14 @@
 		max-width: rem(368);
 		margin-left: auto;
 		margin-right: auto;
-		margin-bottom: rem(73) !important;
+		@include media-breakpoint-up(sm) {
+			margin-bottom: rem(134) ;
+		}
+		margin-bottom: rem(64) ;
 		color: $white;
 		position: relative;
     z-index: 10;
-		@include media-breakpoint-down(sm) {
-			max-width: rem(272);
-		}
+			max-width: rem(272); 
 		h2 {
 			margin-bottom: rem(13.600);
 		}
@@ -213,18 +228,13 @@
 		}
 	}
 	.swiper {
-		width: 100vw;
-		height: 100vh;
-		position: absolute;
+		// width: 100%;
+		// height: 100vh;
+		// position: absolute;
 	}
 	.swiper-button-hand {
 		z-index: 11;
-		bottom: rem(17);
-		&-prev {
-			--swiperArrowPosition: #{rem(24)};
-		}
-		&-next {
-			--swiperArrowPosition: #{rem(30)};
-		}
+		// bottom: rem(17);
+		--swiperArrowPosition: var(--container-g-x);
 	}
 }

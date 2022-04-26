@@ -305,24 +305,27 @@ ul {
 	}
 }
 
-.swiper-pagination {
+.swiper-horizontal .swiper-pagination {
 	width: 100%;
 	text-align: center;
 	position: absolute;
-	bottom: rem(17.8);
+	bottom: rem(40);
 	z-index: 1;
+	--g-x: #{rem(23)};
+	--size: var(--swiperArrowSize);
+	height: var(--size);
 
 	&-bullet {
 		opacity: 1;
-		width: 16px;
-		height: 16px;
+		width: var(--size);
+		height: var(--size);
 		border-radius: 50%;
 		// background-color: #E6E6E6;
 		outline: none !important;
 		@include mt;
-		margin-left: rem(8);
+		margin-left: var(--g-x) !important;
 		// padding-right: rem(8);
-		margin-right: rem(10);
+		margin-right: var(--g-x) !important;
 		display: inline-block;
 		border-radius: 50%;
 		border: 1px solid transparent;
@@ -332,21 +335,33 @@ ul {
 			content: '';
 			position: absolute;
 			display: block;
-			width: 4px;
-			height: 4px;
+			width: 8px;
+			height: 8px;
 			border-radius: 50%;
-			background-color: rgba($color: $white, $alpha: 0.5);
 			@include a-cent();
+			background-color: rgba($color: $white, $alpha: 0.5);
 		}
-
+		&:first-child{
+			position: relative;
+			&::after{
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				pointer-events: none;
+				// left: 0;
+				left: calc(var(--size) * var(--pagination-count) + var(--g-x) * 2 * (var(--pagination-count)));
+				top: 0;
+				border-radius: 50%;
+				border: 1px solid rgba($color: $white, $alpha: 0.5);
+				@include mt;
+			}
+		}
 		&-active,
 		&:hover {
 			color: $white;
-			border: 1px solid rgba($color: $white, $alpha: 0.5);
-			&:before {
-				content: '';
-				position: absolute;
-				background-color: $white;
+			&::before{
+				background: #fff;
 			}
 		}
 	}
@@ -521,7 +536,7 @@ iframe {
 }
 
 .container-fluid {
-	--bs-gutter-x: #{rem(24)};
+	--bs-gutter-x: var(--container-g-x);
 }
 
 
