@@ -261,10 +261,17 @@ function eventHandler() {
 
 	function setFixedNav() {
 		let topNav = document.querySelector('.top-nav  ');
+		let h = topNav.offsetHeight + 30;
+		let h2 = topNav.offsetHeight + 350;
+		console.log(h);
+
 		if (!topNav) return;
-		window.scrollY > 0
-			? topNav.classList.add('fixed')
-			: topNav.classList.remove('fixed');
+		window.scrollY > h
+			? (topNav.classList.add('fixed'), setTimeout(()=> topNav.classList.add('active'), 500))
+			: (topNav.classList.remove('fixed'), setTimeout(()=> topNav.classList.remove('active'), 500));
+		// window.scrollY > h2
+		// 	? topNav.classList.add('active')
+		// 	: topNav.classList.remove('active');
 	}
 
 	function whenResize() {
@@ -386,86 +393,69 @@ function eventHandler() {
 	// 		}, 800);
 	// 	};
 	// });
+	let scroller = document.body;
+	gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+	ScrollTrigger.defaults({
+		toggleActions: "restart pause resume pause"
+	});
 
+	let scTrigger = (el, start=  '50% bottom', end ='top top') => {
+		return gsap.timeline({
 
+			scrollTrigger:  {
+				trigger: el,
+				scroller,
+				start,
+				end,
+				scrub: true, 
+				// invalidateOnRefresh: true,
+				defaults: {
+					ease: "power3",
+					overwrite: true
+				}
+			}
+	
+		})
+	
+	}
+	if (document.querySelector(".sCards")) {
 
+	
+	var t1 = scTrigger(".sCards__content--1");
+	t1
+		.to(".cards-img-1",  { y: "-40%", duration: 3.5 })
+		.to(".cards-img-1-2",  { y: "-30%", duration: 1.5 }, 0)
+		.to(".cards-img-1-3",  { y: "-30%", duration: 1.5 }, 0)
+		.to(".cards-img-2",  { y: "-40%",duration: 2}, 0)
+		.to(".cards-img-3",  { y: "-60%",duration: 1.5}, 0)
+		.to(".cards-img-4", { y: "-50%",duration: 1.8}, 0)
+		;
 
+	var t2 = scTrigger(".sCards__content--2");
+	t2
+		.to(".cards-img-7",  { y: "-100%", duration: 1.5})
+		.to(".cards-img-8", { y: "-10%",duration: 3}, 0)
+		.to(".cards-img-9",  { y: "-100%",duration: 2.5}, 0)
+		.to(".cards-img-10", { y: "-50%",duration: 1.8}, 0)
+		;
+	var t3 = scTrigger(".sCards__content--3");
+	t3.from(".cards-img-5", { y: "50%"});
 
+	var t4 = scTrigger(".sCards__content--last-card");
+	t4
+		.to(".cards-img-6", { y: "-6%", duration: 1.5 })
+		// .to(".cards-img-11", { y: "-19%", duration: 2 })
+
+	}
 
 	var controller = new ScrollMagic.Controller();
+
+
 
 
 	let height = window.innerHeight;
 
 
-	var tweens = [
-		TweenMax.to(".cards-img-1", 100, { y: "-30%", duration: 4500 }),
-		TweenMax.to(".cards-img-1-2", 100, { y: "-30%", duration: 1500 }),
-		TweenMax.to(".cards-img-1-3", 190, { y: "-30%", duration: 1500 }),
-		TweenMax.to(".cards-img-2", 40, { y: "-60%",duration: 2000}),
-		TweenMax.to(".cards-img-3", 100, { y: "-70%",duration: 2500}),
-		TweenMax.to(".cards-img-4", 40, { y: "-50%",duration: 1800}),
-		]; // build scene 
-
-	for (var i = 0, l = tweens.length; i < l; i++) {
-		var scene = new ScrollMagic.Scene({
-			triggerElement: ".sCards__content--1",
-			duration: '100%', offset: -10
-		}).setTween(tweens[i]) // .addIndicators() // add indicators (requires plugin)
-		// .addIndicators()
-		.addTo(controller);
-	} // main animate
-	// contact animate
-
-
-	var tweens2 = [
-		TweenMax.to(".cards-img-7", 100, { y: "-50%", duration: 3500 }),
-		TweenMax.to(".cards-img-8", 60, { y: "-10%",duration: 3000}),
-		TweenMax.to(".cards-img-9", 100, { y: "-100%",duration: 2500}),
-		TweenMax.to(".cards-img-10", 40, { y: "-50%",duration: 1800}),
-		]; // build scene 
-
-	for (var i = 0, l = tweens2.length; i < l; i++) {
-		var scene = new ScrollMagic.Scene({
-			triggerElement: ".sCards__content--2",
-			duration: '100%', offset: -150
-		}).setTween(tweens2[i]) // .addIndicators() // add indicators (requires plugin)
-		// .addIndicators()
-		.addTo(controller);
-	} // main animate
-	// contact animate
-
-	var tweens3 = [
-		TweenMax.to(".cards-img-5", 100, { y: "-24%", duration: 3500 })
-		]; // build scene 
-
-	for (var i = 0, l = tweens3.length; i < l; i++) {
-		var scene = new ScrollMagic.Scene({
-			triggerElement: ".sCards__content--3",
-			duration: '100%', offset: -150
-		}).setTween(tweens3[i]) // .addIndicators() // add indicators (requires plugin)
-		// .addIndicators()
-		.addTo(controller);
-	} // main animate
-	// contact animate
-
-	var tweens4 = [
-		TweenMax.to(".cards-img-6", 100, { y: "-9%", duration: 1500 }),
-		TweenMax.to(".cards-img-11", 100, { y: "-9%", duration: 1500 })
-		]; // build scene 
-
-	// var tweens11 = [
-	// 	]; // build scene 
-
-	for (var i = 0, l = tweens4.length; i < l; i++) {
-		var scene = new ScrollMagic.Scene({
-			triggerElement: ".sCards__content--last-card",
-			duration: '100%', offset: -150
-		}).setTween(tweens4[i]) // .addIndicators() // add indicators (requires plugin)
-		// .addIndicators()
-		.addTo(controller);
-	} // main animate
-	// contact animate
 
 	$('.sParisContentBody__btn').click(function() {
 		$(this).toggleClass('active');
@@ -477,18 +467,18 @@ function eventHandler() {
 		});
 	});
 		
-	$(document).scroll(function() {
-		let root = this.querySelector('.top-nav');
-		let navHeight = $('.top-nav').height() + 100;
-		let scrollPos = ($(document).scrollTop() / navHeight) * 100;
-		root.style.setProperty('--scrollPos', '-' + scrollPos + "%");
-		// root.style.setProperty('--scrollPos', '25%');
-		if ($(document).scrollTop() > navHeight + 100) {
-			$('.top-nav').addClass('active');
-		} else {
-			$('.top-nav').removeClass('active');
-		}
-	});
+	// $(document).scroll(function() {
+	// 	let root = this.querySelector('.top-nav');
+	// 	let navHeight = $('.top-nav').height() + 100;
+	// 	let scrollPos = ($(document).scrollTop() / navHeight) * 100;
+	// 	root.style.setProperty('--scrollPos', '-' + scrollPos + "%");
+	// 	// root.style.setProperty('--scrollPos', '25%');
+	// 	if ($(document).scrollTop() > navHeight + 100) {
+	// 		$('.top-nav').addClass('active');
+	// 	} else {
+	// 		$('.top-nav').removeClass('active');
+	// 	}
+	// });
 
 	$(document).scroll(function() {
 		if ($(document).scrollTop() > $('.page-head').height()) {
@@ -502,20 +492,26 @@ function eventHandler() {
 	const mediaQuery = window.matchMedia('(min-width: 991.98px)')
 	// Check if the media query is true
 	if (mediaQuery.matches) {
-		var wipeAnimation = new TimelineMax()
-			.fromTo(".imageSlider img", 1, {x: "0"}, {x: "+75vw", ease: Linear.easeNone})  // in from left
+		// var wipeAnimation = new TimelineMax()
+		// 	.fromTo(".imageSlider img", 1, {x: "0"}, {x: "+75vw", ease: Linear.easeNone})  // in from left
 	
-		// create scene to pin and link animation
-		new ScrollMagic.Scene({
-			triggerElement: ".imageSlider",
-			triggerHook: 0.5,
-			duration: "100%"
-		})
-		// .setPin(".imageSlider")
-		.setTween(wipeAnimation)
-		// .addIndicators() // add indicators (requires plugin)
-		.addTo(controller);
+		// // create scene to pin and link animation
+		// new ScrollMagic.Scene({
+		// 	triggerElement: ".imageSlider",
+		// 	triggerHook: 0.5,
+		// 	duration: "100%"
+		// })
+		// // .setPin(".imageSlider")
+		// .setTween(wipeAnimation)
+		// // .addIndicators() // add indicators (requires plugin)
+		// 	.addTo(controller);
+		
+			var t5 = scTrigger(".imageSlider",'30% bottom','50% top');
+			t5
+				.to(".imageSlider img", {scale: "1.18", duration: 3})  // in from left
+				.to(".imageSlider__slide", {x: "75vw", duration: 6},'>-1')  // in from left: ;
 	}
+
 
 	var tweenPicture = TweenMax.to(".sHavanaContentHead__footer img", 1, {scale:1.2, ease:Linear.easeNone});
 

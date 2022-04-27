@@ -14,8 +14,11 @@
 	--sPB: #{rem(90 * .5)};
 	--sTPB: #{rem(40 * .5)};
 
+	@include media-breakpoint-up(sm){
 
 		--swiperArrowSize: #{rem(31.8)};
+	}
+	--swiperArrowSize: 24px;
 		--swiperArrowPosition: calc(-1 * var(--swiperArrowSize) / 2);
 		--swiperBorderColorDef: #{$white};
 		--swiperColorDef: #{$white};

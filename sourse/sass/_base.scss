@@ -269,7 +269,7 @@ ul {
 	height: var(--swiperArrowSize);
 	border-radius: 50%;
 	background-color: var(--swiperBgDef);
-	border: 2px solid var(--swiperBorderColorDef);
+	border: 1px solid var(--swiperBorderColorDef);
 	color: var(--swiperColorDef);
 	@include bgs;
 	z-index: 300;
@@ -311,8 +311,16 @@ ul {
 	position: absolute;
 	bottom: rem(40);
 	z-index: 1;
-	--g-x: #{rem(23)};
-	--size: var(--swiperArrowSize);
+	@include media-breakpoint-up(sm){
+
+		--g-x: #{rem(10)};
+	}
+	--g-x: #{rem(4)};
+	@include media-breakpoint-up(sm){
+
+		--size: var(--swiperArrowSize);
+	}
+	--size: 16px;
 	height: var(--size);
 
 	&-bullet {
@@ -335,8 +343,13 @@ ul {
 			content: '';
 			position: absolute;
 			display: block;
-			width: 8px;
-			height: 8px;
+			@include media-breakpoint-up(sm){
+
+				width: 8px;
+				height: 8px;
+			}
+			width: 4px;
+			height: 4px;
 			border-radius: 50%;
 			@include a-cent();
 			background-color: rgba($color: $white, $alpha: 0.5);
@@ -349,12 +362,13 @@ ul {
 				width: 100%;
 				height: 100%;
 				pointer-events: none;
-				// left: 0;
-				left: calc(var(--size) * var(--pagination-count) + var(--g-x) * 2 * (var(--pagination-count)));
+				left: 0;
+				transform: translateX(calc(var(--size) * var(--pagination-count) + var(--g-x) * 2 * (var(--pagination-count))));
 				top: 0;
 				border-radius: 50%;
 				border: 1px solid rgba($color: $white, $alpha: 0.5);
-				@include mt;
+				// @include mt;
+				@include transition(all .6s $ease-out-back);
 			}
 		}
 		&-active,

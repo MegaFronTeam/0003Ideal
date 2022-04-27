@@ -207,7 +207,7 @@
 				// margin-left: calc(var(--w) / -2);
 				// @include media-breakpoint-down(lg) { 
 				// }
-				bottom: -30%;
+				bottom: -50%;
 				@include media-breakpoint-up(xl) { 
 				}
 			}
@@ -217,7 +217,7 @@
 				right: calc(#{$card} * 194);
 				margin-left: calc(var(--w) / -2);
 				z-index: -1;
-				bottom: 0%;
+				bottom: -10%;
 				left: auto;
 				@include media-breakpoint-down(lg) { 
 				}
@@ -229,7 +229,7 @@
 				width: var(--w);
 				right: calc(#{$card} * 26);
 				margin-left: calc(var(--w) / -2); 
-				bottom: 0%;
+				bottom: -20%;
 				left: auto;
 				@include media-breakpoint-down(lg) { 
 				}
@@ -238,19 +238,19 @@
 			}
 			&-2 {
 				width: var(--w);
-				bottom: 38%;
+				bottom: 8%;
 				left: 3%;
 				--w: 19%;
 				@include media-breakpoint-down(lg) {
-					bottom: 30%;
+					// bottom: 10%;
 				}
 				@include media-breakpoint-up(xl) {
-					bottom: 26%;
+					// bottom: 16%;
 				}
 			}
 			&-3 {
 				width: var(--w);
-				bottom: -23%;
+				bottom: -33%;
 				left: calc(#{$card} * 54);
 				--w: calc(#{$card} * 513);
 				z-index: -1;
@@ -267,10 +267,10 @@
 			&-4 {
 				width: var(--w);
 				--w: 23%;
-				bottom: -6%;
+				bottom: -10%;
 				left: 17%;
 				@include media-breakpoint-down(lg) {
-					bottom: 1%;
+					// bottom: 1%;
 					left: 25%;
 					--w: 18%;
 				}
@@ -284,34 +284,35 @@
 				--w: 89%;
 				left: 50%;
 				margin-left: calc(var(--w) / -2);
-				bottom: -12%;
+				bottom: 0;
 			}
 			&-6 {
 				width: var(--w);
-				--w: 109%;
-				height: 109%;
-				bottom: -9%;
-				left: -9%;
+				--w: 100%;
+				top: 0;
+				// height: 109%;
+				// bottom: 0;
+				left: 0;
 			}
 			&-7 {
 				width: var(--w);
 				--w: 13%;
-				bottom: 44%;
+				bottom: 24%;
 				left: 34%;
 				z-index: 1;
-				@include media-breakpoint-down(sm) {
-					bottom: 38%;
-				}
-				@include media-breakpoint-up(xl) {
-					bottom: 53%;
-				}
+				// @include media-breakpoint-down(sm) {
+				// 	bottom: 38%;
+				// }
+				// @include media-breakpoint-up(xl) {
+				// 	bottom: 47%;
+				// }
 			}
 			&-8 {
 				width: var(--w);
 				--w: 51%;
 				left: 50%;
 				margin-left: calc(var(--w) / -2);
-				bottom: 5%;
+				bottom: 0%;
 				@include media-breakpoint-down(sm) {
 					--w: 48%;
 
@@ -323,7 +324,7 @@
 			&-9 {
 				width: var(--w);
 				--w: 43%;
-    		bottom: -12%;
+    		bottom: -22%;
 				@include media-breakpoint-down(sm) {
 					--w: 37%;
     			left: 5%;
@@ -331,7 +332,7 @@
 			}
 			&-10 {
 				width: var(--w);
-				bottom: 20%;
+				bottom: 10%;
 				left: 60%;
 				--w: 31%;
 			}

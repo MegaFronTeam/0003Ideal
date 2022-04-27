@@ -7,8 +7,8 @@ mixin sHavanaContentHead(data)
 		+b.imageSlider
 			//- +pic('imageSlider-1', 'bg')
 			//- +pic('imageSlider-2', 'bg')
-			+img('imageSlider-1.jpg')
-			+img('imageSlider-2.jpg')
+			+e.slide: +img('imageSlider-1.jpg')
+			+e.slide: +img('imageSlider-2.jpg')
 		+e.footer
 			+pic('sHavanaContent-img-1.jpg', 'bg')
 			.container

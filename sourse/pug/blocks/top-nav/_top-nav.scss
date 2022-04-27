@@ -2,12 +2,13 @@
 	// background: svg-load('../svg/check.svg',  stroke=$primary); 
 	// 
 	// position: absolute;
-	top: rem(15.8);
+	--top: #{rem(15.8)};
+	top:  var(--top);
 	left: 0;
 	width: 100%;
 	z-index: 500;
 	// top: 0;
-	@include mt;
+	@include mt(1s);
 	.h2 {
 		color: $white;
 		margin-bottom: 0;
@@ -28,15 +29,29 @@
 	// }
 	@include media-breakpoint-up(md) {
 		// --scrollPos: 25%;
-		--scrollPos: 0;
-		transform: translateY(var(--scrollPos));
+		// transform: translateY(15.800px);
+		&.fixed:not(.active){
+
+			@include media-breakpoint-up(md) {
+			// transform: translateY(calc(-100% - var(--top)));
+			
+		}
+		}
 		position: fixed;
+		&.fixed{
+			animation: upDown 1s 1 ease-in-out;
+		
+		}
 		// top: 0;
 	}
 	// transform: translateY(15.800px);
 	&.active {
+		.toggle-menu-mobile{
+			animation-delay: 1s;
+			animation: opacityToggle 1s 1 ease-in-out;
+		}
 		@include media-breakpoint-up(md) {
-			transform: translateY(15.800px);
+			// transform: translateY(15.800px);
 			.logo {
 				background-color: $white;
 				box-shadow: 3px 4px 7px 0px #00000091;
@@ -95,3 +110,15 @@
 }
 
 
+
+
+@keyframes upDown {
+  0% {transform: translateY(0)} 
+  50% {transform: translateY(calc(-100% - var(--top)));} 
+  100%{transform: translateY(0)}
+}
+@keyframes opacityToggle {
+  // 0% {opacity: 1;} 
+  0% {opacity: 0} 
+  100%{opacity: 1}
+}

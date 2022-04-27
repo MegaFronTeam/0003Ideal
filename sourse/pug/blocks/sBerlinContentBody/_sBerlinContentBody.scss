@@ -34,7 +34,13 @@
 		border-radius: 12px;
 	}
 	p {
-		max-width: rem(323);
+		@include media-breakpoint-down(sm) {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+		@include media-breakpoint-up(sm) {
+		max-width: rem(400);
+		}
 		margin-left: auto;
 		margin-right: auto;
 		color: $white;
@@ -51,6 +57,12 @@
 			}
 		}
 	}
+	@include media-breakpoint-up(xxl) {
+		&__col-img-vertical--last{
+			padding-top: rem(111);
+		}
+	}
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

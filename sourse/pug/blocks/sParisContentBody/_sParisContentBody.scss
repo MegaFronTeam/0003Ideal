@@ -1,14 +1,13 @@
 // start .sParisContentBody
 .sParisContentBody {
 	--sPT: #{rem(40)};
-	--sPB: #{rem(24)};
+	--sPB: 0;
 	// --sTPB: #{rem()};
 	position: relative;
 	z-index: 10;
 	background-color: $white;
 	@include media-breakpoint-up(lg) {
-		--sPT: #{rem(63)};
-		--sPB: #{rem(63)};
+		--sPT: #{rem(63)}; 
 	}
 	&__container {
 		// @include media-breakpoint-up(lg) {
