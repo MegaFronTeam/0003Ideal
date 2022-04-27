@@ -407,11 +407,11 @@ function eventHandler() {
 				scroller,
 				start,
 				end,
-				scrub: true, 
+				scrub: 1.2, 
 				// invalidateOnRefresh: true,
 				defaults: {
 					ease: "power3",
-					overwrite: true
+					// overwrite: true
 				}
 			}
 	
@@ -506,10 +506,10 @@ function eventHandler() {
 		// // .addIndicators() // add indicators (requires plugin)
 		// 	.addTo(controller);
 		
-			var t5 = scTrigger(".imageSlider",'30% bottom','50% top');
+			var t5 = scTrigger(".imageSlider",'60% bottom','top top');
 			t5
 				.to(".imageSlider img", {scale: "1.18", duration: 3})  // in from left
-				.to(".imageSlider__slide", {x: "75vw", duration: 6},'>-1')  // in from left: ;
+				.to(".imageSlider__slide", {x: "75vw", duration: 50},"<-1")  // in from left: ;
 	}
 
 
