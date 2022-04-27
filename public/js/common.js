@@ -399,7 +399,7 @@ function eventHandler() {
 		toggleActions: "restart pause resume pause"
 	});
 
-	let scTrigger = (el, start=  '50% bottom', end ='top top') => {
+	let scTrigger = (el, start=  '50% bottom', end ='top top', scrub= .8) => {
 		return gsap.timeline({
 
 			scrollTrigger:  {
@@ -407,10 +407,10 @@ function eventHandler() {
 				scroller,
 				start,
 				end,
-				scrub: 1.2, 
+				scrub, 
 				// invalidateOnRefresh: true,
 				defaults: {
-					ease: "power3",
+					// ease: "power3",
 					// overwrite: true
 				}
 			}
@@ -489,108 +489,69 @@ function eventHandler() {
 	});
 
 	
-	const mediaQuery = window.matchMedia('(min-width: 991.98px)')
+	const mediaQuery = window.matchMedia('(min-width: 767.98px)')
 	// Check if the media query is true
-	if (mediaQuery.matches) {
-		// var wipeAnimation = new TimelineMax()
-		// 	.fromTo(".imageSlider img", 1, {x: "0"}, {x: "+75vw", ease: Linear.easeNone})  // in from left
-	
-		// // create scene to pin and link animation
-		// new ScrollMagic.Scene({
-		// 	triggerElement: ".imageSlider",
-		// 	triggerHook: 0.5,
-		// 	duration: "100%"
-		// })
-		// // .setPin(".imageSlider")
-		// .setTween(wipeAnimation)
-		// // .addIndicators() // add indicators (requires plugin)
-		// 	.addTo(controller);
+	if (mediaQuery.matches) { 
 		
-			var t5 = scTrigger(".imageSlider",'60% bottom','top top');
+			var t5 = scTrigger(".imageSlider",'50% 70%','70% top', 3);
 			t5
-				.to(".imageSlider img", {scale: "1.18", duration: 3})  // in from left
-				.to(".imageSlider__slide", {x: "75vw", duration: 50},"<-1")  // in from left: ;
-	}
-
-
-	var tweenPicture = TweenMax.to(".sHavanaContentHead__footer img", 1, {scale:1.2, ease:Linear.easeNone});
-
-	// create scene to pin and link animation
-	new ScrollMagic.Scene({
-		triggerElement: ".sHavanaContentHead__footer picture",
-		triggerHook: 0.2,
-		duration: "100%"
-	})
-	.setTween(tweenPicture)
-	// .addIndicators() // add indicators (requires plugin)
-	.addTo(controller);
-
-
-	var tweenPicture = TweenMax.to(".sHavanaContentHead__content-pic img", 1.2, {scale:0.9, ease:Linear.easeNone});
-
-	// create scene to pin and link animation
-	new ScrollMagic.Scene({
-		triggerElement: ".sHavanaContentHead__content-pic picture",
-		triggerHook: 0.2,
-		duration: "100%"
-	})
-	.setTween(tweenPicture)
-	// .addIndicators() // add indicators (requires plugin)
-	.addTo(controller);
-
-
-	var sHavanaContentBodyPicture = TweenMax.to(".sHavanaContentBody__img-wrap img", 1, {scale:1.2, ease:Linear.easeNone});
-
-	// create scene to pin and link animation
-	new ScrollMagic.Scene({
-		triggerElement: ".sHavanaContentBody__img-wrap picture",
-		triggerHook: 0.2,
-		duration: "100%"
-	})
-	.setTween(sHavanaContentBodyPicture)
-	// .addIndicators() // add indicators (requires plugin)
-	.addTo(controller);
+				.from(".imageSlider img", {scale: "1.6", duration: 3, scrub: 2})  // in from left
+				.to(".imageSlider__slide", {x: "75vw", duration: 50}, 
+				"+=2")  // in from left: ;
+			}
+			
+			var t6 = scTrigger('.sHavanaContentHead__footer picture','20% bottom','70% top', .5);
+			t6
+				.to(".sHavanaContentHead__footer img", { scale: 1.2 });
+				
+				var t7 = scTrigger( ".sHavanaContentHead__content-pic picture",'20% bottom','90% top', .5);
+				t7
+				.from(".sHavanaContentHead__content-pic img", {scale:1.2});
+				
+				
+				var t8 = scTrigger('.sHavanaContentBody__img-wrap picture','20% bottom','70% top', .5);
+				t8
+					.from(".sHavanaContentBody__img-wrap img", { scale: 1.2 });
 
 	// Check if the media query is true
 	if (mediaQuery.matches) {
-		var wipeAnimation = new TimelineMax()
-			.fromTo(".sHavanaContentBody__imageSlider img", 1, {x: "0"}, {x: "+75vw", ease: Linear.easeNone})  // in from left
+		var t9 = scTrigger(".sHavanaContentBody__imageSlider",'50% 70%','70% top', 3);
+			t9
+				.from(".sHavanaContentBody__imageSlider img", {scale: "1.6", duration: 3, scrub: 2, delay: 1})  // in from left: ;
+				.to(".sHavanaContentBody__slide", {x: "75vw", duration: 50}, 
+				"+=2")  // in from left: ;
+	} 
 	
-		// create scene to pin and link animation
-		new ScrollMagic.Scene({
-			triggerElement: ".sHavanaContentBody__imageSlider",
-			triggerHook: 0.5,
-			duration: "100%"
-		})
-		// .setPin(".sHavanaContentBody__imageSlider")
-		.setTween(wipeAnimation)
-		// .addIndicators() // add indicators (requires plugin)
-		.addTo(controller);
-	}
 
-	var tweenPicture = TweenMax.to(".sHavanaContentBody__content-pic img", 1.2, {scale:0.9, ease:Linear.easeNone});
+	var t9 = scTrigger('.sHavanaContentBody__content-pic picture','20% bottom','70% top', .5);
+				t9
+					.from(".sHavanaContentBody__content-pic img", { scale: 1.2 });
 
-	// create scene to pin and link animation
-	new ScrollMagic.Scene({
-		triggerElement: ".sHavanaContentBody__content-pic picture",
-		triggerHook: 0.2,
-		duration: "100%"
-	})
-	.setTween(tweenPicture)
-	// .addIndicators() // add indicators (requires plugin)
-	.addTo(controller);
+	// var tweenPicture = TweenMax.to(".sHavanaContentBody__content-pic img", 1.2, {scale:0.9, ease:Linear.easeNone});
 
-	var sHavanaContentBodyPicture2 = TweenMax.to(".img-wrap-js img", 1, {scale:1.2, ease:Linear.easeNone});
+	// // create scene to pin and link animation
+	// new ScrollMagic.Scene({
+	// 	triggerElement: ".sHavanaContentBody__content-pic picture",
+	// 	triggerHook: 0.2,
+	// 	duration: "100%"
+	// })
+	// .setTween(tweenPicture)
+	// // .addIndicators() // add indicators (requires plugin)
+	// .addTo(controller);
+	var t7 = scTrigger( ".img-wrap-js picture",'20% bottom','90% top', .5);
+				t7
+				.from(".img-wrap-js img", {scale:1.2});
+	// var sHavanaContentBodyPicture2 = TweenMax.to(".img-wrap-js img", 1, {scale:1.2, ease:Linear.easeNone});
 
-	// create scene to pin and link animation
-	new ScrollMagic.Scene({
-		triggerElement: ".img-wrap-js picture",
-		triggerHook: 0.2,
-		duration: "100%"
-	})
-	.setTween(sHavanaContentBodyPicture2)
-	// .addIndicators() // add indicators (requires plugin)
-	.addTo(controller);
+	// // create scene to pin and link animation
+	// new ScrollMagic.Scene({
+	// 	triggerElement: ".img-wrap-js picture",
+	// 	triggerHook: 0.2,
+	// 	duration: "100%"
+	// })
+	// .setTween(sHavanaContentBodyPicture2)
+	// // .addIndicators() // add indicators (requires plugin)
+	// .addTo(controller);
 
 
 	if (mediaQuery.matches) {
