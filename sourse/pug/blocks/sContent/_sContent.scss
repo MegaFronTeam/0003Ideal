@@ -191,7 +191,7 @@
 		}
 		// margin-left: rem(16);
 		@include media-breakpoint-up(lg) {
-			// margin-left: rem(32);
+			margin-left: rem(32);
 			margin-bottom: rem(60);
 		}
 		margin-bottom: rem(48);
@@ -199,10 +199,15 @@
 		li {
 			list-style-type: none;
 			position: relative;
+			ol{
+				padding-left: rem(15);
+			}
+			// padding-left: rem(30);
 			&::before {
 				content: counter(num);
 				counter-increment: num;
 				margin-right: rem(15);
+				margin-left: rem(-30);
 			}
 			&:not(:last-child) {
 				margin-bottom: rem(20);
@@ -211,7 +216,7 @@
 				list-style-type: none;
 				position: relative;
 				&::before {
-					content: counter(num2)".";
+					content: counter(num)"."counter(num2);
 					counter-increment: num2;
 					margin-right: rem(5);
 				}

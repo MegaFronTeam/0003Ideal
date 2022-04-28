@@ -145,6 +145,9 @@
 
 
 .secondScreen {
+	&__slider{
+		width: 100%;
+	}
 	// align-items: flex-end;
 	// padding-bottom: rem(73);
 	// position: absolute;

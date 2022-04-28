@@ -1,29 +1,102 @@
+mixin card-wrap(num)
+	
+		+b.A.card-item(href="#")
+			+pic(`news-${num}.jpg`, 'bg')&attributes(attributes)
+			+e.wrap
+				p 20 современных идей домашнего декора для любого любителя дизайна
+				+e.date
+					span 28 января 
+					span 2022
+mixin card-wrap2(num)
+	
+		+b.A.card-item(href="#")
+			picture&attributes(attributes)
+				img.swiper-lazy(class="object-fit-js" src="#" data-src=`img/@2x/news-${num}.jpg` alt="" loading="lazy") 
+			+e.wrap
+				p 20 современных идей домашнего декора для любого любителя дизайна
+				+e.date
+					span 28 января 
+					span 2022
 mixin sNews(data)
 	// start sNews
-	+b.SECTION.sNews.section#sNews&attributes(attributes)
+	+b.SECTION.sNews--page.section#sNews&attributes(attributes)
 		+e.container.container
 			+b.section-title.text-center.d-md-none
 				h3 Новости
 			+e.row.row.align-items-center.justify-content-center
-				mixin card-wrap(num)
-					.col-lg-6
-						+e.A.card-wrap.wow.animate__animated.animate__fadeInUp(href="#")
-							+pic(`news-${num}.jpg`, 'bg')&attributes(attributes)
-							+e.wrap
-								p 20 современных идей домашнего декора для любого любителя дизайна
-								+e.date
-									span 28 января 
-									span 2022
-				+card-wrap('1').img-sm
-				+card-wrap('2').img-lg
-				+card-wrap('3').img-lg
-				+card-wrap('4').img-sm
-				+card-wrap('5').img-sm
-				+card-wrap('6').img-lg
-				+card-wrap('7').img-lg
-				+card-wrap('8').img-sm
-				+card-wrap('9').img-sm
-				+card-wrap('10').img-lg
+				.col-lg-6.wow.animate__animated.animate__fadeInUp
+					+card-wrap('1').img-sm
+				.col-lg-6.wow.animate__animated.animate__fadeInUp
+					+card-wrap('2').img-lg
+				.col-lg-6.wow.animate__animated.animate__fadeInUp
+					+card-wrap('3').img-lg
+				.col-lg-6.wow.animate__animated.animate__fadeInUp
+					+card-wrap('4').img-sm
+				.col-lg-6.wow.animate__animated.animate__fadeInUp
+					+card-wrap('5').img-sm
+				.col-lg-6.wow.animate__animated.animate__fadeInUp
+					+card-wrap('6').img-lg
+				.col-lg-6.wow.animate__animated.animate__fadeInUp
+					+card-wrap('7').img-lg
+				.col-lg-6.wow.animate__animated.animate__fadeInUp
+					+card-wrap('8').img-sm
+				.col-lg-6.wow.animate__animated.animate__fadeInUp
+					+card-wrap('9').img-sm
+				.col-lg-6.wow.animate__animated.animate__fadeInUp
+					+card-wrap('10').img-lg
 				+e.col-btn.col-auto
 					button.btn.btn-outline-primary Еще новости
+	// end sNews
+mixin sNews10(data)
+	// start sNews
+	+b.SECTION.sNews.section#sNews&attributes(attributes)
+		+e.container.container-fluid
+			+b.section-title.text-center
+				h4 Новости
+			.swiper-scrollbar
+			+e.sliders.row
+				mixin wrapper()
+					.swiper-wrapper
+						block
+				+e.col-lg.col
+					+e.slider--js.--lg.swiper
+						+wrapper()
+							+e.slide.swiper-slide: +card-wrap2('1')
+							+e.slide.swiper-slide: +card-wrap2('2')
+							+e.slide.swiper-slide: +card-wrap2('3')
+							+e.slide.swiper-slide: +card-wrap2('4')
+							+e.slide.swiper-slide: +card-wrap2('5')
+							+e.slide.swiper-slide: +card-wrap2('6')
+							+e.slide.swiper-slide: +card-wrap2('7')
+							+e.slide.swiper-slide: +card-wrap2('8')
+							+e.slide.swiper-slide: +card-wrap2('9')
+							+e.slide.swiper-slide: +card-wrap2('10')
+				+e.col-md.col
+					+e.slider--md-js.--md.swiper
+						+wrapper()
+							+e.slide.swiper-slide: +card-wrap2('2')
+							+e.slide.swiper-slide: +card-wrap2('3')
+							+e.slide.swiper-slide: +card-wrap2('4')
+							+e.slide.swiper-slide: +card-wrap2('5')
+							+e.slide.swiper-slide: +card-wrap2('6')
+							+e.slide.swiper-slide: +card-wrap2('7')
+							+e.slide.swiper-slide: +card-wrap2('8')
+							+e.slide.swiper-slide: +card-wrap2('9')
+							+e.slide.swiper-slide: +card-wrap2('10')
+							+e.slide.swiper-slide: +card-wrap2('1')
+				+e.col-md.col.d-none.d-md-block
+					+e.slider--md2-js.--md.swiper
+						+wrapper()
+							+e.slide.swiper-slide: +card-wrap2('3')
+							+e.slide.swiper-slide: +card-wrap2('4')
+							+e.slide.swiper-slide: +card-wrap2('5')
+							+e.slide.swiper-slide: +card-wrap2('6')
+							+e.slide.swiper-slide: +card-wrap2('7')
+							+e.slide.swiper-slide: +card-wrap2('8')
+							+e.slide.swiper-slide: +card-wrap2('9')
+							+e.slide.swiper-slide: +card-wrap2('10')
+							+e.slide.swiper-slide: +card-wrap2('1')
+							+e.slide.swiper-slide: +card-wrap2('2')
+				+e.control-wrap.d-none.d-md-block
+					+arrow()
 	// end sNews

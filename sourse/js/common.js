@@ -263,7 +263,7 @@ function eventHandler() {
 		let topNav = document.querySelector('.top-nav  ');
 		let h = topNav.offsetHeight + 30;
 		let h2 = topNav.offsetHeight + 350;
-		console.log(h);
+		// console.log(h);
 
 		if (!topNav) return;
 		window.scrollY > h
@@ -287,66 +287,8 @@ function eventHandler() {
 	}, { passive: true });
 
 	whenResize();
+ 
 
-
-	let defaultSl = {
-		spaceBetween: 0,
-		lazy: {
-			loadPrevNext: true,
-		},
-		watchOverflow: true,
-		spaceBetween: 0,
-		loop: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		pagination: {
-			el: ' .swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-			// renderBullet: function (index, className) {
-			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-			// }
-		},
-	}
-
-	const swiper4 = new Swiper('.sBanners__slider--js', {
-		// slidesPerView: 5,
-		...defaultSl,
-		slidesPerView: 'auto',
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		pagination: {
-			el: ' .swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-			// renderBullet: function (index, className) {
-			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-			// }
-		},
-	});
-	// modal window
-
-	const firstScreenSwiper = new Swiper('.firstScreen__slider--js', {
-		effect: "fade",
-		// slidesPerView: 1,
-		loop: true,
-		// speed: 1500,
-		allowTouchMove: false,
-		autoplay: {
-			delay: 3500,
-			// disableOnInteraction: false,
-		}
-	});
-	
 	const secondScreenSwiper = new Swiper('.secondScreen__slider--js', {
 		effect: "fade",
 		slidesPerView: 1,
@@ -357,11 +299,11 @@ function eventHandler() {
 		},
 		// speed: 1500,
 		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+			nextEl: '.secondScreen .swiper-button-next',
+			prevEl: '.secondScreen .swiper-button-prev',
 		},
 		pagination: {
-			el: ' .swiper-pagination',
+			el: '.secondScreen .swiper-pagination',
 			type: 'bullets',
 			clickable: true,
 			
@@ -377,6 +319,70 @@ function eventHandler() {
 		}
 	});
 
+
+	const firstScreenSwiper = new Swiper('.firstScreen__slider--js', {
+		effect: "fade",
+		// slidesPerView: 1,
+		loop: true,
+		// speed: 1500,
+		allowTouchMove: false,
+		autoplay: {
+			delay: 3500,
+			// disableOnInteraction: false,
+		}
+	});
+	let opt = { 
+		// slidesPerView: 1,
+		loop: true,
+		speed: 1400,
+		parallax: true,
+		scrollbar: {
+			el: '.swiper-scrollbar',
+			draggable: true,
+		},
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 3
+		},
+		
+	}
+	const NewsSwiper = new Swiper('.sNews__slider--js', {
+		...opt,
+		navigation: {
+			nextEl: ' .swiper-button-next',
+			prevEl: ' .swiper-button-prev',
+		}
+	});
+	
+	const NewsSwiperMd = new Swiper('.sNews__slider--md-js', opt);
+	
+	const NewsSwiperMd2 = new Swiper('.sNews__slider--md2-js', opt);
+
+	NewsSwiper.controller.control = [NewsSwiperMd, NewsSwiperMd2]; 
+	NewsSwiperMd.controller.control = NewsSwiper; 
+  NewsSwiperMd2.controller.control = NewsSwiper;
+
+ 
+	
+var $hoverClass = $('.sNews__sliders');
+var $sl = $('.sNews__slider');
+$sl.on('mousedown touchstart', function (e) {
+    if (e.type === 'mousedown') {
+    $hoverClass.addClass('hovered');
+  }
+});
+$sl.on('mouseup touchend', function (e) {
+    if (e.type === 'mouseup') {
+    $hoverClass.removeClass('hovered');
+  }
+});
+// $sl.on('mouseup touchmove', function (e) {
+//     if (e.type === 'touchmove') {
+//     $hoverClass.removeClass('hovered');
+//   }
+// });
+
+
 	$('.section-title__btn--js').click(function() {
 		$('.section-title--js').addClass('animate__animated animate__fadeOutDown');
 		setTimeout(() => {
@@ -384,6 +390,8 @@ function eventHandler() {
 			$('.index-page').css("overflow", "auto")
 		}, 1000);
 	});
+
+
 
 	// $('.swiper-button-hand').click(function() {
 	// 	if($('.swiper-slide-active')) {
@@ -657,13 +665,13 @@ function eventHandler() {
 	
 	const mediaContentSwiper = new Swiper('.mediaContent__slider--js', {
 		slidesPerView: 1,
-		// loop: true,
+		loop: true,
 		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+			nextEl: '.mediaContent .swiper-button-next',
+			prevEl: '.mediaContent .swiper-button-prev',
 		},
 		pagination: {
-			el: ' .swiper-pagination',
+			el: '.mediaContent .swiper-pagination',
 			type: 'bullets',
 			clickable: true,
 		}

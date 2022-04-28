@@ -20,8 +20,8 @@
 	}
 	--swiperArrowSize: 24px;
 	--swiperArrowPosition: calc(-1 * var(--swiperArrowSize) / 2);
-	--swiperBorderColorDef: #{$white};
 	--swiperColorDef: #{$white};
+	--swiperBorderColorDef: var(--swiperColorDef);
 	--swiperBgDef: transparent;
 	
 	--swiperBorderColorDefHover: #{$white};
