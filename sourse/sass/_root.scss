@@ -15,26 +15,29 @@
 	--sTPB: #{rem(40 * .5)};
 
 	@include media-breakpoint-up(sm){
-
+		
 		--swiperArrowSize: #{rem(31.8)};
 	}
 	--swiperArrowSize: 24px;
-		--swiperArrowPosition: calc(-1 * var(--swiperArrowSize) / 2);
-		--swiperBorderColorDef: #{$white};
-		--swiperColorDef: #{$white};
-		--swiperBgDef: transparent;
+	--swiperArrowPosition: calc(-1 * var(--swiperArrowSize) / 2);
+	--swiperBorderColorDef: #{$white};
+	--swiperColorDef: #{$white};
+	--swiperBgDef: transparent;
 	
-		--swiperBorderColorDefHover: #{$white};
-		--swiperColorDefHover: #{$body-color};
-		--swiperBgDefHover: #ffffff;
-
-
+	--swiperBorderColorDefHover: #{$white};
+	--swiperColorDefHover: #{$body-color};
+	--swiperBgDefHover: #ffffff;
+	
+	
 	--fancybox-bg: rgba(24, 24, 27, .77);
-
+	
 	--swiper-pagination-bullet-inactive-color: none;
 	--swiper-pagination-color: none;
-
+	
+	@include media-breakpoint-up(sm){
 	--container-g-x: #{rem(24)};
+}
+--container-g-x: #{rem(16)};
 
 	  //  --carousel-button-width: 48px;
 	  //  --carousel-button-height: 48px;

@@ -1,14 +1,15 @@
 mixin sPetersburgInfo(img1, img2, text)
 	// start sPetersburgInfo
 	+b.sPetersburgInfo.section#sPetersburgInfo&attributes(attributes)
-		+e.container.container-fluid
+		+e.container--42.container-fluid
 			.row
 				.col-6.col-lg-4
 					+pic(`saint-petersburg-img-${img1}.jpg`, 'bg').wow.animate__animated.animate__fadeInUp
 				.col-6.col-lg-4
 					+pic(`saint-petersburg-img-${img2}.jpg`, 'bg').wow.animate__animated.animate__fadeInUp
 				.col-lg-4
-					p.wow.animate__animated.animate__fadeInUp!= text
+					+e.content.wow.animate__animated.animate__fadeInUp
+						p!= text
 	// end sPetersburgInfo
 
 mixin sPetersburgInfo2(img3, text)
@@ -19,5 +20,6 @@ mixin sPetersburgInfo2(img3, text)
 				.col-lg-8
 					+pic(`saint-petersburg-img-${img3}.jpg`, 'bg').wow.animate__animated.animate__fadeInUp
 				.col-lg-4
-					p.wow.animate__animated.animate__fadeInUp!= text
+					+e.content.wow.animate__animated.animate__fadeInUp
+						p!= text
 	// end sPetersburgInfo
