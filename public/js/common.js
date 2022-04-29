@@ -261,11 +261,11 @@ function eventHandler() {
 
 	function setFixedNav() {
 		let topNav = document.querySelector('.top-nav  ');
+		// console.log(h);
+		
+		if (!topNav) return;
 		let h = topNav.offsetHeight + 30;
 		let h2 = topNav.offsetHeight + 350;
-		// console.log(h);
-
-		if (!topNav) return;
 		window.scrollY > h
 			? (topNav.classList.add('fixed'), setTimeout(()=> topNav.classList.add('active'), 500))
 			: (topNav.classList.remove('fixed'), setTimeout(()=> topNav.classList.remove('active'), 500));
