@@ -570,3 +570,45 @@ iframe {
   animation-name: fadeInUpSlide;
 	animation-duration: .3s;
 }
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+
+
+
+.filepond--root,
+.filepond--drop-label {
+	min-height: rem(60) !important;
+}
+.filepond--drop-label {
+	cursor: pointer;
+	background-color: #fff;
+	border: 1px solid #D1D1D1;
+	color: #8A8A8A;
+	border-radius: 4px;
+	// height: rem(104) !important;
+	border-radius: 4px;
+	label {
+		font-size: 14px !important;
+		max-width: 275px;
+		font-family: $font-family-sans-serif;
+	}
+}
+.filepond--credits {
+	display: none;
+}

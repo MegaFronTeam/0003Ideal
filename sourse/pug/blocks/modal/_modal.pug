@@ -30,6 +30,8 @@ mixin modal()
 							+e.required.text-gray-medium *
 					+e.col-textarea.col-lg-12
 						+input("Напишите дополнительную информацию", 'textarea')
+					+e.col-textarea.col-lg-12.mt-3
+						input.filepond(type='file' name='filepond' multiple='' data-allow-reorder='true' data-max-file-size='3MB' data-max-files='3')
 					.col-lg-12.text-center
 						+e.BUTTON.btn.btn(type="submit") Отправить
 					.col

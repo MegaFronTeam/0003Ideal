@@ -6,6 +6,11 @@ mixin allcss()
 	link(rel='preconnect' href='https://fonts.googleapis.com')
 	link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
 	link(href='https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;500;700&display=swap' rel='stylesheet')
+
+	link(href="libs/@fancyapps/ui/fancybox.css", rel="stylesheet")
+	link(href="libs/filepond/filepond.min.css", rel="stylesheet")
+	link(href="libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css", rel="stylesheet")
+	
 	link(href=`css/main.min.css?v=${version}`, rel="stylesheet")
 
 mixin allcjs() 
@@ -19,10 +24,15 @@ mixin allcjs()
 	script(src="libs/scrollmagic/scrollmagic/minified/ScrollMagic.min.js")
 	script(src="libs/gsap/ScrollToPlugin.min.js")
 	script(src="libs/gsap/EasePack.min.js")
+
+	script(  src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.min.js") 
+	script(  src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.min.js") 
+	script(  src="https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.min.js") 
+	script(  src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js") 
+	script(  src="https://unpkg.com/filepond/dist/filepond.min.js") 
+
 	script(src="libs/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js")
 	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-
-
 	script(src="libs/gsap/ScrollTrigger.min.js") 
 	script(src="libs/gsap/ScrollToPlugin.min.js") 
 	script(src="libs/gsap/gsap.min.js") 

@@ -47,7 +47,7 @@ mixin logo()
 
 mixin page-head(data)
 	+b.page-head.bg-wrap&attributes(attributes)
-		+img(`${data.img}`, 'bg').picture-bg
+		+pic(`${data.img}`,'bg').picture-bg
 		+e.container.container.animate__animated.animate__fadeInUp
 			+e.title.h1!= data.title
 			+e.P.subtitle!= data.text

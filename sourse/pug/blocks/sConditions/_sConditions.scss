@@ -26,6 +26,11 @@
 	&__col-right-side {
 	}
 	.sCards {
+		&__text{
+			margin-left: auto;
+			margin-right: auto;
+			max-width: rem(450);
+		}
 		&__textwrap {
 			width: 100%;
 			position: absolute;	
@@ -103,22 +108,22 @@
 			margin-bottom: 0;
 		}
 	}
-	.cards-img {
-		@include media-breakpoint-up(xl) {
-			&-7 {
-				bottom: 38%;
-			}
-			&-8 {
-				bottom: 0;
-			}
-			&-11 {
-				bottom: -9%;
-				height: 109%;
-				left: -9%;
-				width: 109%;
-			}
-		}
-	}
+	// .cards-img {
+	// 	@include media-breakpoint-up(xl) {
+	// 		&-7 {
+	// 			bottom: 38%;
+	// 		}
+	// 		&-8 {
+	// 			bottom: 0;
+	// 		}
+	// 		&-11 {
+	// 			bottom: -9%;
+	// 			height: 109%;
+	// 			left: -9%;
+	// 			width: 109%;
+	// 		}
+	// 	}
+	// }
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

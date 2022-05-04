@@ -99,7 +99,7 @@ $success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
 $danger: $red !default;
-$light: $gray-100 !default;
+$light: #DFDFDF;
 $dark: $gray-900 !default;
 // scss-docs-end theme-color-variables
 
@@ -117,7 +117,6 @@ $theme-colors: (
 
 $theme-colors: map-remove($theme-colors, 
 "info", 
-"light", 
 "dark",  
 "success",
 'warning', 

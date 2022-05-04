@@ -449,12 +449,16 @@ $sl.on('mouseup touchend', function (e) {
 	var t3 = scTrigger(".sCards__content--3");
 	t3.from(".cards-img-5", { y: "50%"});
 
-	var t4 = scTrigger(".sCards__content--last-card");
-	t4
-		.to(".cards-img-6", { y: "-6%", duration: 1.5 })
-		// .to(".cards-img-11", { y: "-19%", duration: 2 })
-
-	}
+		let lastCard = document.querySelectorAll(".sCards__content--last-card");
+		for (const iterator of lastCard) {
+			
+			var t4 = scTrigger(iterator);
+			t4
+				.to(iterator.querySelector(".cards-img-6"), { y: "-8%", duration: 1.5 })
+				// .to(".cards-img-11", { y: "-19%", duration: 2 })
+		
+			}
+		}
 
 	var controller = new ScrollMagic.Controller();
 
@@ -548,7 +552,12 @@ $sl.on('mouseup touchend', function (e) {
 	// .addTo(controller);
 	var t7 = scTrigger( ".img-wrap-js picture",'20% bottom','90% top', .5);
 				t7
-				.from(".img-wrap-js img", {scale:1.2});
+					.from(".img-wrap-js img", { scale: 1.2 });
+	
+	var t8 = scTrigger( ".page-head + * ",'top bottom','top top', .5);
+			t8
+				.to(".page-head picture", { scale: 1.2 });
+	
 	// var sHavanaContentBodyPicture2 = TweenMax.to(".img-wrap-js img", 1, {scale:1.2, ease:Linear.easeNone});
 
 	// // create scene to pin and link animation
@@ -714,6 +723,40 @@ const sConditionsSwiper = new Swiper('.sConditionsSlider__slider--js', {
 		},
 	},
 });
+	
+var wow = new WOW(
+	{
+		animateClass: 'animate__animated', // animation css class (default is animated)
+		mobile: false       // trigger animations on mobile devices (default is true)
+	}
+);
+wow.init();
+
+
+
+FilePond.registerPlugin(
+	// encodes the file as base64 data
+	FilePondPluginFileEncode,
+
+	// validates the size of the file
+	FilePondPluginFileValidateSize,
+
+	// corrects mobile image orientation
+	FilePondPluginImageExifOrientation,
+
+	// previews dropped images
+	FilePondPluginImagePreview
+);
+
+// Select the file input and use 
+// create() to turn it into a pond
+FilePond.create(
+	document.querySelector('.filepond'),
+	{
+		// labelIdle: `Drag & Drop your picture or <span class="filepond--label-action">Browse</span>`,
+		labelIdle: `Перетащите свой файл  <br> или загрузите`,
+	}
+);
 
 };
 if (document.readyState !== 'loading') {
