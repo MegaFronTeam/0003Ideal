@@ -11,7 +11,6 @@
 11. <https://megafronteam.github.io/0003Ideal/public/13-сontacts.html>
 12. <https://megafronteam.github.io/0003Ideal/public/14-conditions.html>
 13. <https://megafronteam.github.io/0003Ideal/public/00-modal.html>
-==== 
-в  работе
-2.  <https://megafronteam.github.io/0003Ideal/public/07-content-american.html>
+14. <https://megafronteam.github.io/0003Ideal/public/07-content-american.html>
+====  в  работе
 3.  <https://megafronteam.github.io/0003Ideal/public/05-content-amsterdam.html>

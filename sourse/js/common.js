@@ -576,62 +576,93 @@ $sl.on('mouseup touchend', function (e) {
 
 	if (mediaQuery.matches) {
 		// var sAmericanContent = TweenMax.to(".sAmericanContent__wrap", 1, {scale:1.2, ease:Linear.easeNone});
-		var t13 = scTrigger( ".sAmericanContent--js",'top  top','+=200%', .5, true );
+		var t13 = scTrigger( ".sAmericanContent--js",'top  top','+=150%', .2, true );
 		t13
 			.fromTo(".sAmericanContent--js .sAmericanContent__wrap", { x: "100%", opacity: 0 }, { x: "0%", opacity: 1 })
 			.fromTo(".sAmericanContent--js  .sAmericanContent__wrap2", { opacity: 0 }, { opacity: 1 });
 		
-		var t14 = scTrigger( ".sAmericanContent--js2",'top  top','+=200%', .5, true );
+		var t14 = scTrigger( ".sAmericanContent--js2",'top  top','+=150%', .2, true );
 		t14
 			.fromTo(" .sAmericanContent--js2 .sAmericanContent__wrap",     {x:  "-100%", opacity:0}, {x: "0%", opacity: 1}) 
-			.fromTo(".sAmericanContent--js  .sAmericanContent__wrap2",     { opacity:0}, {opacity: 1})  
+			.fromTo(".sAmericanContent--js2  .sAmericanContent__wrap2",     { opacity:0}, {opacity: 1})  
 
 		
 		
-		var t15 = scTrigger(".sAmericanContent--js3", 'top  top', '+=200%', .5, true);
+		// var t151 = scTrigger(".sAmericanContent__picture", 'top  bottom', '+=100%', .2);
+		// t151
+		var t151 = scTrigger(".sAmericanContent--js3",'top bottom');
+		t151.fromTo(".sAmericanContent--js3 .sAmericanContent__picture img", { opacity: 0, scale: 1.6, 'transform-origin': 'top center', delay:-1 }, { opacity: 1, scale: 1 })
+		var t15 = scTrigger(".sAmericanContent--js3", 'top  bottom', '+=200%', .2, true);
 		t15
+		// .fromTo(" .sAmericanContent__picture img", { opacity: 0, scale: 1.6, 'transform-origin': 'top center' }, { opacity: 1, scale: 1 })
+		
+		// var t16 = scTrigger(".sAmericanContent--js3", 'top  top', '+=200%', .2, true);
+		// t16
+			.to(" .sAmericanContent--js3 .sAmericanContent__bg", { y: "0"})
 			.fromTo(" .sAmericanContent--js3 .sAmericanContent__wrap", { x: "100%", opacity: 0 }, { x: "0%", opacity: 1 })
-			.fromTo(".sAmericanContent--j3  .sAmericanContent__wrap2", { opacity: 0 }, { opacity: 1 }, ">-1");
+			.fromTo(".sAmericanContent--js3  .sAmericanContent__wrap2", { opacity: 0 }, { opacity: 1 }, ">-1");
+		
+		var t161 = scTrigger(".sAmericanContent--js4",'top bottom');
+		t161.fromTo(".sAmericanContent--js4 .sAmericanContent__picture img", { opacity: 0, scale: 1.6, 'transform-origin': 'top center', delay:-1 }, { opacity: 1, scale: 1 })
+		
+		var t16 = scTrigger(".sAmericanContent--js4", 'top  bottom', '+=200%', .2, true);
+		t16
+		// .fromTo(" .sAmericanContent__picture img", { opacity: 0, scale: 1.6, 'transform-origin': 'top center' }, { opacity: 1, scale: 1 })
+		
+		// var t16 = scTrigger(".sAmericanContent--js3", 'top  top', '+=200%', .2, true);
+		// t16
+			.to(" .sAmericanContent--js4 :is(.sAmericanContent__bg, .sAmericanContent__wrap)", { y: "0"})
+			.fromTo(" .sAmericanContent--js4 .sAmericanContent__wrap2", { x: "100%", opacity: 0 }, { x: "0%", opacity: 1 })
+			// .fromTo(".sAmericanContent--js4  .sAmericanContent__wrap2", { opacity: 0 }, { opacity: 1 }, ">-1");
+		
+		// var t17 = scTrigger(".sAmericanContent--js5", 'top  top', '+=100%', .2, true);
+		// t17
+		// 	.fromTo(" .sAmericanContent--js5 .sAmericanContent__wrap", { x: "100%", opacity: 0 }, { x: "0%", opacity: 1 })
+		// 	.fromTo(".sAmericanContent--js5  .sAmericanContent__wrap2", { opacity: 0 }, { opacity: 1 }, ">-1");
+		var t17 = scTrigger(".sAmericanContent--js5", 'top  top', '+=100%', .2, true);
+		t17
+			.fromTo(" .sAmericanContent--js5 .sAmericanContent__wrap", { x: "100%", opacity: 0 }, { x: "0%", opacity: 1 })
+			.fromTo(".sAmericanContent--js5  .sAmericanContent__wrap2", { opacity: 0 }, { opacity: 1 }, ">-.5");
 
-		var sAmericanContent3 = new TimelineMax()
-			// .fromTo(".sAmericanContent__wrap", 1, {x: "100%"}, {x: "0", ease: Linear.easeNone})
-			.fromTo(".sAmericanContent--js5 .sAmericanContent__wrap",    0.1, {x:  "100%"}, {x: "0%", autoAlpha: 1, ease: Linear.easeNone}) 
+		// var sAmericanContent3 = new TimelineMax()
+		// 	// .fromTo(".sAmericanContent__wrap", 1, {x: "100%"}, {x: "0", ease: Linear.easeNone})
+		// 	.fromTo(".sAmericanContent--js5 .sAmericanContent__wrap",    0.1, {x:  "100%"}, {x: "0%", autoAlpha: 1, ease: Linear.easeNone}) 
 	
-		// create scene to pin and link animation
-		new ScrollMagic.Scene({
-			triggerElement: ".sAmericanContent--js5",
-			triggerHook: 'onLeave',
-			duration: "100%"
-		})
-		.setTween(sAmericanContent3)
-		.setPin(".sAmericanContent--js5")
-		// .addIndicators() // add indicators (requires plugin)
-		.addTo(controller);
+		// // create scene to pin and link animation
+		// new ScrollMagic.Scene({
+		// 	triggerElement: ".sAmericanContent--js5",
+		// 	triggerHook: 'onLeave',
+		// 	duration: "100%"
+		// })
+		// .setTween(sAmericanContent3)
+		// .setPin(".sAmericanContent--js5")
+		// // .addIndicators() // add indicators (requires plugin)
+		// .addTo(controller);
 	}
 
-	var sAmericanContentPicture2 = TweenMax.to(".sAmericanContent__section-picture img", 1, {scale:1, ease:Linear.easeNone});
+	// var sAmericanContentPicture2 = TweenMax.to(".sAmericanContent__section-picture img", 1, {scale:1, ease:Linear.easeNone});
 
-	// create scene to pin and link animation
-	new ScrollMagic.Scene({
-		triggerElement: ".sAmericanContent__section-picture",
-		triggerHook: 0.5,
-		duration: "100%"
-	})
-	.setTween(sAmericanContentPicture2)
-	// .addIndicators() // add indicators (requires plugin)
-	.addTo(controller);
+	// // create scene to pin and link animation
+	// new ScrollMagic.Scene({
+	// 	triggerElement: ".sAmericanContent__section-picture",
+	// 	triggerHook: 0.5,
+	// 	duration: "100%"
+	// })
+	// .setTween(sAmericanContentPicture2)
+	// // .addIndicators() // add indicators (requires plugin)
+	// .addTo(controller);
 
-	var sAmericanContentBodyPicture2 = TweenMax.to(".sAmericanBody__bg-img img", 1, {scale:1, ease:Linear.easeNone});
+	// var sAmericanContentBodyPicture2 = TweenMax.to(".sAmericanBody__bg-img img", 1, {scale:1, ease:Linear.easeNone});
 
-	// create scene to pin and link animation
-	new ScrollMagic.Scene({
-		triggerElement: ".sAmericanBody__bg-img",
-		triggerHook: 0.5,
-		duration: "100%"
-	})
-	.setTween(sAmericanContentBodyPicture2)
-	// .addIndicators() // add indicators (requires plugin)
-	.addTo(controller);
+	// // create scene to pin and link animation
+	// new ScrollMagic.Scene({
+	// 	triggerElement: ".sAmericanBody__bg-img",
+	// 	triggerHook: 0.5,
+	// 	duration: "100%"
+	// })
+	// .setTween(sAmericanContentBodyPicture2)
+	// // .addIndicators() // add indicators (requires plugin)
+	// .addTo(controller);
 
 	// const scroll = new Scrooth({
 	// 	element: window,
