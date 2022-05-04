@@ -409,7 +409,7 @@ $sl.on('mouseup touchend', function (e) {
 		toggleActions: "restart pause resume pause"
 	});
 
-	let scTrigger = (el, start=  '50% bottom', end ='top top', scrub= .8) => {
+	let scTrigger = (el, start=  '50% bottom', end ='top top', scrub= .8, pin= false) => {
 		return gsap.timeline({
 
 			scrollTrigger:  {
@@ -418,6 +418,7 @@ $sl.on('mouseup touchend', function (e) {
 				start,
 				end,
 				scrub, 
+				pin,
 				// invalidateOnRefresh: true,
 				defaults: {
 					// ease: "power3",
@@ -537,8 +538,8 @@ $sl.on('mouseup touchend', function (e) {
 	} 
 	
 
-	var t9 = scTrigger('.sHavanaContentBody__content-pic picture','20% bottom','70% top', .5);
-				t9
+	var t10 = scTrigger('.sHavanaContentBody__content-pic picture','20% bottom','70% top', .5);
+				t10
 					.from(".sHavanaContentBody__content-pic img", { scale: 1.2 });
 
 	// var tweenPicture = TweenMax.to(".sHavanaContentBody__content-pic img", 1.2, {scale:0.9, ease:Linear.easeNone});
@@ -552,12 +553,12 @@ $sl.on('mouseup touchend', function (e) {
 	// .setTween(tweenPicture)
 	// // .addIndicators() // add indicators (requires plugin)
 	// .addTo(controller);
-	var t7 = scTrigger( ".img-wrap-js picture",'20% bottom','90% top', .5);
-				t7
+	var t11 = scTrigger( ".img-wrap-js picture",'20% bottom','90% top', .5);
+				t11
 					.from(".img-wrap-js img", { scale: 1.2 });
 	
-	var t8 = scTrigger( ".page-head + * ",'top bottom','top top', .5);
-			t8
+	var t12 = scTrigger( ".page-head + * ",'top bottom','top top', .5);
+			t12
 				.to(".page-head picture", { scale: 1.2 });
 	
 	// var sHavanaContentBodyPicture2 = TweenMax.to(".img-wrap-js img", 1, {scale:1.2, ease:Linear.easeNone});
@@ -575,57 +576,22 @@ $sl.on('mouseup touchend', function (e) {
 
 	if (mediaQuery.matches) {
 		// var sAmericanContent = TweenMax.to(".sAmericanContent__wrap", 1, {scale:1.2, ease:Linear.easeNone});
-		var sAmericanContent = new TimelineMax()
-			// .fromTo(".sAmericanContent__wrap", 1, {x: "100%"}, {x: "0", ease: Linear.easeNone})
-			.fromTo(".sAmericanContent--js .sAmericanContent__wrap",    0.1, {x:  "100%"}, {x: "0%", autoAlpha: 1, ease: Linear.easeNone}) 
-	
-		// create scene to pin and link animation
-		new ScrollMagic.Scene({
-			triggerElement: ".sAmericanContent--js",
-			triggerHook: 'onLeave',
-			duration: "100%"
-		})
-		.setTween(sAmericanContent)
-		.setPin(".sAmericanContent--js")
-		.setClassToggle(".sAmericanContent--js", "visible")
-		// .addIndicators() // add indicators (requires plugin)
-		.addTo(controller);
+		var t13 = scTrigger( ".sAmericanContent--js",'top  top','+=200%', .5, true );
+		t13
+			.fromTo(".sAmericanContent--js .sAmericanContent__wrap", { x: "100%", opacity: 0 }, { x: "0%", opacity: 1 })
+			.fromTo(".sAmericanContent--js  .sAmericanContent__wrap2", { opacity: 0 }, { opacity: 1 });
 		
+		var t14 = scTrigger( ".sAmericanContent--js2",'top  top','+=200%', .5, true );
+		t14
+			.fromTo(" .sAmericanContent--js2 .sAmericanContent__wrap",     {x:  "-100%", opacity:0}, {x: "0%", opacity: 1}) 
+			.fromTo(".sAmericanContent--js  .sAmericanContent__wrap2",     { opacity:0}, {opacity: 1})  
 
-
-		var sAmericanContent = new TimelineMax()
-			// .fromTo(".sAmericanContent__wrap", 1, {x: "100%"}, {x: "0", ease: Linear.easeNone})
-			.fromTo(".sAmericanContent--js2 .sAmericanContent__wrap",    0.1, {x:  "-100%"}, {x: "0%", autoAlpha: 1, ease: Linear.easeNone}) 
-	
-		// create scene to pin and link animation
-		new ScrollMagic.Scene({
-			triggerElement: ".sAmericanContent--js2",
-			triggerHook: 'onLeave',
-			duration: "100%"
-		})
-		.setTween(sAmericanContent)
-		.setPin(".sAmericanContent--js2")
-		.setClassToggle(".sAmericanContent--js2", "visible")
-		// .addIndicators() // add indicators (requires plugin)
-		.addTo(controller);
-
-
-
-		var sAmericanContent2 = new TimelineMax()
-			// .fromTo(".sAmericanContent__wrap", 1, {x: "100%"}, {x: "0", ease: Linear.easeNone})
-			.fromTo(".sAmericanContent--js3 .sAmericanContent__wrap",    0.1, {x:  "100%"}, {x: "0%", autoAlpha: 1, ease: Linear.easeNone}) 
-	
-		// create scene to pin and link animation
-		new ScrollMagic.Scene({
-			triggerElement: ".sAmericanContent--js3",
-			triggerHook: 'onLeave',
-			duration: "100%"
-		})
-		.setTween(sAmericanContent2)
-		.setPin(".sAmericanContent--js3")
-		// .addIndicators() // add indicators (requires plugin)
-		.addTo(controller);
-
+		
+		
+		var t15 = scTrigger(".sAmericanContent--js3", 'top  top', '+=200%', .5, true);
+		t15
+			.fromTo(" .sAmericanContent--js3 .sAmericanContent__wrap", { x: "100%", opacity: 0 }, { x: "0%", opacity: 1 })
+			.fromTo(".sAmericanContent--j3  .sAmericanContent__wrap2", { opacity: 0 }, { opacity: 1 }, ">-1");
 
 		var sAmericanContent3 = new TimelineMax()
 			// .fromTo(".sAmericanContent__wrap", 1, {x: "100%"}, {x: "0", ease: Linear.easeNone})
