@@ -36,7 +36,7 @@
 	&__img {
 		@include block(619, 558);
 		@include media-breakpoint-up(lg) {
-			max-width: 619px;
+			max-width: 100%;
 		}
 		@include media-breakpoint-down(sm) {
 			--ratio: 958/619;
@@ -52,15 +52,15 @@
 	&__text {
 		font-size: rem(14);
 		line-height: 1.43em;
-		max-width: 394px;
+		max-width: rem(394px);
 		margin-left: auto;
 		margin-bottom: 0;
 		@include media-breakpoint-down(lg) {
 			margin-right: auto;
-			padding: rem(24) 20px 0;
+			padding: rem(24) rem(20px) 0;
 		}
 		@include media-breakpoint-up(lg) {
-			padding-top: 60px;
+			padding-top: rem(60px);
 		}
 	}
 	&--1 &__img-wrap {
@@ -74,8 +74,9 @@
 		max-width: rem(296);
 		padding: rem(13);
 		@include media-breakpoint-up(lg) {
+			max-width: calc(296 / 620 * 50%);
 			position: absolute;
-			right: calc(50% - 148px);
+			left: 38%;
 			bottom: -58px;
 
 			// transform: translateX(50%);
@@ -83,7 +84,7 @@
 		@include media-breakpoint-down(lg) {
 			margin-left: auto;
 			margin-right: auto;
-			margin-top: -143px;
+			margin-top: rem(-143px);
 			position: relative;
 			z-index: 10;
 		}
@@ -114,10 +115,10 @@
 		}
 		.sAmericanBody__bg-img {
 			@include block(1280, 705);
-			margin-top: 40px;
+			margin-top:rem( 40px);
 			overflow: hidden;
 			@include media-breakpoint-up(lg) {
-				margin-top: 91px;
+				margin-top: rem(91px);
 			}
 			img {
 				transform: scale(1.2);
