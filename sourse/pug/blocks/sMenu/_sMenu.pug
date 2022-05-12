@@ -7,7 +7,7 @@ mixin menu-item(i, t)
 mixin sMenu(data)
 	// start sMenu
 	+b.sMenu(class="menu-mobile--js")#sMenu&attributes(attributes)
-		.container
+		.container-fluid
 			+b.section-title.text-center
 				.h4 Готовые решения
 			+e.row.row
@@ -18,7 +18,7 @@ mixin sMenu(data)
 				+menu-item(5, 'Париж')
 				+menu-item(6, 'Стокгольм')
 				+menu-item(7, 'Санкт-Петербург')
-		.container
+		.container-fluid
 			+e.row-footer.row
 				.col-12.col-lg
 					+mnu()
