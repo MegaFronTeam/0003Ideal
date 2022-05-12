@@ -131,6 +131,8 @@ $output-bourbon-deprecation-warnings: false;
 @import '../pug/blocks/404block/_404block.scss';
 @import '../pug/blocks/sConditions/_sConditions.scss';
 @import '../pug/blocks/sConditionsSlider/_sConditionsSlider.scss';
+@import '../pug/blocks/am-content1/_am-content1.scss';
+@import '../pug/blocks/am-content2/_am-content2.scss';
 
 @import "media"; // Всегда в конце
 
