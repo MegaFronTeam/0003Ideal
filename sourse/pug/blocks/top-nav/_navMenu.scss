@@ -110,10 +110,33 @@
 		height: calc(var(--vh, 1vh) * 100);
 		top: 0;
 		right: 0;
+		visibility: hidden;
+		width: 100%;
+			// transform: translate3d(0, -120%,0);
+			z-index: -1;
+			opacity: 0;
+		transition: opacity 0.5s, visibility 0s 0.5s;
+		&.active{
+			transition: opacity 0.5s;
+			opacity: 1; 
+			visibility: visible;
+			.container-fluid > *{
+				opacity: 1; 
+				transform: rotateX(0deg);
+			}
+		}
 		&:not(.active){
-			transform: translate3d(0, -120%,0);
-			--opacity: 0;
+			
 		}
 		@include mt(.6s);
 		will-change: transform;
+		.container-fluid{
+			perspective: 1200px;
+			& > * {
+				opacity: 0.4; 
+				transform: translateY(-15%) rotateX(15deg); 
+				transition: transform 0.5s, opacity 0.5s;
+			}
+
+		}
 	}

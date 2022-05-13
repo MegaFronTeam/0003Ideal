@@ -35,9 +35,9 @@
 		width: 100%;
 		position: absolute;
 		left: 0;
-		top: 0;
+		top: 0; 
 		object-fit: cover;
-		height: 100%;
+		height: calc(100% + 40vh);
 	}
 	&__img-wrap{
 		overflow: hidden;

@@ -19,7 +19,7 @@ include ../blocks/am-content1/_am-content1.pug
 include ../blocks/am-content2/_am-content2.pug
 
 block variables
-	- let  mainPage= 'inner-page' 
+	- let  mainPage= 'inner-page page-amsterdam' 
 	- let  bg= '03-content-berlin.jpg'
 
 block title
@@ -33,6 +33,9 @@ block pagecontent
 	//- +topLine
 	+top-nav()
 	//- +headerBlock
+	+b.preload-block--head 
+		+e.slide--dark
+
 	+page-head({
 		img: 'header-bg-5.jpg',
 		title: 'Амстердам',
@@ -41,9 +44,13 @@ block pagecontent
 	+sMenu
 	+am-content1
 	+b.img-wrap-full
+		+b.preload-block
+			+e.slide
 		+img('am-3.jpg').w-100
 	+am-content2
 	+b.img-wrap-full
+		+b.preload-block
+			+e.slide
 		+img('am-5.jpg').w-100
 	+am-content22
 	+fullPageImg('sAmsterdamContent-img-1.jpg')

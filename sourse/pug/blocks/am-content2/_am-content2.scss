@@ -27,11 +27,11 @@
 
 	img{
 		width: 100%;
-		height: 100%;
 		position: absolute;
 		left: 0;
-		top: 0;
+		top: 0; 
 		object-fit: cover;
+		height: calc(100% + 40vh);
 	}
 	&__img-wrap{
 		overflow: hidden;
@@ -69,8 +69,12 @@
 
 				@include block(518, 544);
 			}
-			}
+		}
 	}
+	&__img-wrap--lg{
+		@include block(762, 614);
+	}
+ 
 	&--3 &__col--color{
 		@include media-breakpoint-up(lg) {
 			@include block(762, 201);

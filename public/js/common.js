@@ -90,9 +90,9 @@ const JSCCommon = {
 			if (!container && !toggle) this.closeMenu();
 		}, { passive: true });
 
-		window.addEventListener('resize', () => {
-			if (window.matchMedia("(min-width: 992px)").matches) this.closeMenu();
-		}, { passive: true });
+		// window.addEventListener('resize', () => {
+		// 	if (window.matchMedia("(min-width: 992px)").matches) this.closeMenu();
+		// }, { passive: true });
 	},
 
 	// tabs  .
@@ -585,7 +585,16 @@ function eventHandler() {
 		t17
 			.fromTo(" .sAmericanContent--js5 .sAmericanContent__wrap", { x: "100%", opacity: 0 }, { x: "0%", opacity: 1 })
 			.fromTo(".sAmericanContent--js5  .sAmericanContent__wrap2", { opacity: 0 }, { opacity: 1 }, ">-.5");
-
+			
+	}
+	let iwrap = document.querySelectorAll(".am-content1__img-wrap, .am-content2__img-wrap, .img-wrap-full");
+	if (iwrap) {
+		for (const iterator of iwrap) {
+			
+			var t188 = scTrigger(iterator, '5% bottom', 'bottom  top', 0);
+			t188
+			.to(iterator.querySelector("img"), { y: "-40vh"});
+		}
 	}
 
 	if (document.querySelector(".sCards")) {
@@ -621,6 +630,25 @@ function eventHandler() {
 
 		}
 	}
+
+
+	gsap.utils.toArray(" .preload-block").forEach(wow => { 
+		const animate = wow.dataset.animate;
+		function myfunction() { 
+			window.setTimeout( () => { wow.classList.add('start')}, 100);
+			window.setTimeout( () => { wow.classList.add('finish')}, 500);
+		};
+		const rect = wow.getBoundingClientRect(); 
+		ScrollTrigger.create({
+			scroller: scroller,
+			trigger: wow,
+			start: '10% bottom', 
+			toggleActions: "play none play none",
+			onEnter: () => myfunction(),
+			onLeaveBack: () => myfunction(),
+			invalidateOnRefresh: true,
+		});
+	})
 
 	const mediaContentSwiper = new Swiper('.mediaContent__slider--js', {
 		slidesPerView: 1,
@@ -715,10 +743,11 @@ if (document.readyState !== 'loading') {
 	document.addEventListener('DOMContentLoaded', eventHandler);
 }
 
-// window.onload = function () {
-// 	document.body.classList.add('loaded_hiding');
-// 	window.setTimeout(function () {
-// 		document.body.classList.add('loaded');
-// 		document.body.classList.remove('loaded_hiding');
-// 	}, 500);
-// }
+window.onload = function () { 
+	let pr = document.querySelector('.preload-block--head');
+	if (pr) {
+		
+		window.setTimeout( () => { pr.classList.add('start')}, 100);
+		window.setTimeout( () => { pr.classList.add('finish')}, 500);
+	}
+}
