@@ -225,6 +225,16 @@
 		z-index: 11;
 		// bottom: rem(17);
 		--swiperArrowPosition: var(--container-g-x);
+		&-next {
+			.icon {
+				margin-left: 1px;
+			}
+		}
+		&-prev {
+			.icon {
+				margin-right: 1px;
+			}
+		}
 	}
 
 	@include media-breakpoint-up(md) {
