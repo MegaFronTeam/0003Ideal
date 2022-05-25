@@ -54,9 +54,9 @@
 			// transform: translateY(15.800px);
 			.logo {
 				background-color: $white;
-				box-shadow: 3px 4px 7px 0px #00000091;
-				padding: 10px;
-				border-radius: 10px;
+				// box-shadow: 3px 4px 7px 0px #00000091;
+				padding: 11px;
+				border-radius: 21px;
 				svg {
 					[fill="black"] {
 						fill: black !important;
@@ -64,7 +64,7 @@
 				}
 			}
 			.toggle-menu-mobile {
-				box-shadow: 3px 4px 7px 0px #00000091;
+				// box-shadow: 3px 4px 7px 0px #00000091;
 			}
 		}
 	}
