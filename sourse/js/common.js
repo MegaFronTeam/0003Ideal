@@ -551,7 +551,7 @@ function eventHandler() {
 	// // .addIndicators() // add indicators (requires plugin)
 	// .addTo(controller);
 
-	var t131 = scTrigger(".headerBlock", 'top  10%', '+=350vh',  0, true, true);
+	var t131 = scTrigger(".headerBlock", 'top  10%', '+=350vh',  0, true);
 	t131
 		.to(".firstScreen .section-title--js", { y: "100%", opacity: 0 })
 		.to(".firstScreen", { y: "100%", opacity: 0 }, ">-.5")
@@ -568,7 +568,7 @@ function eventHandler() {
 		// 	$('.firstScreen').addClass('animate__animated animate__fadeOutDown');
 		// 	$('.index-page').css("overflow", "auto")
 		// }, 1000);
-		$('html, body').animate({ scrollTop: '100vh'}, 0);
+		$('html, body').animate({ scrollTop: '150vh'}, 0);
 	});
 
 	if (mediaQuery.matches) {
