@@ -385,13 +385,6 @@ function eventHandler() {
 	// });
 
 
-	$('.section-title__btn--js').click(function () {
-		$('.section-title--js').addClass('animate__animated animate__fadeOutDown');
-		setTimeout(() => {
-			$('.firstScreen').addClass('animate__animated animate__fadeOutDown');
-			$('.index-page').css("overflow", "auto")
-		}, 1000);
-	});
 
 
 
@@ -409,7 +402,7 @@ function eventHandler() {
 		toggleActions: "restart pause resume pause"
 	});
 
-	let scTrigger = (el, start = '50% bottom', end = 'top top', scrub = .8, pin) => {
+	let scTrigger = (el, start = '50% bottom', end = 'top top', scrub = .8, pin, markers, pinSpacing, ) => {
 		return gsap.timeline({
 
 			scrollTrigger: {
@@ -419,6 +412,29 @@ function eventHandler() {
 				end,
 				scrub,
 				pin,
+				pinSpacing,
+				markers,
+				// invalidateOnRefresh: true,
+				defaults: {
+					// ease: "power3",
+					// overwrite: true
+				}
+			}
+
+		})
+
+	}
+
+	let scTriggerTop = (el, start = '50% bottom',  scrub = .8, pin) => {
+		return gsap.timeline({
+
+			scrollTrigger: {
+				trigger: el,
+				scroller,
+				start, 
+				scrub,
+				pin,
+				markers: true,
 				// invalidateOnRefresh: true,
 				defaults: {
 					// ease: "power3",
@@ -470,14 +486,14 @@ function eventHandler() {
 	// Check if the media query is true
 	if (mediaQuery.matches) {
 
-		var t5 = scTrigger(".imageSlider", '50% 70%', '70% top', 3);
+		var t5 = scTrigger(".main-wrapper-head", 'top 80',  "+=1000", 3, true);
 		t5
-			.from(".imageSlider img", { scale: "1.6", duration: 3, scrub: 2 })  // in from left
-			.to(".imageSlider__slide", { x: "75vw", duration: 50 },
+			.from(".imageSlider img", { scale: "1.6", duration: 3 })  // in from left
+			.to(".imageSlider__slide", { x: "75vw",  duration: 50 },
 				"+=2")  // in from left: ;
 	}
 
-	var t6 = scTrigger('.sHavanaContentHead__footer picture', '20% bottom', '70% top', .5);
+	var t6 = scTrigger('.sHavanaContentHead__footer picture', '40% top', '70% top', .8);
 	t6
 		.to(".sHavanaContentHead__footer img", { scale: 1.2 });
 
@@ -492,7 +508,7 @@ function eventHandler() {
 
 	// Check if the media query is true
 	if (mediaQuery.matches) {
-		var t9 = scTrigger(".sHavanaContentBody__imageSlider", '50% 70%', '70% top', 3);
+		var t9 = scTrigger(".main-wrapper-body", 'top 80',  "+=1000", 3, true);
 		t9
 			.from(".sHavanaContentBody__imageSlider img", { scale: "1.6", duration: 3, scrub: 2, delay: 1 })  // in from left: ;
 			.to(".sHavanaContentBody__slide", { x: "75vw", duration: 50 },
@@ -535,6 +551,25 @@ function eventHandler() {
 	// // .addIndicators() // add indicators (requires plugin)
 	// .addTo(controller);
 
+	var t131 = scTrigger(".headerBlock", 'top  10%', '+=350vh',  0, true, true);
+	t131
+		.to(".firstScreen .section-title--js", { y: "100%", opacity: 0 })
+		.to(".firstScreen", { y: "100%", opacity: 0 }, ">-.5")
+		.to("body", {})
+		// .from(".secondScreen", { y: "10%"})
+		;
+	
+	
+		
+
+		$('.section-title__btn--js').click(function () {
+		// $('.section-title--js').addClass('animate__animated animate__fadeOutDown');
+		// setTimeout(() => {
+		// 	$('.firstScreen').addClass('animate__animated animate__fadeOutDown');
+		// 	$('.index-page').css("overflow", "auto")
+		// }, 1000);
+		$('html, body').animate({ scrollTop: '100vh'}, 0);
+	});
 
 	if (mediaQuery.matches) {
 		// var sAmericanContent = TweenMax.to(".sAmericanContent__wrap", 1, {scale:1.2, ease:Linear.easeNone});
