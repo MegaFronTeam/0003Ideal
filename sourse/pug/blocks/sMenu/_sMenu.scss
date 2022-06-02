@@ -19,6 +19,9 @@
 	@include media-breakpoint-down(lg) {
 		padding-bottom: rem(71);
 	}
+	@include media-breakpoint-down(md) {
+		padding-bottom: rem(119);
+	}
 	&__row{
 		--bs-gutter-x: #{rem(9)};
 		--bs-gutter-y: var(--bs-gutter-x);

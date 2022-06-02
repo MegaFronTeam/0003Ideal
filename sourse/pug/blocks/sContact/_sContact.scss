@@ -33,6 +33,9 @@
 	}
 	&__map {
 		@include block(1280, 647);
+		@include media-breakpoint-down(sm) {
+			--ratio: 710/710;
+		}
 		#map {
 			position: absolute;
 			top: 0;
@@ -41,9 +44,9 @@
 			height: 100%;
 			filter: grayscale(1);
 		}
-		& > * {
-			width: 100%;
-			height: 100%;
+		& > *, .ymaps-2-1-79-map {
+			width: 100% !important;
+			height: 100% !important;
 		}
 	}
 	@include media-breakpoint-up(xl) {}

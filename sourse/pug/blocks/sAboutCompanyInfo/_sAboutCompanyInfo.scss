@@ -15,8 +15,14 @@
 	&__col{
 		display: flex;
 		flex-direction: column;
+		h3 {
+			margin-bottom: rem(24);
+			@include media-breakpoint-up(lg) {
+				margin-bottom: rem(105);
+			}
+		}
 		p {
-			margin-top: auto;
+			// margin-top: auto;
 			margin-bottom: rem(40);
 		}
 	}
@@ -39,6 +45,7 @@
 	picture {
 		@include block(484, 648);
 		overflow: hidden;
+		filter: grayscale(1);
 		img {
 			position: absolute;
 			top: 0;

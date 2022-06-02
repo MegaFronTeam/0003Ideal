@@ -77,6 +77,9 @@
 		&-prev {
 			@include media-breakpoint-up(lg) {
 				left: rem(-10);
+				.icon {
+					margin-left: -1px;
+				}
 			}
 			@include media-breakpoint-up(xl) {
 				left: rem(-32);
@@ -85,13 +88,18 @@
 		&-next {
 			@include media-breakpoint-up(lg) {
 				right: rem(-10);
+				.icon {
+					margin-left: 1px;
+				}
 			}
 			@include media-breakpoint-up(xl) {
 				right: rem(-32);
 			}
 		}
 		@include media-breakpoint-up(lg) {
-			display: block;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 	}
 	@include media-breakpoint-up(xl) {}
