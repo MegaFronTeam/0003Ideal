@@ -186,3 +186,16 @@
 		transform: translateY(100%);
 	}
 }
+.sAmericanContent--js4 .sAmericanContent__wrap,
+.sAmericanContent--js4 .sAmericanContent__bg{
+	@include media-breakpoint-down(md) {
+		transform: translateY(0);
+
+	}
+
+}
+.sAmericanContent--js4 .sAmericanContent__picture{
+	@include media-breakpoint-down(md) {
+		position: relative;
+	}
+}
