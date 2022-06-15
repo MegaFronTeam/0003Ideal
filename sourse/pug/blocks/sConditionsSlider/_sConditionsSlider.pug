@@ -11,7 +11,8 @@ mixin sConditionsSlider(data)
 							mixin sConditions-item(i)
 								+e.slide.swiper-slide
 									+e.item(href="sample.pdf"  download)
-										+img(`sConditions-img-${i}.jpg`)
+										+e.img-wrap
+											+img(`sConditions-img-${i}.jpg`)
 										+e.text
 											p Сертификат соответствия
 											+icon('pdf-icon')

@@ -102,6 +102,17 @@
 			justify-content: center;
 		}
 	}
+	&__img-wrap {
+		@include block(256, 367);
+		margin-bottom: rem(6);
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
