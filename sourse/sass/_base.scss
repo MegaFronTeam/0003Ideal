@@ -19,10 +19,11 @@ html {
 		font-size: calc(var(--bs-body-font-size) + (5vw + 5vh) * 0.1);
 	}
 
-	@media (min-width: 1920px) {
+	@media (min-width: 1921px) {
 
-		font-size: calc(var(--bs-body-font-size) + (4vw + 4vh) * 0.1);
+		font-size: calc(var(--bs-body-font-size) + (3vw + 3vh) * 0.1);
 	}
+	font-size: calc(var(--bs-body-font-size) + (1vw + 1vh) * 0.1);
 	
 }
 html{
