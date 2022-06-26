@@ -14,7 +14,16 @@
 
 body,
 html {
-	font-size: calc(var(--bs-body-font-size) + (1vw + 1vh) * 0.1);
+	@media (min-width: 2600px) {
+
+		font-size: calc(var(--bs-body-font-size) + (5vw + 5vh) * 0.1);
+	}
+
+	@media (min-width: 1920px) {
+
+		font-size: calc(var(--bs-body-font-size) + (4vw + 4vh) * 0.1);
+	}
+	
 }
 html{
 	-webkit-text-size-adjust: 100%;
@@ -345,8 +354,8 @@ ul {
 			display: block;
 			@include media-breakpoint-up(sm){
 
-				width: 8px;
-				height: 8px;
+				width: rem(8px);
+				height: rem(8px);
 			}
 			width: 4px;
 			height: 4px;
@@ -677,5 +686,11 @@ iframe {
 		top: 0; 
 		object-fit: cover;
 		height: calc(100% + 40vh);
+	}
+}
+
+.main-wrapper {
+	*[style] {
+		will-change: transform;
 	}
 }
