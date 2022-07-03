@@ -14,6 +14,9 @@
 		padding-bottom: rem(56);
 		margin-bottom: 0;
 		max-width: rem(749);
+		@include media-breakpoint-down(sm) {
+			font-family: 'Roboto';
+		}
 		&--white {
 			color: $white;
 		}

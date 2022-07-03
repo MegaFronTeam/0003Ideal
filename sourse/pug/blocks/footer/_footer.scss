@@ -139,6 +139,12 @@
 			fill: white;
 		}
 	}
+	&--amsterdam {
+		background-color: #D3D3D3;
+	}
+	// &--america {
+	// 	background-color: #878484;
+	// }
 @include media-breakpoint-up(xl) {}
 
 @include media-breakpoint-up(lg) {}

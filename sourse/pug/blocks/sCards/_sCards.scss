@@ -27,7 +27,7 @@
 	
 	}
 	&__content {
-		background-color: $gray-800;
+		background-color: $gray-600;
 		border-radius: rem(12);
 		padding-top: rem(30);
 		position: relative;
@@ -99,7 +99,7 @@
 			height: 100%;
 			bottom: 0;
 			left: 0;
-			background-image: linear-gradient(360deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+			background-color: $gray-600;
 			opacity: 0.4;
 			z-index: -1;
 			border-radius: rem(12);
@@ -347,6 +347,26 @@
 				--w: 31%;
 			}
 		}
+	}
+	&--amsterdam {
+		background-color: #D3D3D3;
+		.sCards__content {
+			background-color: #ABABAB;
+			&::before {
+				background-color: #ABABAB;
+			}
+		}
+	}
+	&--grey-dark {
+		.sCards__content {
+			background-color: #ABABAB;
+			&::before {
+				background-color: #ABABAB;
+			}
+		}
+	}
+	&--america {
+		background-color: #878484;
 	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
