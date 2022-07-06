@@ -337,6 +337,7 @@ function eventHandler() {
 		// slidesPerView: 1,
 		loop: true,
 		speed: 1400,
+		spaceBetween: 1,
 		parallax: true,
 		scrollbar: {
 			el: '.swiper-scrollbar',
@@ -450,8 +451,15 @@ function eventHandler() {
 	// var controller = new ScrollMagic.Controller();
 
 
+	let textHidden = 'Всё описание';
+	let textShow = 'Скрыть описание';
+
 	$('.sParisContentBody__btn').click(function () {
 		$(this).toggleClass('active');
+		let text = this.querySelector('.sParisContentBody__btn-text');
+		text.innerHTML = (text.innerHTML == textHidden) 
+			? textShow 
+			: textHidden;
 		$('.sParisContentBody__text').slideUp(function () {
 			// $(this).removeClass('active');
 		});
@@ -459,6 +467,20 @@ function eventHandler() {
 			// $(this).addClass('active');
 		});
 	});
+
+	// $('.sParisContentBody__btn').click(function() {
+	// 	$(this).toggleClass('active');
+		// let text = this.querySelector('.sGoods__btn-text');
+		// text.innerHTML = (text.innerHTML == textHidden) 
+		// 	? textShow 
+		// 	: textHidden;
+		// $('.sGoods__col--js.active').slideUp(function() {
+		// 	$(this).removeClass('active');
+		// });
+		// $('.sGoods__col--js:hidden').slideDown(function() {
+		// 	$(this).addClass('active');
+		// });
+	// });
 
 	// $(document).scroll(function() {
 	// 	let root = this.querySelector('.top-nav');
@@ -688,6 +710,7 @@ function eventHandler() {
 	const mediaContentSwiper = new Swiper('.mediaContent__slider--js', {
 		slidesPerView: 1,
 		loop: true,
+		spaceBetween: 1,
 		navigation: {
 			nextEl: '.mediaContent .swiper-button-next',
 			prevEl: '.mediaContent .swiper-button-prev',

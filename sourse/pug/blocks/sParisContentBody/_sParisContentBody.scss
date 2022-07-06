@@ -55,7 +55,13 @@
 		font-weight: 400;
 		margin-bottom: rem(24);
 		.icon {
+			@include mt;
 			font-size: rem(16);
+		}
+		&.active {
+			.icon {
+				transform: rotate(180deg);
+			}
 		}
 	}
 	picture {

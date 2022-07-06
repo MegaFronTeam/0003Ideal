@@ -61,6 +61,9 @@
 		--swiperColorDef: #000;
 		--swiperBorderColorDef: #000;
 	}
+	&__slider {
+		border-radius: 12px;
+	}
 	&__sliders{
 		flex-wrap: nowrap;
 		position: relative;
@@ -110,7 +113,7 @@
 	picture {
 		background-color: $dark;
 		margin-bottom: rem(10);
-		border-radius: 12px;
+		// border-radius: 12px;
 		overflow: hidden;
 		img {
 			position: absolute;

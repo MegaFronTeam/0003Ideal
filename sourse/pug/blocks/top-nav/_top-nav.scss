@@ -14,9 +14,10 @@
 		margin-bottom: 0;
 	}
 	.logo {
-		width: 123px;
-		padding: 11px;
+		width: rem(123);
+		padding: rem(11);
 		display: block;
+		text-align: center;
 		svg {
 			width: rem(90);
 			height: rem(20);
