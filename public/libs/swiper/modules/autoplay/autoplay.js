@@ -35,8 +35,7 @@ export default function Autoplay(_ref) {
       delay = $activeSlideEl.attr('data-swiper-autoplay') || swiper.params.autoplay.delay;
     }
 
-    clearTimeout(timeout);
-    timeout = nextTick(() => {
+    const proceed = () => {
       let autoplayResult;
 
       if (swiper.params.autoplay.reverseDirection) {
@@ -70,6 +69,17 @@ export default function Autoplay(_ref) {
       if (swiper.params.cssMode && swiper.autoplay.running) run();else if (autoplayResult === false) {
         run();
       }
+    };
+
+    clearTimeout(timeout);
+
+    if (delay === 0) {
+      proceed();
+      return;
+    }
+
+    timeout = nextTick(() => {
+      proceed();
     }, delay);
   }
 

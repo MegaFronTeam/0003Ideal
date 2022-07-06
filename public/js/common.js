@@ -486,11 +486,11 @@ function eventHandler() {
 	// Check if the media query is true
 	if (mediaQuery.matches) {
 
-		var t5 = scTrigger(".main-wrapper-head", 'top 80',  "+=1000", 3, true);
+		var t5 = scTrigger(".main-wrapper-head", 'top 80',  "+=2500", 3, true);
 		t5
 			.from(".imageSlider img", { scale: "1.6", duration: 3 })  // in from left
-			.to(".imageSlider__slide", { x: "75vw",  duration: 50 },
-				"+=2")  // in from left: ;
+			.to(".imageSlider__slide", { x: "75vw",  duration: 50 }, "+=2")  // in from left: ;
+			// .to(".imageSlider__slide", { opacity:1  }, "+=2")  // in from left: ;
 	}
 
 	var t6 = scTrigger('.sHavanaContentHead__footer picture', '40% top', '70% top', .8);
@@ -551,11 +551,11 @@ function eventHandler() {
 	// // .addIndicators() // add indicators (requires plugin)
 	// .addTo(controller);
 
-	var t131 = scTrigger(".headerBlock", 'top  10%', '+=350vh',  0, true);
+	var t131 = scTrigger(".headerBlock", 'top  10%', '+=550vh',  0, true);
 	t131
 		.to(".firstScreen .section-title--js", { y: "100%", opacity: 0 })
-		.to(".firstScreen", { y: "100%", opacity: 0 }, ">-.5")
-		.to("body", {})
+		.to(".firstScreen", { y: "100%", opacity: 0 }, ">-1")
+		.to(".firstScreen", {  }, ">+1.5")
 		// .from(".secondScreen", { y: "10%"})
 		;
 	
