@@ -43,6 +43,10 @@
 		padding-left: rem(25);
 		padding-top: rem(39);
 		padding-bottom: rem(39);
+		@include media-breakpoint-up(lg) {
+			max-width: none !important;
+			width: 39.9%;
+		}
 	}
 	&__container {
 		@media (min-width: 1400px) {

@@ -10,8 +10,10 @@
 	// top: 0;
 	@include mt(1s);
 	.h2 {
+		@include mt;
 		color: $white;
 		margin-bottom: 0;
+		opacity: 1;
 	}
 	.logo {
 		width: rem(123);
@@ -70,6 +72,9 @@
 			.toggle-menu-mobile {
 				// box-shadow: 3px 4px 7px 0px #00000091;
 			}
+		}
+		.h2 {
+			opacity: 0;
 		}
 	}
 	@include media-breakpoint-down(md) {

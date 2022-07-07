@@ -695,3 +695,18 @@ iframe {
 		// will-change: transform;
 	}
 }
+
+.news-page {
+	.top-nav {
+		&__col {
+			@include media-breakpoint-up(md) {
+				width: 9.225rem;
+			}
+			.toggle-menu-mobile {
+				@include media-breakpoint-up(md) {
+					margin-left: auto;
+				}
+			}
+		}
+	}
+}
