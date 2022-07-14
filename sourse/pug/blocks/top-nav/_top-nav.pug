@@ -26,19 +26,21 @@ mixin top-nav(title)
 				//- .col-auto
 				//- 	+logo()
 				if title
-					.col.col-md-auto
+					.col
 						+logo()
-					.col.d-none.d-md-block
+					.col-auto.d-none.d-md-block
 						.h2.text-center!= title
+					+e.col.col
+						+menu-toggle()
 				else
 					.col
 						+logo()
-				//- .col
-				//- 	.menu-mobile.menu-mobile--js
-				//- 		.menu-mobile__inner
-							//- +menu-toggle()
-							//- +mnu()
-							//- +sMenu
-				+e.col.col-auto
-					+menu-toggle()
+					//- .col
+					//- 	.menu-mobile.menu-mobile--js
+					//- 		.menu-mobile__inner
+								//- +menu-toggle()
+								//- +mnu()
+								//- +sMenu
+					+e.col.col-auto
+						+menu-toggle()
 	// end top-nav

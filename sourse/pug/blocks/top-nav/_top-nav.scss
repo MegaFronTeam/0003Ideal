@@ -30,6 +30,13 @@
 			}
 		}
 	}
+	&__col {
+		.toggle-menu-mobile {
+			@include media-breakpoint-up(md) {
+				margin-left: auto;
+			}
+		}
+	}
 	// .container-fluid {
 	// 	--bs-gutter-x: #{rem(24)};
 	// }

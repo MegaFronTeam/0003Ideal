@@ -88,7 +88,7 @@
 		height: auto;
 		picture{
 		
-
+			// border-radius: 0 !important;
 			@include media-breakpoint-up(md) {
 				--ratio: 687/556;
 			}
@@ -113,7 +113,7 @@
 	picture {
 		background-color: $dark;
 		margin-bottom: rem(10);
-		// border-radius: 12px;
+		border-radius: 12px;
 		overflow: hidden;
 		img {
 			position: absolute;
