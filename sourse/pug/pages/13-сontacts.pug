@@ -19,7 +19,7 @@ include ../blocks/404block/_404block.pug
 include ../blocks/sMenu/_sMenu.pug
 
 block variables
-	- let  mainPage= '' 
+	- let  mainPage= 'сontacts-page' 
 	- let  bg= '13-сontacts.jpg'
 
 block title
@@ -27,7 +27,9 @@ block title
 	title= title
 block pagecontent
 	//- +mob-mnu()
-	+top-nav(title)
+	+top-nav()
+	.title-wrap
+		h1!= title
 	+sContact()
 	+sMenu
 	+footer().--contacts

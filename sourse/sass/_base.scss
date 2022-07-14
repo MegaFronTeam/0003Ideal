@@ -696,6 +696,17 @@ iframe {
 	}
 }
 
+.title-wrap {
+	position: absolute;
+	top: 0.6875rem;
+	left: 50%;
+	transform: translateX(-50%);
+	h1 {
+		@extend .h2;
+		color: $white;
+		margin-bottom: 0;
+	}
+}
 .news-page {
 	.top-nav {
 		&__col {
@@ -707,6 +718,17 @@ iframe {
 					margin-left: auto;
 				}
 			}
+		}
+	}
+}
+.сontacts-page {
+	.title-wrap {
+		@include media-breakpoint-down(md) {
+			width: 100%;
+			max-width: 540px;
+			margin-left: auto;
+			margin-right: auto;
+			padding-left: 1rem;
 		}
 	}
 }
