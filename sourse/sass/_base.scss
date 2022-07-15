@@ -635,6 +635,17 @@ iframe {
 	.main-wrapper{
 		margin-top: 0;
 	}
+	.sCards {
+		--sPT: 0;
+		--sPB: 0;
+		--container-g-x: 0;
+		&__row {
+			--bs-gutter-x: 0;
+		}
+		&__content {
+			border-radius: 0;
+		}
+	}
 }
 
 .preload-block{
