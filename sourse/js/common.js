@@ -513,6 +513,16 @@ function eventHandler() {
 			.from(".imageSlider img", { scale: "1.6", duration: 3 })  // in from left
 			.to(".imageSlider__slide", { x: "75vw",  duration: 50 }, "+=2")  // in from left: ;
 			// .to(".imageSlider__slide", { opacity:1  }, "+=2")  // in from left: ;
+		}
+		else{
+			let wrap = document.querySelectorAll(".main-wrapper-head .imageSlider__slide, .sHavanaContentBody__slide");
+			if(wrap)
+			for (const item of wrap) {
+				
+				var t5 = scTrigger(item, 'top 80%', '70% top', .8)
+				t5
+				.to(item.querySelector("img"), { scale: 1.2})
+			}
 	}
 
 	var t6 = scTrigger('.sHavanaContentHead__footer picture', '40% top', '70% top', .8);
