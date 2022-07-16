@@ -773,7 +773,7 @@ function eventHandler() {
 	var wow = new WOW(
 		{
 			animateClass: 'animate__animated', // animation css class (default is animated)
-			mobile: false       // trigger animations on mobile devices (default is true)
+			// mobile: false       // trigger animations on mobile devices (default is true)
 		}
 	);
 	wow.init();
