@@ -252,16 +252,16 @@
 	.swiper-button-hand{
 		top: auto;
 		transform: none;
-		bottom: rem(100);
+		// bottom: rem(100);
+		bottom: rem(35);
 		@include media-breakpoint-up(md) {
-			bottom: rem(40);
 		}
 	}
 
 	.swiper-pagination{
-		bottom: rem(100);
+		// bottom: rem(100);
+		bottom: rem(40);
 		@include media-breakpoint-up(md) {
-			bottom: rem(40);
 		}
 	}
 
