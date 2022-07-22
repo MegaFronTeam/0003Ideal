@@ -4,6 +4,11 @@
 	--sPB: #{rem(40)};
 	// --sTPB: #{rem()};
 	background-color: $white;
+	&__content{
+		@include media-breakpoint-up(lg) {
+		padding-right: rem(30);
+	}
+	}
 	&__container--42  &__content{
 		@include media-breakpoint-down(md) {
 			padding-left: rem(16);

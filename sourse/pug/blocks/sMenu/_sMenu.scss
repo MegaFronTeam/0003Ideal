@@ -3,6 +3,7 @@
 	--sPT: #{rem(38.987)};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
+	overscroll-behavior: contain;
 	@include mt;
 	position: fixed;
 	width: 100%;

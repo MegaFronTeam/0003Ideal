@@ -733,15 +733,25 @@ function eventHandler() {
 	});
 
 
-	if (document.querySelector('.point')) {
-		const mask = document.querySelector('.point');
+	if (document.querySelector('.spotlight')) {
+		const mask = $('.spotlight');
 		const mainModal = document.querySelector('.block404');
 
 		mainModal.addEventListener('mousemove', (e) => {
-			mask.style.setProperty('--x', (e.clientX) + 'px');
-			mask.style.setProperty('--y', (e.clientY) + 'px');
+
+			// mask.style.setProperty('--x', (e.clientX) + 'px');
+			// mask.style.setProperty('--y', (e.clientY) + 'px');
+
+			let w = mask.innerWidth(),
+			h = mask.innerHeight(),
+			t = e.pageY - mask.offset().top,
+			l = e.pageX - mask.offset().left;
+		mask.css('background-image', 'radial-gradient(circle at '+ (l / w * 100) +'% '+ (t / h * 100) +'%, transparent 0px, rgba(0, 0, 0, 0.8) 180px)');
 		}, { passive: true });
 	}
+
+	$(window).mousemove(function(e){
+	});	
 
 	document.addEventListener("click", function (event) {
 		const toggleEv = event.target.closest(".applicationSent__close");
