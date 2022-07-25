@@ -154,7 +154,7 @@
 	left: 50%;
 	transform: translateX(-50%) translateY(275%);
 	bottom: rem(16);
-	z-index: 16;
+	z-index: 1000;
 	background-color: $white;
 	&.visible {
 		transform: translateX(-50%) translateY(0);
