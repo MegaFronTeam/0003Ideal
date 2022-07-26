@@ -11,6 +11,7 @@
 	@include media-breakpoint-up(md) {
 		--top: #{rem(15.8)};
 		top:  var(--top);
+		bottom: auto;
 
 	}
 	@include media-breakpoint-down(md) {
