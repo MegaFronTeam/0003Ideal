@@ -1,8 +1,12 @@
 // start .headerBlock
 .headerBlock {
-	min-height: 100vh;
+	// min-height: 100vh;
 	// background-image: url(../img);
 	// background-color: #000000;
+
+	.pin-spacer{
+		// min-height: 100vh;
+	}
 	position: relative;
 	padding-top: 0;
 	padding-bottom: 0;
@@ -91,10 +95,22 @@
 	@include media-breakpoint-down(md) {}
 
 	@include media-breakpoint-down(sm) {}
-
-	@include media-breakpoint-down(xs) {}
-
 	
+	@include media-breakpoint-down(xs) {}
+	
+	@include media-breakpoint-down(md) {
+
+		.secondScreen{
+			
+	.swiper-button-hand{ 
+		bottom: rem(75); 
+	}
+
+	.swiper-pagination{ 
+		bottom: rem(80); 
+	}
+		}
+	}
 }
 
 // end.headerBlock
@@ -111,12 +127,17 @@
 	@include mt;
 	align-items: center;
 	// position: relative;
-	position: absolute;
+	// position: absolute;
 	// display: none;
+
+	@include media-breakpoint-up(lg) {
+
+		position: absolute;
+	}
 	left: 0;
 	top: 0;
 	width: 100%;
-	// height: 100%;
+	height: 100%;
 
 	z-index: 20;
 	&::before {
