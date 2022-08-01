@@ -562,10 +562,6 @@ function eventHandler() {
 		// .to(".firstScreen", {  }, ">+1.5")
 		;
 	
-	}
-
-		
-
 		$('.section-title__btn--js').click(function () {
 		// $('.section-title--js').addClass('animate__animated animate__fadeOutDown');
 		// setTimeout(() => {
@@ -574,6 +570,20 @@ function eventHandler() {
 		// }, 1000);
 		$('html, body').animate({ scrollTop: window.innerHeight}, 0);
 	});
+}
+else{
+			$('.section-title__btn--js').click(function () {
+			// $('.section-title--js').addClass('animate__animated animate__fadeOutDown');
+			// setTimeout(() => {
+			// 	$('.firstScreen').addClass('animate__animated animate__fadeOutDown');
+			// 	$('.index-page').css("overflow", "auto")
+			// }, 1000);
+			$('html, body').animate({ scrollTop: $("#headerBlock .secondScreen").offset().top}, 0);
+			});
+			
+		}
+		
+
 
 	if (mediaQuery.matches) {
 		// var sAmericanContent = TweenMax.to(".sAmericanContent__wrap", 1, {scale:1.2, ease:Linear.easeNone});
