@@ -1,3 +1,11 @@
+.index-page{
+	.footer {
+		@include media-breakpoint-down(md) {
+			padding-bottom: rem(43.6);
+		}
+	}
+
+}
 .footer {
 	padding-top: rem(9);
 	padding-bottom: rem(71.6);
